@@ -107,49 +107,74 @@ end
 -- Create a laucher widget and a main menu
 
 -- menu_items = freedesktop.menu.new()
-myawesomemenu = {
-    { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'help' }) },
-    { "edit config", editor_cmd .. " " .. awesome.conffile, freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
-    { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) },
-    { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
-}
-
+-- myawesomemenu = {
+--     { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'system-help' }) },
+--     { "edit config", editor_cmd .. " " .. awesome.conffile, freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
+--     { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) },
+--     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
+-- }
+-- 
 -- table.insert(menu_items, { "Awesome", myawesomemenu, beautiful.awesome_icon })
 -- table.insert(menu_items, { "Wallpaper", wallmenu, freedesktop.utils.lookup_icon({ icon = 'gnome-settings-background' })}) 
 -- 
 -- mymainmenu = awful.menu({ items = menu_items, width = 250 })
 
+myawesomemenu = {
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", editor_cmd .. " " .. awesome.conffile },
+    { "restart", awesome.restart },
+    { "quit", awesome.quit }
+}
+
 networkmenu = {
-	{ "Chromium", "chromium" },
-	{ "Firefox", "firefox" }
+    { "Chromium", "chromium" },
+    { "Firefox", "firefox" },
+    { "Thunderbird", "thunderbird" },
+    { "Baidu Yunpan", "bcloud-gui" },
+    { "Transmission", "transmission-gtk"}
 }
 
 mathmenu = {
-	{ "Sagemath", "sage" },
-	{"Gap", "gap" }
+    { "Sagemath", "sage -notebook" },
+    { "Gap", "gap" }
 }
 
 editormenu = {
-	{ "Gvim", "gvim" },
-	{ "Emacs", "emacs" }
+    { "Gvim", "gvim" },
+    { "Emacs", "emacs" }
 }
 
 libreofficemenu = {
-	{ "Base", "lobase" },
-	{ "Writer", "lowriter" },
-	{ "Calc", "localc" },
-	{ "Impress", "loimpress" },
-	{ "Draw", "lodraw" },
-	{ "Math", "lomath" }
+    { "Base", "lobase" },
+    { "Writer", "lowriter" },
+    { "Calc", "localc" },
+    { "Impress", "loimpress" },
+    { "Draw", "lodraw" },
+    { "Math", "lomath" }
+}
+
+terminalmenu = {
+    { "URxvt", "urxvt" },
+    { "URxvt(tabbed)", "urxvt-tabbed" },
+    { "Xterm", "xterm" },
+    { "UXterm", "uxterm" },
+    { "LXTerminal", "LXTerminal" }
+}
+
+graphicmenu = {
+    { "GIMP", "gimp" },
+    { "Inkscape", "inkscape" },
+    { "Geeqie", "geeqie" }
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-									{ "Network", networkmenu },
-									{ "Files", "pcmanfm" },
-									{ "Math", mathmenu },
-									{ "Editor", editormenu },
-									{ "LibreOffice", libreofficemenu },
-                                    { "Open Terminal", terminal, beautiful.menu_terminal }
+                                    { "Network", networkmenu },
+                                    { "Files", "pcmanfm" },
+                                    { "Math", mathmenu },
+                                    { "Editor", editormenu },
+                                    { "LibreOffice", libreofficemenu },
+                                    { "Graphic", graphicmenu },
+                                    { "Terminal", terminalmenu, beautiful.menu_terminal }
                                   }
                         })
 
@@ -158,6 +183,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 -- }}}
 
 -- {{{ Wibox
@@ -245,7 +271,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
-	-- right_layout:add(powerline-widget)
+    -- right_layout:add(powerline-widget)
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
@@ -302,7 +328,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-	awful.key({ modkey,           }, "l",     function () awful.utils.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey,           }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock") end),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
@@ -325,7 +351,10 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- Screenshot
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end)
 )
 
 clientkeys = awful.util.table.join(
