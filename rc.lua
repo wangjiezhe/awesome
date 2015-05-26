@@ -13,10 +13,6 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
--- FreeDesktop
-require('freedesktop.utils')
-require('freedesktop.menu')
--- freedesktop.utils.icon_theme = 'gnome'
 -- Powerline
 package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
 require('powerline')
@@ -52,7 +48,7 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 -- beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -67,16 +63,16 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
     awful.layout.suit.magnifier
 }
 -- }}}
@@ -91,10 +87,13 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {}
+tags = {
+    names = { '|1.Term', '|2.WWW', '|3.Files', '|4.Edit', '|5.Entertainment', '|6.Wiki', '|7.Mail', '|8.Math', '|9.Others' },
+    layouts = {}
+}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ '|1.Term', '|2.WWW', '|3.Files', '|4.Edit', '|5.Entertainment', '|6.Wiki', '|7.Mail', '|8.Math', '|9.Others' }, s, layouts[1])
+    tags[s] = awful.tag(tags.names, s, layouts[2])
 end
 -- }}}
 
@@ -106,6 +105,10 @@ end
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 
+-- FreeDesktop
+-- require('freedesktop.utils')
+-- require('freedesktop.menu')
+-- freedesktop.utils.icon_theme = 'gnome'
 -- menu_items = freedesktop.menu.new()
 -- myawesomemenu = {
 --     { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'system-help' }) },
@@ -113,37 +116,35 @@ end
 --     { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) },
 --     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
 -- }
--- 
 -- table.insert(menu_items, { "Awesome", myawesomemenu, beautiful.awesome_icon })
--- table.insert(menu_items, { "Wallpaper", wallmenu, freedesktop.utils.lookup_icon({ icon = 'gnome-settings-background' })}) 
--- 
+-- table.insert(menu_items, { "Wallpaper", wallmenu, freedesktop.utils.lookup_icon({ icon = 'gnome-settings-background' })})
 -- mymainmenu = awful.menu({ items = menu_items, width = 250 })
 
+-- Manually
 myawesomemenu = {
     { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     { "restart", awesome.restart },
     { "quit", awesome.quit }
 }
-
 networkmenu = {
     { "Chromium", "chromium" },
     { "Firefox", "firefox" },
     { "Thunderbird", "thunderbird" },
-    { "Baidu Yunpan", "bcloud-gui" },
+    { "Baidu Yun", "bcloud-gui" },
     { "Transmission", "transmission-gtk"}
 }
-
 mathmenu = {
     { "Sagemath", "sage -notebook" },
-    { "Gap", "gap" }
+    { "Gap", "gap" },
+    { "Maxima", "maxima" },
+    { "XMaxima", "xmaxima" },
+    { "R", "R" }
 }
-
 editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" }
 }
-
 libreofficemenu = {
     { "Base", "lobase" },
     { "Writer", "lowriter" },
@@ -152,31 +153,55 @@ libreofficemenu = {
     { "Draw", "lodraw" },
     { "Math", "lomath" }
 }
-
 terminalmenu = {
     { "URxvt", "urxvt" },
+    { "URxvt(client)", "urxvtc" },
     { "URxvt(tabbed)", "urxvt-tabbed" },
     { "Xterm", "xterm" },
     { "UXterm", "uxterm" },
-    { "LXTerminal", "LXTerminal" }
+    { "Lxterminal", "lxterminal" }
 }
-
 graphicmenu = {
     { "GIMP", "gimp" },
     { "Inkscape", "inkscape" },
     { "Geeqie", "geeqie" }
 }
-
+latexmenu = {
+    { "TeXmacs", "texmacs" },
+    { "Lyx", "lyx" }
+}
+wpsmenu = {
+    { "Writer", "wps" },
+    { "Spreadsheets", "et" },
+    { "Presentation", "wpp" }
+}
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
+                                    -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
                                     { "Network", networkmenu },
                                     { "Files", "pcmanfm" },
                                     { "Math", mathmenu },
                                     { "Editor", editormenu },
                                     { "LibreOffice", libreofficemenu },
+                                    { "WPS Office", wpsmenu },
+                                    { "LaTeX", latexmenu },
                                     { "Graphic", graphicmenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal }
                                   }
                         })
+
+-- Xdg_menu
+-- xdg_menu = require("archmenu")
+-- myawesomemenu = {
+--     { "manual", terminal .. " -e man awesome" },
+--     { "edit config", editor_cmd .. " " .. awesome.conffile },
+--     { "restart", awesome.restart },
+--     { "quit", awesome.quit }
+-- }
+-- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+--                                     { "Applications", xdgmenu },
+--                                     { "open terminal", terminal }
+--                                   }
+--                         })
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -189,6 +214,10 @@ app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+-- Volume widget
+require("volume")
+volume_widget = create_volume_widget()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -270,6 +299,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
+    right_layout:add(volume_widget)
     right_layout:add(mylayoutbox[s])
     -- right_layout:add(powerline-widget)
 
@@ -354,7 +384,29 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- Screenshot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end)
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
+
+    -- Toggle titlebar visibility
+    -- awful.key({ modkey, "Shift" }, "t", awful.titlebar.toggle)
+
+    -- Volume control
+    awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
+    awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end),
+    awful.key({ }, "XF86AudioMute", function() mute_volume(volume_widget) end)
+    -- awful.key({ }, "XF86AudioLowerVolume",
+    --     function()
+    --         update_volume(volume_widget)
+    --     end),
+    -- awful.key({ }, "XF86AudioRaiseVolume",
+    --     function()
+    --         awful.util.spawn("amixer sset Master,0 5%+")
+    --         update_volume(volume_widget)
+    --     end),
+    -- awful.key({ }, "XF86AudioMute",
+    --     function()
+    --         awful.util.spawn("amixer sset Master toggle")
+    --         update_volume(volume_widget)
+    --     end)
 )
 
 clientkeys = awful.util.table.join(
@@ -442,15 +494,59 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
+    -- { rule = { class = "MPlayer" },
+    --   properties = { floating = true } },
+    -- { rule = { class = "pinentry" },
+    --   properties = { floating = true } },
+    -- { rule = { class = "gimp" },
+    --   properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
+    { rule = { class = "URxvt" },
+      properties = { maximized_vertical = true, maximized_horizontal = true }},
+    { rule = { class = "Gvim" },
+      properties = { maximized_vertical = true, maximized_horizontal = true }},
+    { rule = { class = "Emacs" },
+      properties = { maximized_vertical = true, maximized_horizontal = true }},
+    { rule = { class = "xterm" },
+      properties = { floating = true, tag = tags[1][1] }},
+    { rule = { class = "Lxterminal" },
+      properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][2], switchtotag = true }},
+    { rule = { class = "Chromium" },
+      properties = { tag = tags[1][2], switchtotag = true }},
+    { rule = { class = "Pcmanfm" },
+      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "libreoffice" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "wps" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "et" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "wpp" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "lyx" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "texmacs.bin" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "Gimp" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Inkscape" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Geeqie" },
+      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "mpv" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Mplayer" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Thunderbird" },
+      properties = { tag = tags[1][7], switchtotag = true }},
+    { rule = { class = "Transmission-gtk" },
+      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
+    { rule = { class = "bcloud-gui" },
+      properties = { floating = true, tag = tags[1][9], switchtotag = true }}
 }
 -- }}}
 
