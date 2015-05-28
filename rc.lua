@@ -14,8 +14,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 -- Powerline
-package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
-require('powerline')
+-- package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
+-- require('powerline')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -104,107 +104,7 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-
--- FreeDesktop
--- require('freedesktop.utils')
--- require('freedesktop.menu')
--- freedesktop.utils.icon_theme = 'gnome'
--- menu_items = freedesktop.menu.new()
--- myawesomemenu = {
---     { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'system-help' }) },
---     { "edit config", editor_cmd .. " " .. awesome.conffile, freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
---     { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) },
---     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
--- }
--- table.insert(menu_items, { "Awesome", myawesomemenu, beautiful.awesome_icon })
--- table.insert(menu_items, { "Wallpaper", wallmenu, freedesktop.utils.lookup_icon({ icon = 'gnome-settings-background' })})
--- mymainmenu = awful.menu({ items = menu_items, width = 250 })
-
--- Manually
-myawesomemenu = {
-    { "manual", terminal .. " -e man awesome" },
-    { "edit config", editor_cmd .. " " .. awesome.conffile },
-    { "restart", awesome.restart },
-    { "quit", awesome.quit }
-}
-networkmenu = {
-    { "Chromium", "chromium" },
-    { "Firefox", "firefox" },
-    { "Thunderbird", "thunderbird" },
-    { "Baidu Yun", "bcloud-gui" },
-    { "Transmission", "transmission-gtk"}
-}
-mathmenu = {
-    { "Sagemath", "sage -notebook" },
-    { "Gap", "gap" },
-    { "Maxima", "maxima" },
-    { "XMaxima", "xmaxima" },
-    { "R", "R" }
-}
-editormenu = {
-    { "Gvim", "gvim" },
-    { "Emacs", "emacs" }
-}
-libreofficemenu = {
-    { "Base", "lobase" },
-    { "Writer", "lowriter" },
-    { "Calc", "localc" },
-    { "Impress", "loimpress" },
-    { "Draw", "lodraw" },
-    { "Math", "lomath" }
-}
-terminalmenu = {
-    { "URxvt", "urxvt" },
-    { "URxvt(client)", "urxvtc" },
-    { "URxvt(tabbed)", "urxvt-tabbed" },
-    { "Xterm", "xterm" },
-    { "UXterm", "uxterm" },
-    { "Lxterminal", "lxterminal" }
-}
-graphicmenu = {
-    { "GIMP", "gimp" },
-    { "Inkscape", "inkscape" },
-    { "Geeqie", "geeqie" }
-}
-latexmenu = {
-    { "TeXmacs", "texmacs" },
-    { "Lyx", "lyx" }
-}
-wpsmenu = {
-    { "Writer", "wps" },
-    { "Spreadsheets", "et" },
-    { "Presentation", "wpp" }
-}
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
-                                    { "Network", networkmenu },
-                                    { "Files", "pcmanfm" },
-                                    { "Math", mathmenu },
-                                    { "Editor", editormenu },
-                                    { "LibreOffice", libreofficemenu },
-                                    { "WPS Office", wpsmenu },
-                                    { "LaTeX", latexmenu },
-                                    { "Graphic", graphicmenu },
-                                    { "Terminal", terminalmenu, beautiful.menu_terminal }
-                                  }
-                        })
-
--- Xdg_menu
--- xdg_menu = require("archmenu")
--- myawesomemenu = {
---     { "manual", terminal .. " -e man awesome" },
---     { "edit config", editor_cmd .. " " .. awesome.conffile },
---     { "restart", awesome.restart },
---     { "quit", awesome.quit }
--- }
--- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
---                                     { "Applications", xdgmenu },
---                                     { "open terminal", terminal }
---                                   }
---                         })
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+local menu = require("menu")
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -213,11 +113,10 @@ app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock("%a %b %d %Y, %H:%M:%S ", 1)
 
 -- Volume widget
-require("volume")
-volume_widget = create_volume_widget()
+local volume = require("volume")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -281,7 +180,8 @@ for s = 1, screen.count() do
                            awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
     -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    -- mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.noempty, mytaglist.buttons)
 
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
@@ -291,15 +191,15 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
-    left_layout:add(mylauncher)
+    left_layout:add(menu_launcher)
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(mytextclock)
     right_layout:add(volume_widget)
+    right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
     -- right_layout:add(powerline-widget)
 
@@ -358,7 +258,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock") end),
+    awful.key({ modkey,           }, "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
@@ -392,21 +292,7 @@ globalkeys = awful.util.table.join(
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
     awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end),
-    awful.key({ }, "XF86AudioMute", function() mute_volume(volume_widget) end)
-    -- awful.key({ }, "XF86AudioLowerVolume",
-    --     function()
-    --         update_volume(volume_widget)
-    --     end),
-    -- awful.key({ }, "XF86AudioRaiseVolume",
-    --     function()
-    --         awful.util.spawn("amixer sset Master,0 5%+")
-    --         update_volume(volume_widget)
-    --     end),
-    -- awful.key({ }, "XF86AudioMute",
-    --     function()
-    --         awful.util.spawn("amixer sset Master toggle")
-    --         update_volume(volume_widget)
-    --     end)
+    awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end)
 )
 
 clientkeys = awful.util.table.join(
