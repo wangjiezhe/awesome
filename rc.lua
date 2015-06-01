@@ -17,6 +17,14 @@ local menubar = require("menubar")
 -- package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
 -- require('powerline')
 
+-- Revelation
+local revelation = require("revelation")
+
+-- Bashets
+-- local bashets = require("bashets")
+-- bashets.set_script_path = awful.util.getdir("config") .. "bashets"
+-- bashets.set_temporary_path = "/dev/shm/tmp"
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -46,6 +54,8 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 -- beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
+
+revelation.init()
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
@@ -113,10 +123,19 @@ app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock("%a %b %d %Y, %H:%M:%S ", 1)
+mytextclock = awful.widget.textclock("%a %b %d %Y, %H:%M:%S", 1)
+
+-- Spacer
+spacer = wibox.widget.textbox()
+spacer:set_markup(" ")
 
 -- Volume widget
 local volume = require("volume")
+
+-- Battery widget
+local battery = require("battery")
+
+-- bashets.start()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -197,9 +216,15 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(spacer)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(spacer)
     right_layout:add(volume_widget)
+    right_layout:add(spacer)
     right_layout:add(mytextclock)
+    right_layout:add(spacer)
+    right_layout:add(battery_widget)
+    right_layout:add(spacer)
     right_layout:add(mylayoutbox[s])
     -- right_layout:add(powerline-widget)
 
@@ -226,7 +251,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
-
+    awful.key({ modkey            }, "e",      revelation),
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
@@ -426,6 +451,8 @@ awful.rules.rules = {
     { rule = { class = "mpv" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Mplayer" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "kwplayer" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][7], switchtotag = true }},

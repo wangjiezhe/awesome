@@ -7,20 +7,18 @@ volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
 
 function update_volume(widget)
-	local fd = io.popen("pamixer --get-volume")
+	local fd = io.popen("echo -n $(pamixer --get-volume)")
 	local volume = fd:read("*all")
 	fd:close()
-	volume = string.match(volume, "%d+")
 
-	local fd = io.popen("pamixer --get-mute")
+	local fd = io.popen("echo -n $(pamixer --get-mute)")
 	local mute = fd:read("*all")
 	fd:close()
-	mute = string.match(mute, "%w+")
 
 	if mute == "false" then
-		volume_text = " Vol:" .. volume .. "% "
+		volume_text = "Vol:" .. volume .. "%"
 	else
-		volume_text = " Vol:" .. volume .. "M "
+		volume_text = "Vol:" .. volume .. "M"
 	end
 
 	widget:set_markup(volume_text)
@@ -43,6 +41,6 @@ end
 
 update_volume(volume_widget)
 
-mytimer = timer({ timeout = 1 })
-mytimer:connect_signal("timeout", function () update_volume(volume_widget) end)
-mytimer:start()
+volume_timer = timer({ timeout = 1 })
+volume_timer:connect_signal("timeout", function () update_volume(volume_widget) end)
+volume_timer:start()
