@@ -17,11 +17,23 @@ function update_volume(widget)
 
 	if mute == "false" then
 		volume_text = "Vol:" .. volume .. "%"
+        bg = "black"
 	else
 		volume_text = "Vol:" .. volume .. "M"
+        bg = "pink"
 	end
 
-	widget:set_markup(volume_text)
+    if tonumber(volume) <= 40 then
+        fg = "green"
+    elseif tonumber(volume) <= 90 then
+        fg = "white"
+    else
+        fg = "red"
+    end
+
+    volume_markup = "<span foreground='" .. fg .. "' background='".. bg .. "'>" .. volume_text .. "</span>"
+
+	widget:set_markup(volume_markup)
 end
 
 function inc_volume(widget)

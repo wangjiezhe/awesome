@@ -27,7 +27,7 @@ function show_battery (widget)
 
     if ac:match("0") then
         dir = "v"
-        if battery < 10 then
+        if battery <= 10 then
             naughty.notify({ title = "Battery Waring",
                              text = "Batter low! Only ".. battery .. "% left!",
                              timeout = 5,
@@ -42,9 +42,20 @@ function show_battery (widget)
         end
     end
 
-    battery_text = "Bat: " .. dir .. battery .. "%" .. dir
+    if battery <= 25 then
+        fg = "red"
+    elseif battery <= 50 then
+        fg = "orange"
+    elseif battery <= 75 then
+        fg = "white"
+    else
+        fg = "green"
+    end
 
-    widget:set_markup(battery_text)
+    battery_text = "Bat: " .. dir .. battery .. "%" .. dir
+    battery_markup = "<span foreground='" .. fg .. "' background='black'>" .. battery_text .. "</span>"
+
+    widget:set_markup(battery_markup)
 end
 
 show_battery(battery_widget)
