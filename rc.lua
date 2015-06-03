@@ -114,7 +114,7 @@ end
 -- }}}
 
 -- {{{ Autostart
--- awful.util.spawn_with_shell("xcompmgr -cF &")
+awful.util.spawn_with_shell(terminal)
 -- }}}
 
 
@@ -287,7 +287,11 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q", function () awful.util.spawn("exit.sh") end),
+    awful.key({ modkey, "Shift"   }, "q",
+        function ()
+            awful.util.spawn("killall sogou-qimpanel-watchdog")
+            awesome.quit()
+        end),
 
     awful.key({ modkey,           }, "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
@@ -541,5 +545,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-client.connect_signal("exit", function () awful.util.spawn("exit.sh") end)
+-- client.connect_signal("exit", function () awful.util.spawn("exit.sh") end)
 -- }}}
