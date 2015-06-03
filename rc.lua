@@ -25,6 +25,11 @@ local revelation = require("revelation")
 -- bashets.set_script_path = awful.util.getdir("config") .. "bashets"
 -- bashets.set_temporary_path = "/dev/shm/tmp"
 
+-- Naughty
+naughty.config.presets.normal.opacity = 0.8
+naughty.config.presets.low.opacity = 0.8
+naughty.config.presets.critical.opacity = 0.8
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -52,13 +57,14 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
--- beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
+-- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+-- gears.wallpaper.maximized("/usr/share/archlinux/wallpaper/archlinux-simplyblack.png", s, true)
+beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
 
 revelation.init()
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "urxvtc -e tmux"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -108,7 +114,7 @@ end
 -- }}}
 
 -- {{{ Autostart
--- awful.utils.spawn_with_shell("ibus-daemon --xim")
+-- awful.util.spawn_with_shell("xcompmgr -cF &")
 -- }}}
 
 
@@ -415,7 +421,7 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "URxvt" },
-      properties = { maximized_vertical = true, maximized_horizontal = true }},
+      properties = { maximized_vertical = true, maximized_horizontal = true, opacity = 0.8 }},
     { rule = { class = "Gvim" },
       properties = { maximized_vertical = true, maximized_horizontal = true }},
     { rule = { class = "Emacs" },
