@@ -64,7 +64,7 @@ beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
 revelation.init()
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc -e tmux"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -114,7 +114,7 @@ end
 -- }}}
 
 -- {{{ Autostart
-awful.util.spawn_with_shell(terminal)
+-- awful.util.spawn_with_shell(terminal)
 -- }}}
 
 
@@ -462,7 +462,7 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Mplayer" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "kwplayer" },
+    { rule = { class = "Kwplayer" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][7], switchtotag = true }},
