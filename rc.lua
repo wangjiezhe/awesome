@@ -246,7 +246,7 @@ end
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
+    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -322,7 +322,7 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
 
     -- Toggle titlebar visibility
-    -- awful.key({ modkey, "Shift" }, "t", awful.titlebar.toggle)
+    awful.key({ modkey, "Shift" }, "t", awful.titlebar.toggle),
 
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
@@ -412,6 +412,7 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+                     size_hints_honor = false,
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
@@ -427,7 +428,7 @@ awful.rules.rules = {
     { rule = { class = "URxvt" },
       properties = { maximized_vertical = true, maximized_horizontal = true, opacity = 0.8 }},
     { rule = { class = "Gvim" },
-      properties = { maximized_vertical = true, maximized_horizontal = true }},
+      properties = { maximized_vertical = true, maximized_horizontal = true }, callback = awful.titlebar.add },
     { rule = { class = "Emacs" },
       properties = { maximized_vertical = true, maximized_horizontal = true }},
     { rule = { class = "xterm" },
@@ -466,6 +467,14 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][7], switchtotag = true }},
+    { rule = { name = "gp" },
+      properties = { tag = tags[1][8], switchtotag = true }},
+    { rule = { name = "gap" },
+      properties = { tag = tags[1][8], switchtotag = true }},
+    { rule = { name = "R" },
+      properties = { tag = tags[1][8], switchtotag = true }},
+    { rule = { class = "Xmaxima" },
+      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Transmission-gtk" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Bcloud-gui" },

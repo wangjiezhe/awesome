@@ -33,11 +33,12 @@ networkmenu = {
     { "Transmission", "transmission-gtk"}
 }
 mathmenu = {
-    { "Sagemath", "sage -notebook" },
-    { "Gap", "gap" },
-    { "Maxima", "maxima" },
+    { "Sagemath", terminal .. " -e sage -notebook" },
+    { "GAP", terminal .. " -e gap" },
+    { "GP/PARI", terminal .. " -e gp"},
+    { "Maxima", terminal .. " -e maxima" },
     { "XMaxima", "xmaxima" },
-    { "R", "R" }
+    { "R", terminal .. " -e R" }
 }
 editormenu = {
     { "Gvim", "gvim" },
