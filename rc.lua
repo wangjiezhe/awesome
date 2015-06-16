@@ -289,7 +289,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",
         function ()
-            awful.util.spawn("killall sogou-qimpanel-watchdog")
+            -- awful.util.spawn("killall sogou-qimpanel-watchdog")
             awesome.quit()
         end),
 
@@ -461,6 +461,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Texmacs.bin" },
       properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "TexMaker" },
+      properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Gimp" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Inkscape" },
@@ -475,6 +477,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][7], switchtotag = true }},
+    { rule = { name = "sage" },
+      properties = { tag = tags[1][8], switchtotag = true }},
     { rule = { name = "gp" },
       properties = { tag = tags[1][8], switchtotag = true }},
     { rule = { name = "gap" },
