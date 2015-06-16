@@ -21,7 +21,7 @@ function update_volume(widget)
         bg = "black"
 	else
 		volume_text = "Vol:" .. volume .. "M"
-        bg = "pink"
+        bg = "grey"
 	end
 
 --    if tonumber(volume) <= 40 then

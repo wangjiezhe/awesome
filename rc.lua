@@ -327,7 +327,15 @@ globalkeys = awful.util.table.join(
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
     awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end),
-    awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end)
+    awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end),
+
+    -- X backlight
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end),
+
+    -- Kbd backlight
+    awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("asus-kbd-backlight up") end),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("asus-kbd-backlight down") end)
 )
 
 clientkeys = awful.util.table.join(
