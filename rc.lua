@@ -483,7 +483,7 @@ awful.rules.rules = {
       properties = { tag = tags[1][8], switchtotag = true }},
     { rule = { name = "gap" },
       properties = { tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "R" },
+    { rule = { name = "^R$" },
       properties = { tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Xmaxima" },
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
