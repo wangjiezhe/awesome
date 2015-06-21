@@ -477,7 +477,7 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][7], switchtotag = true }},
-    { rule = { name = "sage" },
+    { rule = { name = "^sage$" },
       properties = { tag = tags[1][8], switchtotag = true }},
     { rule = { name = "gp" },
       properties = { tag = tags[1][8], switchtotag = true }},
@@ -490,6 +490,8 @@ awful.rules.rules = {
     { rule = { class = "Transmission-gtk" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Bcloud-gui" },
+      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
+    { rule = { class = "Wine" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }}
 }
 -- }}}

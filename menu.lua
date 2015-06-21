@@ -33,7 +33,8 @@ networkmenu = {
     { "Transmission", "transmission-gtk"}
 }
 mathmenu = {
-    { "Sagemath", terminal .. " -e sage -notebook" },
+    { "Sage", terminal .. " -e sage" },
+    { "Sage(Notebook)", terminal .. " -e sage -notebook" },
     { "GAP", terminal .. " -e gap" },
     { "GP/PARI", terminal .. " -e gp"},
     { "Maxima", terminal .. " -e maxima" },
