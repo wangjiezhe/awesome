@@ -30,7 +30,10 @@ networkmenu = {
     { "Firefox", "firefox" },
     { "Thunderbird", "thunderbird" },
     { "Baidu Yun", "bcloud-gui" },
-    { "Transmission", "transmission-gtk"}
+    { "115 Pan", "115pan" },
+    { "Filezilla", "filezilla" },
+    { "Pidgin", "pidgin" },
+    { "Transmission", "transmission-gtk" }
 }
 mathmenu = {
     { "Sage", terminal .. " -e sage" },
@@ -76,6 +79,19 @@ wpsmenu = {
     { "Spreadsheets", "et" },
     { "Presentation", "wpp" }
 }
+qtmenu = {
+    { "Qt5 Assistant", "assistant-at5" },
+    { "Qt4 Assistant", "assistant-qt4" },
+    { "Qt5 Designer", "designer-qt5" },
+    { "Qt4 Designer", "designer-qt4" }
+}
+othermenu = {
+    { "Qt", qtmenu },
+    { "CMake", "cmake-gui" },
+    { "File Cleaner", "bleachbit" },
+    { "Manage Printing", "xdg-open http://localhost:631/"},
+    { "Font Editor", "fontforge" }
+}
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
                                     { "Network", networkmenu },
@@ -86,6 +102,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "WPS Office", wpsmenu },
                                     { "LaTeX", latexmenu },
                                     { "Graphic", graphicmenu },
+                                    { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal }
                                   }
                         })
