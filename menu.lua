@@ -98,6 +98,13 @@ othermenu = {
     { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" }
 }
+powermenu = {
+    { "Power Off", "shutdown -P now" },
+    { "Reboot", "shutdown -r now" },
+    { "Suspend", "pm-suspend" },
+    { "Hibernate", "pm-hibernate" },
+    { "Hybrid Suspend", "pm-suspend-hybrid" }
+}
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
                                     { "Network", networkmenu },
@@ -109,7 +116,8 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "LaTeX", latexmenu },
                                     { "Graphic", graphicmenu },
                                     { "Others", othermenu },
-                                    { "Terminal", terminalmenu, beautiful.menu_terminal }
+                                    { "Terminal", terminalmenu, beautiful.menu_terminal },
+                                    { "Power", powermenu }
                                   }
                         })
 
