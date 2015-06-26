@@ -469,6 +469,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "TexMaker" },
       properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "Spyder" },
+      properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "assistant" },
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Assistant-qt4" },
@@ -512,6 +514,8 @@ awful.rules.rules = {
     { rule = { class = "Bcloud-gui" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "115pan" },
+      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
+    { rule = { class = "Seahorse" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Wine" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }}

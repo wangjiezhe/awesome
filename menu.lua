@@ -35,9 +35,14 @@ networkmenu = {
     { "Pidgin", "pidgin" },
     { "Transmission", "transmission-gtk" }
 }
+sciencemenu = {
+    { "Spyder", "spyder" },
+    { "Spyder (python3)", "spyder3"}
+}
 mathmenu = {
     { "Sage", terminal .. " -e sage" },
     { "Sage(Notebook)", terminal .. " -e sage -notebook" },
+    { "Science", sciencemenu },
     { "GAP", terminal .. " -e gap" },
     { "GP/PARI", terminal .. " -e gp"},
     { "Maxima", terminal .. " -e maxima" },
@@ -90,6 +95,7 @@ othermenu = {
     { "CMake", "cmake-gui" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
+    { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" }
 }
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
