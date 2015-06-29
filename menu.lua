@@ -99,8 +99,8 @@ othermenu = {
     { "Font Editor", "fontforge" }
 }
 powermenu = {
-    { "Power Off", "shutdown -P now" },
-    { "Reboot", "shutdown -r now" },
+    { "Power Off", "poweroff" },
+    { "Reboot", "reboot" },
     { "Suspend", "pm-suspend" },
     { "Hibernate", "pm-hibernate" },
     { "Hybrid Suspend", "pm-suspend-hybrid" }
