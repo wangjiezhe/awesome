@@ -335,7 +335,10 @@ globalkeys = awful.util.table.join(
 
     -- Kbd backlight
     awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("asus-kbd-backlight up") end),
-    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("asus-kbd-backlight down") end)
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("asus-kbd-backlight down") end),
+
+    -- Touchpad toggle
+    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -470,6 +473,10 @@ awful.rules.rules = {
     { rule = { class = "TexMaker" },
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Spyder" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "jetbrains-pycharm" },
+      properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "jetbrains-studio" },
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "assistant" },
       properties = { tag = tags[1][4], switchtotag = true }},

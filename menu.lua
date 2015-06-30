@@ -39,19 +39,25 @@ sciencemenu = {
     { "Spyder", "spyder" },
     { "Spyder (python3)", "spyder3"}
 }
+maximamenu = {
+    { "Maxima", terminal .. " -e maxima" },
+    { "Xmaxima", "xmaxima" },
+    { "wxMaxima", "wxmaxima" }
+}
 mathmenu = {
     { "Sage", terminal .. " -e sage" },
     { "Sage(Notebook)", terminal .. " -e sage -notebook" },
     { "Science", sciencemenu },
     { "GAP", terminal .. " -e gap" },
     { "GP/PARI", terminal .. " -e gp"},
-    { "Maxima", terminal .. " -e maxima" },
-    { "XMaxima", "xmaxima" },
+    { "Maxiama", maximamenu },
     { "R", terminal .. " -e R" }
 }
 editormenu = {
     { "Gvim", "gvim" },
-    { "Emacs", "emacs" }
+    { "Emacs", "emacs" },
+    { "PyCharm", "pycharm" },
+    { "Android Studio", "android-studio" }
 }
 libreofficemenu = {
     { "Base", "lobase" },
