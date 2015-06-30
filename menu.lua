@@ -57,6 +57,7 @@ editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" },
     { "PyCharm", "pycharm" },
+    { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" }
 }
 libreofficemenu = {
@@ -90,6 +91,11 @@ wpsmenu = {
     { "Spreadsheets", "et" },
     { "Presentation", "wpp" }
 }
+multimediamenu = {
+    { "Ario", "ario" },
+    { "Gmpc", "gmpc" },
+    { "Osdlyrics", "osdlyrics" }
+}
 qtmenu = {
     { "Qt5 Assistant", "assistant-at5" },
     { "Qt4 Assistant", "assistant-qt4" },
@@ -121,6 +127,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "WPS Office", wpsmenu },
                                     { "LaTeX", latexmenu },
                                     { "Graphic", graphicmenu },
+                                    { "Multimedia", multimediamenu },
                                     { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal },
                                     { "Power", powermenu }
