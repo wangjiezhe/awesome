@@ -107,12 +107,17 @@ pamenu = {
     { "Volume Control", "pavucontrol" },
     { "Volume Meter", "pavumeter" }
 }
+webcammenu = {
+    { "Guvcview", "guvcview" },
+    { "Cheese", "cheese" }
+}
 othermenu = {
     { "Qt", qtmenu },
     { "CMake", "cmake-gui" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
     { "PulseAudio Control", pamenu },
+    { "WebCam", webcammenu },
     { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" }
 }

@@ -343,6 +343,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("asus-kbd-backlight up") end),
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("asus-kbd-backlight down") end),
 
+    -- WebCam
+    awful.key({ }, "XF86WebCam", function () awful.util.spawn("guvcview") end),
+
     -- Touchpad toggle
     awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end)
 )
@@ -521,6 +524,10 @@ awful.rules.rules = {
     { rule = { class = "Pavucontrol" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Pavumeter" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Cheese" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { instance = "guvcview" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { floating = true, tag = tags[1][7], switchtotag = true }},
