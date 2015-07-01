@@ -102,11 +102,17 @@ qtmenu = {
     { "Qt5 Designer", "designer-qt5" },
     { "Qt4 Designer", "designer-qt4" }
 }
+pamenu = {
+    { "PulseAudio Manager", "paman" },
+    { "Volume Control", "pavucontrol" },
+    { "Volume Meter", "pavumeter" }
+}
 othermenu = {
     { "Qt", qtmenu },
     { "CMake", "cmake-gui" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
+    { "PulseAudio Control", pamenu },
     { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" }
 }
