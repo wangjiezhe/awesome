@@ -509,6 +509,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Geeqie" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "feh" },
+      properties = { floating = true }},
     { rule = { class = "mpv" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Mplayer" },
