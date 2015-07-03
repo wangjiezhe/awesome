@@ -92,6 +92,7 @@ wpsmenu = {
     { "Presentation", "wpp" }
 }
 multimediamenu = {
+    { "KW Player", "kwplayer" },
     { "Ario", "ario" },
     { "Gmpc", "gmpc" },
     { "Osdlyrics", "osdlyrics" }
