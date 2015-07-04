@@ -123,11 +123,11 @@ othermenu = {
     { "Font Editor", "fontforge" }
 }
 powermenu = {
-    { "Power Off", "poweroff" },
-    { "Reboot", "reboot" },
-    { "Suspend", "pm-suspend" },
-    { "Hibernate", "pm-hibernate" },
-    { "Hybrid Suspend", "pm-suspend-hybrid" }
+    { "Power Off", "systemctl poweroff" },
+    { "Reboot", "systemctl reboot" },
+    { "Suspend", "systemctl suspend" },
+    { "Hibernate", "systemctl hibernate" },
+    { "Hybrid Suspend", "systemctl hybrid-sleep" }
 }
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
