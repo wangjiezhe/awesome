@@ -127,7 +127,7 @@ powermenu = {
     { "Reboot", "systemctl reboot" },
     { "Suspend", "systemctl suspend" },
     { "Hibernate", "systemctl hibernate" },
-    { "Hybrid Suspend", "systemctl hybrid-sleep" }
+    { "Hybrid Sleep", "systemctl hybrid-sleep" }
 }
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
