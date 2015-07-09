@@ -53,9 +53,17 @@ mathmenu = {
     { "Maxiama", maximamenu },
     { "R", terminal .. " -e R" }
 }
+latexmenu = {
+    { "Gummi", "gummi" },
+    { "TexMaker", "texmaker" },
+    { "TeXstudio", "texstudio" },
+    { "TeXmacs", "texmacs" },
+    { "Lyx", "lyx" }
+}
 editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" },
+    { "LaTeX", latexmenu },
     { "PyCharm", "pycharm" },
     { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" }
@@ -67,6 +75,15 @@ libreofficemenu = {
     { "Impress", "loimpress" },
     { "Draw", "lodraw" },
     { "Math", "lomath" }
+}
+wpsmenu = {
+    { "Writer", "wps" },
+    { "Spreadsheets", "et" },
+    { "Presentation", "wpp" }
+}
+officemenu = {
+    { "LibreOffice", libreofficemenu },
+    { "WPS Office", wpsmenu }
 }
 terminalmenu = {
     { "URxvt", "urxvt" },
@@ -80,18 +97,6 @@ graphicmenu = {
     { "GIMP", "gimp" },
     { "Inkscape", "inkscape" },
     { "Geeqie", "geeqie" }
-}
-latexmenu = {
-    { "Gummi", "gummi" },
-    { "TexMaker", "texmaker" },
-    { "TeXstudio", "texstudio" },
-    { "TeXmacs", "texmacs" },
-    { "Lyx", "lyx" }
-}
-wpsmenu = {
-    { "Writer", "wps" },
-    { "Spreadsheets", "et" },
-    { "Presentation", "wpp" }
 }
 multimediamenu = {
     { "KW Player", "kwplayer" },
@@ -137,9 +142,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Files", "pcmanfm" },
                                     { "Math", mathmenu },
                                     { "Editor", editormenu },
-                                    { "LibreOffice", libreofficemenu },
-                                    { "WPS Office", wpsmenu },
-                                    { "LaTeX", latexmenu },
+                                    { "Office", officemenu },
                                     { "Graphic", graphicmenu },
                                     { "Multimedia", multimediamenu },
                                     { "Others", othermenu },
