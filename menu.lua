@@ -82,7 +82,9 @@ graphicmenu = {
     { "Geeqie", "geeqie" }
 }
 latexmenu = {
+    { "Gummi", "gummi" },
     { "TexMaker", "texmaker" },
+    { "TeXstudio", "texstudio" },
     { "TeXmacs", "texmacs" },
     { "Lyx", "lyx" }
 }
