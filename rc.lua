@@ -482,7 +482,7 @@ awful.rules.rules = {
     { rule = { class = "TexMaker" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Gummi" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
+      properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "TeXstudio" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Spyder" },
