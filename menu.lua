@@ -35,10 +35,6 @@ networkmenu = {
     { "Pidgin", "pidgin" },
     { "Transmission", "transmission-gtk" }
 }
-sciencemenu = {
-    { "Spyder", "spyder" },
-    { "Spyder (python3)", "spyder3"}
-}
 maximamenu = {
     { "Maxima", terminal .. " -e maxima" },
     { "Xmaxima", "xmaxima" },
@@ -47,7 +43,6 @@ maximamenu = {
 mathmenu = {
     { "Sage", terminal .. " -e sage" },
     { "Sage(Notebook)", terminal .. " -e sage -notebook" },
-    { "Science", sciencemenu },
     { "GAP", terminal .. " -e gap" },
     { "GP/PARI", terminal .. " -e gp"},
     { "Maxiama", maximamenu },
@@ -60,11 +55,21 @@ latexmenu = {
     { "TeXmacs", "texmacs" },
     { "Lyx", "lyx" }
 }
+pythonmenu = {
+    { "PyCharm", "pycharm" },
+    { "Spyder", "spyder" },
+    { "Spyder (python3)", "spyder3"}
+}
+schememenu = {
+    {"GRacket", "grackdt" },
+    { "DrRacket", "drracket" }
+}
 editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" },
     { "LaTeX", latexmenu },
-    { "PyCharm", "pycharm" },
+    { "Python", pythonmenu },
+    { "Scheme", schememenu },
     { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" }
 }
