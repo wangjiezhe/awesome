@@ -42,15 +42,6 @@ function show_battery (widget)
         end
     end
 
---    if battery <= 25 then
---        fg = "red"
---    elseif battery <= 50 then
---        fg = "orange"
---    elseif battery <= 75 then
---        fg = "white"
---    else
---        fg = "green"
---    end
     sur = 100 - battery
     fg = gradient(0, 100, sur)
 

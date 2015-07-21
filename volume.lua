@@ -24,13 +24,6 @@ function update_volume(widget)
         bg = "grey"
 	end
 
---    if tonumber(volume) <= 40 then
---        fg = "green"
---    elseif tonumber(volume) <= 90 then
---        fg = "white"
---    else
---        fg = "red"
---    end
     fg = gradient(0, 100, tonumber(volume))
 
     volume_markup = "<span foreground='" .. fg .. "' background='".. bg .. "'>" .. volume_text .. "</span>"
