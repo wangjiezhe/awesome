@@ -28,6 +28,7 @@ myawesomemenu = {
 networkmenu = {
     { "Chromium", "chromium" },
     { "Firefox", "firefox" },
+    { "Yandex Browser", "yandex-browser-beta" },
     { "Thunderbird", "thunderbird" },
     { "Baidu Yun", "bcloud-gui" },
     { "115 Pan", "115pan" },
@@ -71,7 +72,8 @@ editormenu = {
     { "Python", pythonmenu },
     { "Scheme", schememenu },
     { "Eclipse", "eclipse" },
-    { "Android Studio", "android-studio" }
+    { "Android Studio", "android-studio" },
+    { "PoEdit", "podeit" }
 }
 libreofficemenu = {
     { "Base", "lobase" },
@@ -127,6 +129,7 @@ webcammenu = {
 othermenu = {
     { "Qt", qtmenu },
     { "CMake", "cmake-gui" },
+    { "VirtualBox", "start-vbox" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
     { "PulseAudio Control", pamenu },
