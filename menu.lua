@@ -30,7 +30,7 @@ networkmenu = {
     { "Firefox", "firefox" },
     { "Yandex Browser", "yandex-browser-beta" },
     { "Thunderbird", "thunderbird" },
-    { "Baidu Yun", "bcloud-gui" },
+    { "Baidu Cloud", "bcloud-gui" },
     { "115 Pan", "115pan" },
     { "Filezilla", "filezilla" },
     { "Pidgin", "pidgin" },
