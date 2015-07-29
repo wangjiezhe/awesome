@@ -47,6 +47,7 @@ mathmenu = {
     { "GAP", terminal .. " -e gap" },
     { "GP/PARI", terminal .. " -e gp"},
     { "Maxiama", maximamenu },
+    { "Singular", terminal .. " -e Singular"},
     { "R", terminal .. " -e R" }
 }
 latexmenu = {

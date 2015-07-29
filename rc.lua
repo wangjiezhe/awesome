@@ -553,6 +553,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { name = "gap" },
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
+    { rule = { name = "Singular" },
+      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { name = "^R$" },
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Xmaxima" },
