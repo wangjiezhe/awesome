@@ -113,7 +113,7 @@ multimediamenu = {
     { "Osdlyrics", "osdlyrics" }
 }
 qtmenu = {
-    { "Qt5 Assistant", "assistant-at5" },
+    { "Qt5 Assistant", "assistant-qt5" },
     { "Qt4 Assistant", "assistant-qt4" },
     { "Qt5 Designer", "designer-qt5" },
     { "Qt4 Designer", "designer-qt4" }
