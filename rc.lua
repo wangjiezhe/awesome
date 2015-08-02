@@ -562,7 +562,7 @@ awful.rules.rules = {
     { rule = { class = "Transmission-gtk" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Bcloud-gui" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
+      properties = { tag = tags[1][9], switchtotag = true }},
     { rule = { class = "115pan" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Seahorse" },
