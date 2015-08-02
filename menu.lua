@@ -74,7 +74,7 @@ editormenu = {
     { "Scheme", schememenu },
     { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" },
-    { "PoEdit", "podeit" }
+    { "PoEdit", "poedit" }
 }
 libreofficemenu = {
     { "Base", "lobase" },
