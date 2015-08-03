@@ -347,7 +347,10 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86WebCam", function () awful.util.spawn("guvcview") end),
 
     -- Touchpad toggle
-    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end)
+    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end),
+
+    -- Xkill
+    awful.key({ modkey, "Control", "Shift" }, "x", function () awful.util.spawn("xkill") end)
 )
 
 clientkeys = awful.util.table.join(
