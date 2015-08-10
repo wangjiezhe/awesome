@@ -135,6 +135,7 @@ othermenu = {
     { "Manage Printing", "xdg-open http://localhost:631/"},
     { "PulseAudio Control", pamenu },
     { "WebCam", webcammenu },
+    { "Bluetooth", "blueman-manager" },
     { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" }
 }
