@@ -66,12 +66,17 @@ schememenu = {
     {"GRacket", "grackdt" },
     { "DrRacket", "drracket" }
 }
+webmenu = {
+    { "Bluefish", "bluefish" },
+    { "BlueGriffon", "bluegriffon" }
+}
 editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" },
     { "LaTeX", latexmenu },
     { "Python", pythonmenu },
     { "Scheme", schememenu },
+    { "Web", webmenu },
     { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" },
     { "PoEdit", "poedit" }
