@@ -1,11 +1,14 @@
  local menu98edb85b00d9527ad5acebe451b3fae6 = {
      {"Archive Manager", "file-roller ", "/usr/share/icons/hicolor/16x16/apps/file-roller.png" },
+     {"Character Map", "gucharmap", "/usr/share/icons/gnome/16x16/apps/accessories-character-map.png" },
      {"ClipIt", "clipit"},
      {"IPython Qt console", "ipython qtconsole"},
      {"IPython2 Qt console", "ipython2 qtconsole"},
      {"Passwords and Keys", "/usr/bin/seahorse", "/usr/share/icons/hicolor/16x16/apps/seahorse.png" },
      {"Root Terminal", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
+     {"Shutter", "shutter ", "/usr/share/icons/hicolor/16x16/apps/shutter.png" },
      {"Vi IMproved", "gvim -f ", "/usr/share/pixmaps/gvim.png" },
+     {"Xchm", "xchm ", "/usr/share/pixmaps/xchm-48.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
      {"bpython2", "xterm -e /usr/bin/bpython2", "/usr/share/pixmaps/bpython2.png" },
      {"compton", "compton"},
@@ -16,7 +19,7 @@
 
  local menude7a22a0c94aa64ba2449e520aa20c99 = {
      {"DrRacket", "drracket -singleInstance ", "/usr/share/icons/hicolor/16x16/apps/drracket.png" },
-     {"GNU Octave", "xterm -e /usr/bin/octave", "///usr/share/octave/3.8.2/imagelib/octave-logo.svg" },
+     {"GNU Octave", "/usr/bin/octave --force-gui", "///usr/share/octave/4.0.0/imagelib/octave-logo.svg" },
      {"GNU TeXmacs", "texmacs ", "/usr/share/pixmaps/TeXmacs.xpm" },
      {"LibreOffice Math", "libreoffice --math ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-math.png" },
      {"Sage", "xterm -e /usr/bin/sage -notebook", "/usr/share/pixmaps/sage-notebook.png" },
@@ -24,6 +27,9 @@
 
  local menu251bd8143891238ecedc306508e29017 = {
      {"Dosbox", "dosbox", "/usr/share/pixmaps/dosbox.png" },
+     {"PlayOnLinux", "playonlinux", "///usr/share/playonlinux/etc/playonlinux.png" },
+     {"Steam", "/usr/bin/steam ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
+     {"Xboard", "xboard", "/usr/share/icons/hicolor/48x48/apps/xboard.png" },
  }
 
  local menud334dfcea59127bedfcdbe0a3ee7f494 = {
@@ -43,14 +49,16 @@
      {"115pan", "115pan", "/usr/share/pixmaps/115pan.png" },
      {"Avahi SSH Server Browser", "/usr/bin/bssh", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
      {"Avahi VNC Server Browser", "/usr/bin/bvnc", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
+     {"BCloud", "bcloud-gui", "/usr/share/icons/hicolor/16x16/apps/bcloud.png" },
      {"Chromium", "chromium ", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
      {"ELinks", "xterm -e /usr/bin/elinks ", "/usr/share/icons/gnome/16x16/mimetypes/html.png" },
      {"FileZilla", "filezilla", "/usr/share/icons/hicolor/16x16/apps/filezilla.png" },
      {"Firefox", "firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox.png" },
      {"Pidgin Internet Messenger", "pidgin", "/usr/share/icons/hicolor/16x16/apps/pidgin.png" },
      {"Point", "/opt/Point/PointDownload/PointDownload", "///opt/Point/PointDownload/point.png" },
+     {"Steam", "/usr/bin/steam ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
      {"Thunderbird", "thunderbird ", "/usr/share/icons/hicolor/16x16/apps/thunderbird.png" },
-     {"Tickr - Feed Reader", "/usr/bin/tickr", "///usr/share/tickr/pixmaps/tickr-icon.xpm" },
+     {"Tickr - Feed Reader", "/usr/bin/tickr"},
      {"Transmission", "transmission-gtk ", "/usr/share/icons/hicolor/16x16/apps/transmission.png" },
      {"Yandex Browser (beta)", "/usr/bin/yandex-browser-beta ", "/usr/share/icons/hicolor/16x16/apps/yandex-browser-beta.png" },
      {"Zenmap", "zenmap ", "///usr/share/zenmap/pixmaps/zenmap.png" },
@@ -58,7 +66,6 @@
      {"aLinkCreator", "alc", "/usr/share/pixmaps/alc.xpm" },
      {"aMule", "amule", "/usr/share/pixmaps/amule.xpm" },
      {"aMuleGUI", "amulegui", "/usr/share/pixmaps/amulegui.xpm" },
-     {"bcloud", "bcloud-gui", "/usr/share/icons/hicolor/16x16/apps/bcloud.png" },
      {"wxCas", "wxcas", "/usr/share/pixmaps/wxcas.xpm" },
  }
 
@@ -66,6 +73,7 @@
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
      {"EclipseTrader", "/usr/share/eclipsetrader/trader", "///usr/share/pixmaps/eclipsetrader.png" },
      {"Gummi", "gummi ", "/usr/share/pixmaps/gummi.png" },
+     {"HTMLDOC", "htmldoc ", "/usr/share/icons/hicolor/16x16/apps/htmldoc.png" },
      {"LibreOffice", "libreoffice ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-startcenter.png" },
      {"LibreOffice Base", "libreoffice --base ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-base.png" },
      {"LibreOffice Calc", "libreoffice --calc ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-calc.png" },
@@ -83,19 +91,29 @@
      {"Zathura", "zathura "},
  }
 
+ local menu6311ae17c1ee52b36e68aaf4ad066387 = {
+     {"Googleplaydownloader", "googleplaydownloader", "/usr/share/pixmaps/googleplaydownloader.png" },
+ }
+
  local menue6f43c40ab1c07cd29e4e83e4ef6bf85 = {
      {"Android SDK", "android", "/usr/share/pixmaps/android-sdk.png" },
      {"Android Studio", "android-studio ", "/usr/share/pixmaps/android-studio.png" },
+     {"BlueGriffon", "bluegriffon", "/usr/share/icons/hicolor/16x16/apps/bluegriffon.png" },
+     {"Bluefish Editor", "bluefish ", "/usr/share/icons/hicolor/16x16/apps/bluefish.png" },
      {"CMake", "cmake-gui ", "/usr/share/icons/hicolor/32x32/apps/CMakeSetup.png" },
+     {"Data Display Debugger", "ddd", "/usr/share/pixmaps/ddd.xpm" },
+     {"Devhelp", "devhelp", "/usr/share/icons/hicolor/16x16/apps/devhelp.png" },
      {"DrRacket", "drracket -singleInstance ", "/usr/share/icons/hicolor/16x16/apps/drracket.png" },
      {"Eclipse", "eclipse", "/usr/share/icons/hicolor/16x16/apps/eclipse.png" },
      {"Emacs", "emacs ", "/usr/share/icons/hicolor/16x16/apps/emacs.png" },
      {"FLUID", "fluid ", "/usr/share/icons/hicolor/16x16/apps/fluid.png" },
+     {"Glade", "glade ", "/usr/share/icons/hicolor/16x16/apps/glade.png" },
      {"IPython Qt console", "ipython qtconsole"},
      {"IPython2 Qt console", "ipython2 qtconsole"},
      {"Java Mission Control", "/usr/lib/jvm/java-8-jdk/bin/jmc", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
      {"Java Monitoring and Management Console", "/usr/lib/jvm/java-8-jdk/bin/jconsole", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
      {"Java VisualVM", "/usr/lib/jvm/java-8-jdk/bin/jvisualvm", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
+     {"LiteIDE", "liteide", "/usr/share/pixmaps/liteide.png" },
      {"OmegaT", "omegat", "/usr/share/pixmaps/omegat.png" },
      {"OpenJDK 1.7.0 Policy Tool", "_BINDIR_/policytool"},
      {"Poedit", "poedit ", "/usr/share/icons/hicolor/16x16/apps/poedit.png" },
@@ -151,7 +169,9 @@
      {"LXTerminal", "lxterminal", "/usr/share/icons/hicolor/128x128/apps/lxterminal.png" },
      {"Manage Printing", "/usr/bin/xdg-open http://localhost:631/", "/usr/share/icons/hicolor/16x16/apps/cups.png" },
      {"Oracle VM VirtualBox", "VirtualBox ", "/usr/share/icons/hicolor/16x16/mimetypes/virtualbox.png" },
+     {"Tint2 panel", "tint2"},
      {"UXTerm", "uxterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
+     {"Wireshark", "wireshark ", "/usr/share/icons/hicolor/16x16/apps/wireshark.png" },
      {"XTerm", "xterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
      {"urxvt", "urxvt", "/usr/share/icons/gnome/16x16/apps/terminal.png" },
      {"urxvt (client)", "urxvtc", "/usr/share/icons/gnome/16x16/apps/terminal.png" },
@@ -165,6 +185,7 @@ xdgmenu = {
     {"Graphics", menud334dfcea59127bedfcdbe0a3ee7f494},
     {"Internet", menuc8205c7636e728d448c2774e6a4a944b},
     {"Office", menudf814135652a5a308fea15bff37ea284},
+    {"Other", menu6311ae17c1ee52b36e68aaf4ad066387},
     {"Programming", menue6f43c40ab1c07cd29e4e83e4ef6bf85},
     {"Science & Math", menu80d754c83abbbd4ef5d150904efcc86c},
     {"Sound & Video", menu52dd1c847264a75f400961bfb4d1c849},

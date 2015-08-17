@@ -167,6 +167,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                         })
 
 -- Xdg_menu
+-- xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua
 -- xdg_menu = require("archmenu")
 -- myawesomemenu = {
 --     { "manual", terminal .. " -e man awesome" },
