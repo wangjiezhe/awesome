@@ -45,9 +45,10 @@ mathmenu = {
     { "Sage", terminal .. " -e sage" },
     { "Sage(Notebook)", terminal .. " -e sage -notebook" },
     { "GAP", terminal .. " -e gap" },
-    { "GP/PARI", terminal .. " -e gp"},
+    { "GP/PARI", terminal .. " -e gp" },
     { "Maxiama", maximamenu },
-    { "Singular", terminal .. " -e Singular"},
+    { "GNU Octave", "octave --force-gui" },
+    { "Singular", terminal .. " -e Singular" },
     { "R", terminal .. " -e R" }
 }
 latexmenu = {
