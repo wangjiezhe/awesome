@@ -522,6 +522,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Bluegriffon" },
       properties = { tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "OmegaT" },
+      properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Gimp" },
       properties = { tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Inkscape" },

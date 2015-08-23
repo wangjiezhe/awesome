@@ -80,7 +80,8 @@ editormenu = {
     { "Web", webmenu },
     { "Eclipse", "eclipse" },
     { "Android Studio", "android-studio" },
-    { "PoEdit", "poedit" }
+    { "PoEdit", "poedit" },
+    { "OmegaT", "omegat" }
 }
 libreofficemenu = {
     { "Base", "lobase" },
