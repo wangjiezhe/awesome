@@ -143,7 +143,8 @@ othermenu = {
     { "WebCam", webcammenu },
     { "Bluetooth", "blueman-manager" },
     { "Passwords and Keys", "seahorse" },
-    { "Font Editor", "fontforge" }
+    { "Font Editor", "fontforge" },
+    { "Hardware Topology", "lstopo" }
 }
 powermenu = {
     { "Power Off", "systemctl poweroff" },
