@@ -148,6 +148,7 @@ othermenu = {
     { "Hardware Topology", "lstopo" }
 }
 powermenu = {
+    { "Shutdown", "shoutdown now" },
     { "Power Off", "systemctl poweroff" },
     { "Reboot", "systemctl reboot" },
     { "Suspend", "systemctl suspend" },
