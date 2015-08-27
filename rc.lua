@@ -568,6 +568,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Xmaxima" },
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
+    { rule = { class = "Wxmaxima" },
+      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Octave-gui" },
       properties = { floating = true, tag = tags[1][8], switchtotag = true }},
     { rule = { class = "Transmission-gtk" },
