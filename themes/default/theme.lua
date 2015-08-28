@@ -6,7 +6,7 @@ local awful = require("awful")
 
 theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "dejavu sans mono 8"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -44,7 +44,7 @@ theme.taglist_squares_unsel = awful.util.getdir("config") .. "/themes/default/ta
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = awful.util.getdir("config") .. "/themes/default/submenu.png"
 theme.menu_height = 20
-theme.menu_width  = 150
+theme.menu_width  = 170
 
 -- You can add as many variables as
 -- you wish and access them by using
