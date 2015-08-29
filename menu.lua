@@ -113,8 +113,14 @@ graphicmenu = {
     { "Inkscape", "inkscape" },
     { "Geeqie", "geeqie" }
 }
+pamenu = {
+    { "PulseAudio Manager", "paman" },
+    { "Volume Control", "pavucontrol" },
+    { "Volume Meter", "pavumeter" }
+}
 multimediamenu = {
     { "KW Player", "kwplayer" },
+    { "PulseAudio Control", pamenu },
     { "Ario", "ario" },
     { "Gmpc", "gmpc" },
     { "Osdlyrics", "osdlyrics" }
@@ -134,11 +140,6 @@ webtoolsmenu = {
     { "Zenmap", "zenmap" },
     { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" }
 }
-pamenu = {
-    { "PulseAudio Manager", "paman" },
-    { "Volume Control", "pavucontrol" },
-    { "Volume Meter", "pavumeter" }
-}
 webcammenu = {
     { "Guvcview", "guvcview" },
     { "Cheese", "cheese" }
@@ -147,7 +148,6 @@ othermenu = {
     { "VirtualBox", "start-vbox" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
-    { "PulseAudio Control", pamenu },
     { "WebCam", webcammenu },
     { "Bluetooth", "blueman-manager" },
     { "Passwords and Keys", "seahorse" },
