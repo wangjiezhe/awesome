@@ -143,7 +143,13 @@ local battery = require("battery")
 
 -- Net widget
 local net_widgets = require("net_widgets")
-net_wireless = net_widgets.wireless({interface="wlp4s0", indent=1,})
+net_wireless = net_widgets.wireless({
+    interface="wlp4s0",
+    indent=1,
+    })
+net_wired = net_widgets.indicator({
+    interfaces = {"enp5s0"},
+    })
 
 -- bashets.start()
 
@@ -228,8 +234,9 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     right_layout:add(spacer)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(spacer)
     right_layout:add(net_wireless)
+    right_layout:add(spacer)
+    right_layout:add(net_wired)
     right_layout:add(spacer)
     right_layout:add(volume_widget)
     right_layout:add(spacer)
