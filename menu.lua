@@ -119,15 +119,20 @@ multimediamenu = {
     { "Gmpc", "gmpc" },
     { "Osdlyrics", "osdlyrics" }
 }
-webtoolsmenu = {
-    { "Zenmap", "zenmap" },
-    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" }
-}
 qtmenu = {
     { "Qt5 Assistant", "assistant-qt5" },
     { "Qt4 Assistant", "assistant-qt4" },
     { "Qt5 Designer", "designer-qt5" },
     { "Qt4 Designer", "designer-qt4" }
+}
+developmentmenu = {
+    { "Qt", qtmenu },
+    { "CMake", "cmake-gui" },
+    { "Devhelp", "devhelp" }
+}
+webtoolsmenu = {
+    { "Zenmap", "zenmap" },
+    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" }
 }
 pamenu = {
     { "PulseAudio Manager", "paman" },
@@ -139,8 +144,6 @@ webcammenu = {
     { "Cheese", "cheese" }
 }
 othermenu = {
-    { "Qt", qtmenu },
-    { "CMake", "cmake-gui" },
     { "VirtualBox", "start-vbox" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
@@ -168,6 +171,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Office", officemenu },
                                     { "Graphic", graphicmenu },
                                     { "Multimedia", multimediamenu },
+                                    { "Development", developmentmenu },
                                     { "Web Tools", webtoolsmenu },
                                     { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal },
