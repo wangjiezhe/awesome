@@ -119,6 +119,10 @@ multimediamenu = {
     { "Gmpc", "gmpc" },
     { "Osdlyrics", "osdlyrics" }
 }
+webtoolsmenu = {
+    { "Zenmap", "zenmap" },
+    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" }
+}
 qtmenu = {
     { "Qt5 Assistant", "assistant-qt5" },
     { "Qt4 Assistant", "assistant-qt4" },
@@ -164,6 +168,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Office", officemenu },
                                     { "Graphic", graphicmenu },
                                     { "Multimedia", multimediamenu },
+                                    { "Web Tools", webtoolsmenu },
                                     { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal },
                                     { "Power", powermenu }
