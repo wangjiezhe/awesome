@@ -517,6 +517,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][4], switchtotag = true }},
     { rule = { class = "jetbrains-pycharm" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
+    { rule = { class = "Astah" },
+      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
     { rule = { class = "jetbrains-studio" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
     { rule = { class = "assistant" },

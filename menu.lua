@@ -134,7 +134,8 @@ qtmenu = {
 developmentmenu = {
     { "Qt", qtmenu },
     { "CMake", "cmake-gui" },
-    { "Devhelp", "devhelp" }
+    { "Devhelp", "devhelp" },
+    { "Astah", "astah" }
 }
 webtoolsmenu = {
     { "Zenmap", "zenmap" },
