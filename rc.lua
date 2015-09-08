@@ -485,7 +485,7 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
     { rule = { class = "Bleachbit" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "libreoffice" },
+    { rule = { instance = "libreoffice" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
     { rule = { class = "Wps" },
       properties = { floating = true, tag = tags[1][4], switchtotag = true }},
