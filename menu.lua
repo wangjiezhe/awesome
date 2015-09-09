@@ -139,7 +139,8 @@ developmentmenu = {
 }
 webtoolsmenu = {
     { "Zenmap", "zenmap" },
-    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" }
+    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" },
+    { "Wireshark", "wireshark" }
 }
 webcammenu = {
     { "Guvcview", "guvcview" },
