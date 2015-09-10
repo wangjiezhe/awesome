@@ -146,9 +146,11 @@ local net_widgets = require("net_widgets")
 net_wireless = net_widgets.wireless({
     interface="wlp4s0",
     indent=1,
+    font="dejavu sans mono 8",
     })
 net_wired = net_widgets.indicator({
     interfaces = {"enp5s0"},
+    font="dejavu sans mono 8",
     })
 
 -- bashets.start()
