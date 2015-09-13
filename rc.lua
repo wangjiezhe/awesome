@@ -480,7 +480,7 @@ awful.rules.rules = {
     { rule = { class = "Yandex-browser-beta" },
       properties = { tag = tags[1][2], switchtotag = true }},
     { rule = { class = "Pidgin" },
-      properties = { floating = true, tag = tags[1][2], switchtotag = true }},
+      properties = { tag = tags[1][7], switchtotag = true }},
     { rule = { class = "Pcmanfm" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
     { rule = { class = "Filezilla" },
