@@ -4,6 +4,8 @@ local awful = require("awful")
 local wibox = require("wibox")
 local color = require("color")
 
+local pulse = true
+
 volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
 volume_widget:buttons(awful.util.table.join(
@@ -11,13 +13,34 @@ volume_widget:buttons(awful.util.table.join(
     ))
 
 function update_volume(widget)
+    local function isempty(s)
+        return s == nil or s == ''
+    end
+
 	local fd = io.popen("echo -n $(pamixer --get-volume)")
 	local volume = fd:read("*all")
 	fd:close()
 
+    if isempty(volume) then
+        pulse = false
+        local fd = io.popen("echo -n $(amixer get Master | grep 'Front Left:' | grep -o -E '\\[[[:digit:]]+%\\]') | grep -o -E '[[:digit:]]+'")
+        volume = fd:read("*all")
+    end
+
 	local fd = io.popen("echo -n $(pamixer --get-mute)")
 	local mute = fd:read("*all")
 	fd:close()
+
+    if isempty(mute) then
+        pulse = false
+        local fd = io.popen("echo -n $(amixer get Master | grep 'Front Left:' | grep -o '\\[on\\]\\|\\[off\\]') | grep -o -E '[[:alpha:]]+'")
+        local status = fd:read("all")
+        if status == "on" then
+            mute = "false"
+        else
+            mute = "true"
+        end
+    end
 
 	if mute == "false" then
 		volume_text = "Vol:" .. volume .. "%"
