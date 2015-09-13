@@ -49,7 +49,7 @@ mathmenu = {
     { "Maxiama", maximamenu },
     { "GNU Octave", "octave --force-gui" },
     { "Singular", terminal .. " -e Singular" },
-    { "R", terminal .. " -e R" }
+    { "RStudio", "rstudio-bin" }
 }
 latexmenu = {
     { "Gummi", "gummi" },
