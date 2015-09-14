@@ -308,7 +308,7 @@ globalkeys = awful.util.table.join(
             awesome.quit()
         end),
 
-    awful.key({ modkey,           }, "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey,           }, "l",     function () awful.util.spawn("xlock") end),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
