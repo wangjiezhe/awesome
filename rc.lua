@@ -336,9 +336,6 @@ globalkeys = awful.util.table.join(
     -- Screenshot
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
 
-    -- Toggle titlebar visibility
-    awful.key({ modkey, "Shift" }, "t", awful.titlebar.toggle),
-
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
     awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end),
@@ -379,6 +376,10 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+
+    -- Toggle titlebar visibility
+    awful.key({ modkey, "Shift" }, "t", function (c) awful.titlebar.toggle(c) end),
+
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
