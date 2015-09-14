@@ -364,6 +364,10 @@ globalkeys = awful.util.table.join(
     -- Touchpad toggle
     awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end),
 
+    -- Transparency
+    awful.key({ modkey }, "Next", function (c) awful.util.spawn("transset-df --actual --inc 0.1") end),
+    awful.key({ modkey }, "Prior", function (c) awful.util.spawn("transset-df --actual --dec 0.1") end),
+
     -- Xkill
     awful.key({ modkey, "Control", "Shift" }, "x", function () awful.util.spawn("xkill") end)
 )
