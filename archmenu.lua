@@ -10,10 +10,23 @@
      {"Xchm", "xchm ", "/usr/share/pixmaps/xchm-48.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
      {"bpython2", "xterm -e /usr/bin/bpython2", "/usr/share/pixmaps/bpython2.png" },
-     {"compton", "compton"},
+     {"compton", "compton", "/usr/share/icons/hicolor/48x48/apps/compton.png" },
      {"fcitx-qimpanel-configtool", "fcitx-qimpanel-configtool", "/usr/share/icons/hicolor/16x16/apps/fcitx.png" },
      {"ipython", "xterm -e ipython"},
      {"ipython2", "xterm -e ipython2"},
+ }
+
+ local menu78059f1898ed518c6ccd6a6392fa82c1 = {
+     {"AUR", "xdg-open https://aur.archlinux.org", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Bugs", "xdg-open https://bugs.archlinux.org", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Developers", "xdg-open http://www.archlinux.org/developers/", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Documentation", "xdg-open https://wiki.archlinux.org/index.php/Official_Arch_Linux_Install_Guide", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Donate", "xdg-open http://www.archlinux.org/donate/", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Forum", "xdg-open https://bbs.archlinux.org", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Homepage", "xdg-open http://www.archlinux.org", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"SVN", "xdg-open http://projects.archlinux.org/svntogit/", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Schwag", "xdg-open http://www.zazzle.com/archlinux/", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
+     {"Wiki", "xdg-open https://wiki.archlinux.org", "/usr/share/icons/hicolor/32x32/apps/arch-logo.png" },
  }
 
  local menude7a22a0c94aa64ba2449e520aa20c99 = {
@@ -42,6 +55,8 @@
      {"Slideshow", "/build/racket/pkg/racket/usr/bin/slideshow"},
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
      {"feh", "feh ", "///usr/share/feh/images/feh.png" },
+     {"xgps", "xgps", "///usr/share/gpsd/gpsd-logo.png" },
+     {"xgpsspeed", "xgpsspeed", "///usr/share/gpsd/gpsd-logo.png" },
  }
 
  local menuc8205c7636e728d448c2774e6a4a944b = {
@@ -92,11 +107,13 @@
 
  local menu6311ae17c1ee52b36e68aaf4ad066387 = {
      {"Googleplaydownloader", "googleplaydownloader", "/usr/share/pixmaps/googleplaydownloader.png" },
+     {"Logical Volume Management", "/usr/bin/system-config-lvm", "///usr/share/system-config-lvm/pixmaps/lv_icon.png" },
  }
 
  local menue6f43c40ab1c07cd29e4e83e4ef6bf85 = {
      {"Android SDK", "android", "/usr/share/pixmaps/android-sdk.png" },
      {"Android Studio", "android-studio ", "/usr/share/pixmaps/android-studio.png" },
+     {"Astah* Professional", "astah ", "/usr/share/pixmaps/astah-professional.png" },
      {"BlueGriffon", "bluegriffon", "/usr/share/icons/hicolor/16x16/apps/bluegriffon.png" },
      {"Bluefish Editor", "bluefish ", "/usr/share/icons/hicolor/16x16/apps/bluefish.png" },
      {"CMake", "cmake-gui ", "/usr/share/icons/hicolor/32x32/apps/CMakeSetup.png" },
@@ -113,6 +130,7 @@
      {"Jupyter Qt console", "jupyter qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
      {"LiteIDE", "liteide", "/usr/share/pixmaps/liteide.png" },
      {"OmegaT", "omegat", "/usr/share/pixmaps/omegat.png" },
+     {"OpenJDK 1.7.0 Monitoring & Management Console", "_BINDIR_/jconsole"},
      {"OpenJDK 1.7.0 Policy Tool", "_BINDIR_/policytool"},
      {"Poedit", "poedit ", "/usr/share/icons/hicolor/16x16/apps/poedit.png" },
      {"PyCharm", "/usr/bin/pycharm", "/usr/share/pixmaps/pycharm.png" },
@@ -124,6 +142,7 @@
      {"Qt4 Designer", "designer-qt4", "/usr/share/icons/hicolor/128x128/apps/designer-qt4.png" },
      {"Qt4 Linguist ", "linguist-qt4", "/usr/share/icons/hicolor/16x16/apps/linguist-qt4.png" },
      {"Qt4 QDbusViewer ", "qdbusviewer-qt4", "/usr/share/icons/hicolor/32x32/apps/qdbusviewer-qt4.png" },
+     {"RStudio", "/usr/lib/rstudio/bin/rstudio ", "/usr/share/icons/hicolor/16x16/apps/rstudio.png" },
      {"Spyder", "spyder ", "/usr/share/pixmaps/spyder.png" },
      {"Spyder3", "spyder3 ", "/usr/share/pixmaps/spyder3.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
@@ -143,6 +162,7 @@
  local menu52dd1c847264a75f400961bfb4d1c849 = {
      {"Ario", "ario", "/usr/share/icons/hicolor/16x16/apps/ario.png" },
      {"Cheese", "cheese", "/usr/share/icons/hicolor/16x16/apps/cheese.png" },
+     {"GTK sound mixer", "/usr/bin/aumix", "///usr/share/aumix/aumix.xpm" },
      {"Gnome Music Player Client", "gmpc", "/usr/share/icons/hicolor/16x16/apps/gmpc.png" },
      {"KW Player", "kwplayer", "/usr/share/icons/hicolor/16x16/apps/kwplayer.png" },
      {"OSD Lyrics", "osdlyrics", "/usr/share/icons/hicolor/64x64/apps/osdlyrics.png" },
@@ -161,6 +181,7 @@
      {"BleachBit", "bleachbit", "/usr/share/pixmaps/bleachbit.png" },
      {"Fcitx", "fcitx", "/usr/share/icons/hicolor/16x16/apps/fcitx.png" },
      {"File Manager PCManFM", "pcmanfm ", "/usr/share/icons/gnome/16x16/apps/system-file-manager.png" },
+     {"GParted", "/usr/bin/gparted_polkit ", "/usr/share/icons/hicolor/16x16/apps/gparted.png" },
      {"Hardware Locality lstopo", "lstopo"},
      {"Htop", "xterm -e htop", "/usr/share/pixmaps/htop.png" },
      {"LSHW", "/usr/sbin/gtk-lshw", "///usr/share/lshw/artwork/logo.svg" },
@@ -179,6 +200,7 @@
 
 xdgmenu = {
     {"Accessories", menu98edb85b00d9527ad5acebe451b3fae6},
+    {"Archlinux", menu78059f1898ed518c6ccd6a6392fa82c1},
     {"Education", menude7a22a0c94aa64ba2449e520aa20c99},
     {"Games", menu251bd8143891238ecedc306508e29017},
     {"Graphics", menud334dfcea59127bedfcdbe0a3ee7f494},
