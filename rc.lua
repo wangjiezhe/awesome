@@ -574,6 +574,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Cheese" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "Steam" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { instance = "guvcview" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { instance = "VirtualBox" },
