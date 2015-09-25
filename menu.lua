@@ -152,6 +152,9 @@ webcammenu = {
     { "Guvcview", "guvcview" },
     { "Cheese", "cheese" }
 }
+winemenu = {
+    { "RHWUD", "" }
+}
 othermenu = {
     { "Shutter", "shutter" },
     { "VirtualBox", "start-vbox" },
@@ -182,6 +185,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Multimedia", multimediamenu },
                                     { "Development", developmentmenu },
                                     { "Web Tools", webtoolsmenu },
+                                    { "Wine", winemenu },
                                     { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal },
                                     { "Power", powermenu }
