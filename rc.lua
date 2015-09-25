@@ -584,6 +584,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][6], switchtotag = true }},
     { rule = { class = "Wireshark" },
       properties = { floating = true, tag = tags[1][6], switchtotag = true }},
+    { rule = { class = "Shutter" },
+      properties = { floating = true, tag = tags[1][6], switchtotag = true }},
     { rule = { class = "Thunderbird" },
       properties = { floating = true, tag = tags[1][7], switchtotag = true }},
     { rule = { name = "^sage$" },

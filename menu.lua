@@ -147,6 +147,7 @@ webcammenu = {
     { "Cheese", "cheese" }
 }
 othermenu = {
+    { "Shutter", "shutter" },
     { "VirtualBox", "start-vbox" },
     { "File Cleaner", "bleachbit" },
     { "Manage Printing", "xdg-open http://localhost:631/"},
