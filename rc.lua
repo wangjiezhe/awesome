@@ -554,6 +554,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Geeqie" },
       properties = { tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "Gcolor2" },
+      properties = { tag = tags[1][5], switchtotag = true }},
     { rule = { class = "feh" },
       properties = { floating = true }},
     { rule = { class = "mpv" },

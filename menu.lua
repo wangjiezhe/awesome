@@ -111,7 +111,8 @@ terminalmenu = {
 graphicmenu = {
     { "GIMP", "gimp" },
     { "Inkscape", "inkscape" },
-    { "Geeqie", "geeqie" }
+    { "Geeqie", "geeqie" },
+    { "Gcolor2", "gcolor2" }
 }
 pamenu = {
     { "PulseAudio Manager", "paman" },
