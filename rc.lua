@@ -563,7 +563,7 @@ awful.rules.rules = {
     { rule = { class = "Mplayer" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Kwplayer" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+      properties = { tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Ario" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "Gmpc" },
