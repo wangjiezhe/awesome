@@ -2,8 +2,10 @@
      {"Archive Manager", "file-roller ", "/usr/share/icons/hicolor/16x16/apps/file-roller.png" },
      {"Character Map", "gucharmap", "/usr/share/icons/gnome/16x16/apps/accessories-character-map.png" },
      {"ClipIt", "clipit"},
+     {"Galculator", "galculator", "/usr/share/icons/hicolor/48x48/apps/galculator.png" },
      {"Jupyter Qt console", "jupyter qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
      {"Passwords and Keys", "/usr/bin/seahorse", "/usr/share/icons/hicolor/16x16/apps/seahorse.png" },
+     {"Qemu Launcher", "qemu-launcher"},
      {"Root Terminal", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
      {"Shutter", "shutter ", "/usr/share/icons/hicolor/16x16/apps/shutter.png" },
      {"Vi IMproved", "gvim -f ", "/usr/share/pixmaps/gvim.png" },
@@ -34,7 +36,9 @@
      {"GNU Octave", "/usr/bin/octave --force-gui", "///usr/share/octave/4.0.0/imagelib/octave-logo.svg" },
      {"GNU TeXmacs", "texmacs ", "/usr/share/pixmaps/TeXmacs.xpm" },
      {"LibreOffice Math", "libreoffice --math ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-math.png" },
+     {"Mendeley Desktop", "mendeleydesktop ", "/usr/share/icons/hicolor/16x16/apps/mendeleydesktop.png" },
      {"Sage", "xterm -e /usr/bin/sage -notebook", "/usr/share/pixmaps/sage-notebook.png" },
+     {"Stellarium", "stellarium", "/usr/share/icons/hicolor/16x16/apps/stellarium.png" },
  }
 
  local menu251bd8143891238ecedc306508e29017 = {
@@ -46,12 +50,16 @@
 
  local menud334dfcea59127bedfcdbe0a3ee7f494 = {
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
+     {"E-book Viewer", "ebook-viewer --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"FontForge", "fontforge ", "/usr/share/icons/hicolor/16x16/apps/fontforge.png" },
      {"GNU Image Manipulation Program", "gimp-2.8 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
+     {"Gcolor2", "gcolor2", "///usr/share/pixmaps/gcolor2/icon.png" },
      {"Geeqie", "geeqie -r ", "/usr/share/pixmaps/geeqie.png" },
      {"Inkscape", "inkscape ", "/usr/share/icons/hicolor/16x16/apps/inkscape.png" },
+     {"LRF Viewer", "lrfviewer ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
-     {"Scribus", "scribus ", "///usr/share/scribus/icons/scribus.png" },
+     {"MComix", "mcomix ", "/usr/share/icons/hicolor/16x16/apps/mcomix.png" },
+     {"Scribus", "scribus "},
      {"Slideshow", "/build/racket/pkg/racket/usr/bin/slideshow"},
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
      {"feh", "feh ", "///usr/share/feh/images/feh.png" },
@@ -84,8 +92,10 @@
  }
 
  local menudf814135652a5a308fea15bff37ea284 = {
+     {"Calibre", "calibre --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-gui.png" },
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
      {"EclipseTrader", "/usr/share/eclipsetrader/trader", "///usr/share/pixmaps/eclipsetrader.png" },
+     {"Edit E-book", "ebook-edit --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-ebook-edit.png" },
      {"Gummi", "gummi ", "/usr/share/pixmaps/gummi.png" },
      {"HTMLDOC", "htmldoc ", "/usr/share/icons/hicolor/16x16/apps/htmldoc.png" },
      {"LibreOffice", "libreoffice ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-startcenter.png" },
@@ -97,6 +107,7 @@
      {"LibreOffice Writer", "libreoffice --writer ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-writer.png" },
      {"LyX Document Processor", "lyx ", "/usr/share/icons/hicolor/48x48/apps/lyx.png" },
      {"ReText", "retext ", "/usr/share/icons/hicolor/16x16/apps/retext.png" },
+     {"ReText", "/usr/bin/retext ", "/usr/share/icons/hicolor/16x16/apps/retext.png" },
      {"TeXstudio", "texstudio "},
      {"Texmaker", "texmaker ", "/usr/share/pixmaps/texmaker.png" },
      {"WPS Presentation", "/usr/bin/wpp ", "/usr/share/icons/hicolor/48x48/apps/wps-office-wppmain.png" },
@@ -127,6 +138,7 @@
      {"Java Mission Control", "/usr/lib/jvm/java-8-jdk/bin/jmc", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
      {"Java Monitoring and Management Console", "/usr/lib/jvm/java-8-jdk/bin/jconsole", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
      {"Java VisualVM", "/usr/lib/jvm/java-8-jdk/bin/jvisualvm", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
+     {"Julia", "xterm -e julia"},
      {"Jupyter Qt console", "jupyter qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
      {"LiteIDE", "liteide", "/usr/share/pixmaps/liteide.png" },
      {"OmegaT", "omegat", "/usr/share/pixmaps/omegat.png" },
@@ -152,6 +164,8 @@
  }
 
  local menu80d754c83abbbd4ef5d150904efcc86c = {
+     {"Celestia", "celestia", "/usr/share/pixmaps/celestia.png" },
+     {"Julia", "xterm -e julia"},
      {"R", "xterm -e R", "///usr/share/pixmaps/r.png" },
      {"Spyder", "spyder ", "/usr/share/pixmaps/spyder.png" },
      {"Spyder3", "spyder3 ", "/usr/share/pixmaps/spyder3.png" },
