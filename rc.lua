@@ -480,7 +480,7 @@ awful.rules.rules = {
       properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][2], switchtotag = true }},
-    { rule = { class = "Chromium" },
+    { rule = { class = "chromium" },
       properties = { tag = tags[1][2], switchtotag = true }},
     { rule = { class = "Yandex-browser-beta" },
       properties = { tag = tags[1][2], switchtotag = true }},
