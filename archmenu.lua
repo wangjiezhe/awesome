@@ -3,6 +3,7 @@
      {"Character Map", "gucharmap", "/usr/share/icons/gnome/16x16/apps/accessories-character-map.png" },
      {"ClipIt", "clipit"},
      {"Galculator", "galculator", "/usr/share/icons/hicolor/48x48/apps/galculator.png" },
+     {"Go For It!", "go-for-it", "/usr/share/icons/hicolor/16x16/apps/go-for-it.svg" },
      {"Jupyter Qt console", "jupyter qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
      {"Passwords and Keys", "/usr/bin/seahorse", "/usr/share/icons/hicolor/16x16/apps/seahorse.png" },
      {"Qemu Launcher", "qemu-launcher"},
@@ -39,6 +40,7 @@
      {"Mendeley Desktop", "mendeleydesktop ", "/usr/share/icons/hicolor/16x16/apps/mendeleydesktop.png" },
      {"Sage", "xterm -e /usr/bin/sage -notebook", "/usr/share/pixmaps/sage-notebook.png" },
      {"Stellarium", "stellarium", "/usr/share/icons/hicolor/16x16/apps/stellarium.png" },
+     {"wxMaxima", "/usr/bin/wxmaxima ", "/usr/share/pixmaps/wxmaxima.png" },
  }
 
  local menu251bd8143891238ecedc306508e29017 = {
@@ -52,6 +54,7 @@
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
      {"E-book Viewer", "ebook-viewer --detach ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"FontForge", "fontforge ", "/usr/share/icons/hicolor/16x16/apps/fontforge.png" },
+     {"FreeWRL", "/usr/bin/freewrl", "/usr/share/pixmaps/freewrl.png" },
      {"GNU Image Manipulation Program", "gimp-2.8 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
      {"Gcolor2", "gcolor2", "///usr/share/pixmaps/gcolor2/icon.png" },
      {"Geeqie", "geeqie -r ", "/usr/share/pixmaps/geeqie.png" },
@@ -59,7 +62,7 @@
      {"LRF Viewer", "lrfviewer ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
      {"MComix", "mcomix ", "/usr/share/icons/hicolor/16x16/apps/mcomix.png" },
-     {"Scribus", "scribus "},
+     {"Scribus", "scribus ", "/usr/share/icons/hicolor/32x32/apps/scribus.png" },
      {"Slideshow", "/build/racket/pkg/racket/usr/bin/slideshow"},
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
      {"feh", "feh ", "///usr/share/feh/images/feh.png" },
@@ -81,6 +84,7 @@
      {"Steam", "/usr/bin/steam ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
      {"Thunderbird", "thunderbird ", "/usr/share/icons/hicolor/16x16/apps/thunderbird.png" },
      {"Tickr - Feed Reader", "/usr/bin/tickr"},
+     {"Tor-Browser (en-US)", "/usr/bin/tor-browser-en", "///usr/share/pixmaps/tor-browser-en.png" },
      {"Transmission", "transmission-gtk ", "/usr/share/icons/hicolor/16x16/apps/transmission.png" },
      {"Yandex Browser (beta)", "/usr/bin/yandex-browser-beta ", "/usr/share/icons/hicolor/16x16/apps/yandex-browser-beta.png" },
      {"Zenmap", "zenmap ", "///usr/share/zenmap/pixmaps/zenmap.png" },
@@ -170,7 +174,6 @@
      {"Spyder", "spyder ", "/usr/share/pixmaps/spyder.png" },
      {"Spyder3", "spyder3 ", "/usr/share/pixmaps/spyder3.png" },
      {"XMaxima", "xterm -e xmaxima", "/usr/share/pixmaps/maxima.png" },
-     {"wxMaxima", "wxmaxima ", "/usr/share/pixmaps/wxmaxima.png" },
  }
 
  local menu52dd1c847264a75f400961bfb4d1c849 = {
