@@ -64,7 +64,7 @@ pythonmenu = {
     { "Spyder (python3)", "spyder3"}
 }
 schememenu = {
-    {"GRacket", "grackdt" },
+    {"GRacket", "gracket" },
     { "DrRacket", "drracket" }
 }
 webmenu = {
