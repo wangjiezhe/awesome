@@ -488,6 +488,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][7], switchtotag = true }},
     { rule = { class = "Pcmanfm" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "File-roller" },
+      properties = { floating = true }},
     { rule = { class = "Filezilla" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
     { rule = { class = "Bleachbit" },
