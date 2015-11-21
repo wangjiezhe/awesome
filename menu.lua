@@ -34,7 +34,8 @@ networkmenu = {
     { "115 Pan", "115pan" },
     { "Filezilla", "filezilla" },
     { "Pidgin", "pidgin" },
-    { "Transmission", "transmission-gtk" }
+    { "Transmission", "transmission-gtk" },
+    { "MEGASync", "megasync" }
 }
 maximamenu = {
     { "Maxima", terminal .. " -e maxima" },
