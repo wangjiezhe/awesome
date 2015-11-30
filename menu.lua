@@ -37,6 +37,10 @@ networkmenu = {
     { "Transmission", "transmission-gtk" },
     { "MEGASync", "megasync" }
 }
+filemenu = {
+    { "PCManFM", "pcmanfm" },
+    { "Ranger", terminal .. " -e ranger" }
+}
 maximamenu = {
     { "Maxima", terminal .. " -e maxima" },
     { "Xmaxima", "xmaxima" },
@@ -170,7 +174,7 @@ powermenu = {
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
                                     { "Network", networkmenu },
-                                    { "Files", "pcmanfm" },
+                                    { "Files", filemenu },
                                     { "Math", mathmenu },
                                     { "Editor", editormenu },
                                     { "Office", officemenu },
