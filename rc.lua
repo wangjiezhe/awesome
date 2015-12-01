@@ -618,6 +618,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Seahorse" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
+    { rule = { class = "QQ.exe" },
+      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "Wine" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }}
 }
