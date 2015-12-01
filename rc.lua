@@ -624,6 +624,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][9], switchtotag = true }},
     { rule = { class = "CAJVieweru.exe" },
       properties = { floating = true, tag = tags[1][3], switchtotag = true }},
+    { rule = { class = "SsReader.exe" },
+      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
     { rule = { class = "Wine" },
       properties = { floating = true, tag = tags[1][9], switchtotag = true }}
 }
