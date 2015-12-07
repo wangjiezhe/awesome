@@ -1,6 +1,9 @@
 -- Configure home path so you dont have too
 home_path  = os.getenv('HOME') .. '/'
 
+-- Standard lua library
+local socket = require("socket")
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -138,6 +141,11 @@ spacer:set_markup(" ")
 -- Volume widget
 local volume = require("volume")
 
+-- Ip widget
+ip_widget = wibox.widget.textbox()
+ip = socket.dns.toip(socket.dns.gethostname())
+ip_widget:set_markup(ip)
+
 -- Battery widget
 local battery = require("battery")
 
@@ -239,6 +247,8 @@ for s = 1, screen.count() do
     right_layout:add(net_wireless)
     right_layout:add(spacer)
     right_layout:add(net_wired)
+    right_layout:add(spacer)
+    right_layout:add(ip_widget)
     right_layout:add(spacer)
     right_layout:add(volume_widget)
     right_layout:add(spacer)
