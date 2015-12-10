@@ -60,8 +60,8 @@ latexmenu = {
     { "Gummi", "gummi" },
     { "TexMaker", "texmaker" },
     { "TeXstudio", "texstudio" },
-    { "TeXmacs", "texmacs" },
-    { "Lyx", "lyx" }
+    { "Lyx", "lyx" },
+    { "TeXmacs", "texmacs" }
 }
 pythonmenu = {
     { "PyCharm", "pycharm" },
