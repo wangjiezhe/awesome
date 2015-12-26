@@ -54,7 +54,10 @@ mathmenu = {
     { "Maxiama", maximamenu },
     { "GNU Octave", "octave --force-gui" },
     { "Singular", terminal .. " -e Singular" },
-    { "RStudio", "rstudio-bin" }
+    { "RStudio", "rstudio-bin" },
+    { "FriCAS", terminal .. " -e fricas -nosman" },
+    { "Yacas", terminal .. " -e yacas" },
+    { "Reduce" , terminal .. " -e redcsl" }
 }
 latexmenu = {
     { "Gummi", "gummi" },
@@ -66,7 +69,8 @@ latexmenu = {
 pythonmenu = {
     { "PyCharm", "pycharm" },
     { "Spyder", "spyder" },
-    { "Spyder (python3)", "spyder3"}
+    { "Spyder (python3)", "spyder3"},
+    { "Dreampie", "dreampie" }
 }
 schememenu = {
     {"GRacket", "gracket" },
@@ -129,7 +133,8 @@ multimediamenu = {
     { "PulseAudio Control", pamenu },
     { "Ario", "ario" },
     { "Gmpc", "gmpc" },
-    { "Osdlyrics", "osdlyrics" }
+    { "Osdlyrics", "osdlyrics" },
+    { "Lenmus" , "lenmus" }
 }
 qtmenu = {
     { "Qt5 Assistant", "assistant-qt5" },
@@ -158,6 +163,10 @@ winemenu = {
     { "CAJViewer", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
     { "SsReader", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" }
 }
+gamemenu = {
+    {"Supertux2", "supertux2"},
+    {"Steam", "steam" }
+}
 othermenu = {
     { "Shutter", "shutter" },
     { "VirtualBox", "start-vbox" },
@@ -167,7 +176,8 @@ othermenu = {
     { "Bluetooth", "blueman-manager" },
     { "Passwords and Keys", "seahorse" },
     { "Font Editor", "fontforge" },
-    { "Hardware Topology", "lstopo" }
+    { "Hardware Topology", "lstopo" },
+    { "Stellarium", "stellarium" }
 }
 powermenu = {
     { "Shutdown", "shutdown now" },
@@ -189,6 +199,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Development", developmentmenu },
                                     { "Web Tools", webtoolsmenu },
                                     { "Wine", winemenu },
+				    { "Games", gamemenu },
                                     { "Others", othermenu },
                                     { "Terminal", terminalmenu, beautiful.menu_terminal },
                                     { "Power", powermenu }
