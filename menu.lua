@@ -115,6 +115,7 @@ terminalmenu = {
     { "URxvt(tabbed)", "urxvt-tabbed" },
     { "Xterm", "xterm" },
     { "UXterm", "uxterm" },
+    { "Roxterm", "roxterm" },
     { "Lxterminal", "lxterminal" }
 }
 graphicmenu = {

@@ -488,6 +488,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][1] }},
     { rule = { class = "Lxterminal" },
       properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
+    { rule = { class = "Roxterm" },
+      properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
     { rule = { class = "Firefox" },
       properties = { floating=true, tag = tags[1][2], switchtotag = true }},
     { rule = { class = "chromium" },
