@@ -142,9 +142,7 @@ spacer:set_markup(" ")
 local volume = require("volume")
 
 -- Ip widget
-ip_widget = wibox.widget.textbox()
-ip = socket.dns.toip(socket.dns.gethostname())
-ip_widget:set_markup(ip)
+local ip = require("ip")
 
 -- Battery widget
 local battery = require("battery")
