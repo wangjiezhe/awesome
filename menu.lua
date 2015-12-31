@@ -83,6 +83,7 @@ webmenu = {
 editormenu = {
     { "Gvim", "gvim" },
     { "Emacs", "emacs" },
+    { "Emacs (client)", "emacsclient -c" },
     { "LaTeX", latexmenu },
     { "Python", pythonmenu },
     { "Scheme", schememenu },
