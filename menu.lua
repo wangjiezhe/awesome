@@ -167,6 +167,7 @@ winemenu = {
 }
 gamemenu = {
     {"Supertux2", "supertux2"},
+    {"mGBA", "mgba-qt" },
     {"Steam", "steam" }
 }
 othermenu = {

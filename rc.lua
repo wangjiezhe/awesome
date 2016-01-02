@@ -596,6 +596,8 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "supertux2" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
+    { rule = { class = "mGBA" },
+      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { class = "stellarium" },
       properties = { floating = true, tag = tags[1][5], switchtotag = true }},
     { rule = { instance = "guvcview" },
