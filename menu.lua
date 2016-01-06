@@ -2,6 +2,7 @@
 
 local awful = require("awful")
 local beautiful = require("beautiful")
+local hotkeys_popup = require("awful.hotkeys_popup.widget")
 
 -- FreeDesktop
 -- require('freedesktop.utils')
@@ -20,194 +21,194 @@ local beautiful = require("beautiful")
 
 -- Manually
 myawesomemenu = {
-    { "manual", terminal .. " -e man awesome" },
-    { "edit config", editor_cmd .. " " .. awesome.conffile },
-    { "restart", awesome.restart },
-    { "quit", awesome.quit }
+   { "hotkeys", function() return false, hotkeys_popup.show_help end},
+   { "manual", terminal .. " -e man awesome" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "restart", awesome.restart },
+   { "quit", awesome.quit }
 }
 networkmenu = {
-    { "Chromium", "chromium" },
-    { "Firefox", "firefox" },
-    { "Yandex Browser", "yandex-browser-beta" },
-    { "Thunderbird", "thunderbird" },
-    { "Baidu Cloud", "bcloud-gui" },
-    { "115 Pan", "115pan" },
-    { "Filezilla", "filezilla" },
-    { "Pidgin", "pidgin" },
-    { "Transmission", "transmission-gtk" },
-    { "MEGASync", "megasync" }
+   { "Chromium", "chromium" },
+   { "Firefox", "firefox" },
+   { "Yandex Browser", "yandex-browser-beta" },
+   { "Thunderbird", "thunderbird" },
+   { "Baidu Cloud", "bcloud-gui" },
+   { "115 Pan", "115pan" },
+   { "Filezilla", "filezilla" },
+   { "Pidgin", "pidgin" },
+   { "Transmission", "transmission-gtk" },
+   { "MEGASync", "megasync" }
 }
 filemenu = {
-    { "PCManFM", "pcmanfm" },
-    { "Ranger", terminal .. " -e ranger" }
+   { "PCManFM", "pcmanfm" },
+   { "Ranger", terminal .. " -e ranger" }
 }
 maximamenu = {
-    { "Maxima", terminal .. " -e maxima" },
-    { "Xmaxima", "xmaxima" },
-    { "wxMaxima", "wxmaxima" }
+   { "Maxima", terminal .. " -e maxima" },
+   { "Xmaxima", "xmaxima" },
+   { "wxMaxima", "wxmaxima" }
 }
 mathmenu = {
-    { "Sage", terminal .. " -e sage" },
-    { "Sage(Notebook)", terminal .. " -e sage -notebook" },
-    { "GAP", terminal .. " -e gap" },
-    { "GP/PARI", terminal .. " -e gp" },
-    { "Maxiama", maximamenu },
-    { "GNU Octave", "octave --force-gui" },
-    { "Singular", terminal .. " -e Singular" },
-    { "RStudio", "rstudio-bin" },
-    { "FriCAS", terminal .. " -e fricas -nosman" },
-    { "Yacas", terminal .. " -e yacas" },
-    { "Reduce" , terminal .. " -e redcsl" }
+   { "Sage", terminal .. " -e sage" },
+   { "Sage(Notebook)", terminal .. " -e sage -notebook" },
+   { "GAP", terminal .. " -e gap" },
+   { "GP/PARI", terminal .. " -e gp" },
+   { "Maxiama", maximamenu },
+   { "GNU Octave", "octave --force-gui" },
+   { "Singular", terminal .. " -e Singular" },
+   { "RStudio", "rstudio-bin" },
+   { "FriCAS", terminal .. " -e fricas -nosman" },
+   { "Yacas", terminal .. " -e yacas" },
+   { "Reduce" , terminal .. " -e redcsl" }
 }
 latexmenu = {
-    { "Gummi", "gummi" },
-    { "TexMaker", "texmaker" },
-    { "TeXstudio", "texstudio" },
-    { "Lyx", "lyx" },
-    { "TeXmacs", "texmacs" }
+   { "Gummi", "gummi" },
+   { "TexMaker", "texmaker" },
+   { "TeXstudio", "texstudio" },
+   { "Lyx", "lyx" },
+   { "TeXmacs", "texmacs" }
 }
 pythonmenu = {
-    { "PyCharm", "pycharm" },
-    { "Spyder", "spyder" },
-    { "Spyder (python3)", "spyder3"},
-    { "Dreampie", "dreampie" }
+   { "PyCharm", "pycharm" },
+   { "Spyder", "spyder" },
+   { "Spyder (python3)", "spyder3"},
+   { "Dreampie", "dreampie" }
 }
 schememenu = {
-    {"GRacket", "gracket" },
-    { "DrRacket", "drracket" }
+   {"GRacket", "gracket" },
+   { "DrRacket", "drracket" }
 }
 webmenu = {
-    { "Bluefish", "bluefish" },
-    { "BlueGriffon", "bluegriffon" }
+   { "Bluefish", "bluefish" },
+   { "BlueGriffon", "bluegriffon" }
 }
 editormenu = {
-    { "Gvim", "gvim" },
-    { "Emacs", "emacs" },
-    { "Emacs (client)", "emacsclient -c" },
-    { "LaTeX", latexmenu },
-    { "Python", pythonmenu },
-    { "Scheme", schememenu },
-    { "Web", webmenu },
-    { "Eclipse", "eclipse" },
-    { "Android Studio", "android-studio" },
-    { "PoEdit", "poedit" },
-    { "OmegaT", "omegat" }
+   { "Gvim", "gvim" },
+   { "Emacs", "emacs" },
+   { "Emacs (client)", "emacsclient -c" },
+   { "LaTeX", latexmenu },
+   { "Python", pythonmenu },
+   { "Scheme", schememenu },
+   { "Web", webmenu },
+   { "Eclipse", "eclipse" },
+   { "Android Studio", "android-studio" },
+   { "PoEdit", "poedit" },
+   { "OmegaT", "omegat" }
 }
 libreofficemenu = {
-    { "Base", "lobase" },
-    { "Writer", "lowriter" },
-    { "Calc", "localc" },
-    { "Impress", "loimpress" },
-    { "Draw", "lodraw" },
-    { "Math", "lomath" }
+   { "Base", "lobase" },
+   { "Writer", "lowriter" },
+   { "Calc", "localc" },
+   { "Impress", "loimpress" },
+   { "Draw", "lodraw" },
+   { "Math", "lomath" }
 }
 wpsmenu = {
-    { "Writer", "wps" },
-    { "Spreadsheets", "et" },
-    { "Presentation", "wpp" }
+   { "Writer", "wps" },
+   { "Spreadsheets", "et" },
+   { "Presentation", "wpp" }
 }
 officemenu = {
-    { "LibreOffice", libreofficemenu },
-    { "WPS Office", wpsmenu }
+   { "LibreOffice", libreofficemenu },
+   { "WPS Office", wpsmenu }
 }
 terminalmenu = {
-    { "URxvt", "urxvt" },
-    { "URxvt(client)", "urxvtc" },
-    { "URxvt(tabbed)", "urxvt-tabbed" },
-    { "Xterm", "xterm" },
-    { "UXterm", "uxterm" },
-    { "Roxterm", "roxterm" },
-    { "Lxterminal", "lxterminal" }
+   { "URxvt", "urxvt" },
+   { "URxvt(client)", "urxvtc" },
+   { "URxvt(tabbed)", "urxvt-tabbed" },
+   { "Xterm", "xterm" },
+   { "UXterm", "uxterm" },
+   { "Roxterm", "roxterm" },
+   { "Lxterminal", "lxterminal" }
 }
 graphicmenu = {
-    { "GIMP", "gimp" },
-    { "Inkscape", "inkscape" },
-    { "Geeqie", "geeqie" },
-    { "Gcolor2", "gcolor2" }
+   { "GIMP", "gimp" },
+   { "Inkscape", "inkscape" },
+   { "Geeqie", "geeqie" },
+   { "Gcolor2", "gcolor2" }
 }
 pamenu = {
-    { "PulseAudio Manager", "paman" },
-    { "Volume Control", "pavucontrol" },
-    { "Volume Meter", "pavumeter" }
+   { "PulseAudio Manager", "paman" },
+   { "Volume Control", "pavucontrol" },
+   { "Volume Meter", "pavumeter" }
 }
 multimediamenu = {
-    { "KW Player", "kwplayer" },
-    { "PulseAudio Control", pamenu },
-    { "Ario", "ario" },
-    { "Gmpc", "gmpc" },
-    { "Osdlyrics", "osdlyrics" },
-    { "Lenmus" , "lenmus" }
+   { "KW Player", "kwplayer" },
+   { "PulseAudio Control", pamenu },
+   { "Ario", "ario" },
+   { "Gmpc", "gmpc" },
+   { "Osdlyrics", "osdlyrics" },
+   { "Lenmus" , "lenmus" }
 }
 qtmenu = {
-    { "Qt5 Assistant", "assistant-qt5" },
-    { "Qt4 Assistant", "assistant-qt4" },
-    { "Qt5 Designer", "designer-qt5" },
-    { "Qt4 Designer", "designer-qt4" }
+   { "Qt5 Assistant", "assistant-qt5" },
+   { "Qt4 Assistant", "assistant-qt4" },
+   { "Qt5 Designer", "designer-qt5" },
+   { "Qt4 Designer", "designer-qt4" }
 }
 developmentmenu = {
-    { "Qt", qtmenu },
-    { "CMake", "cmake-gui" },
-    { "Devhelp", "devhelp" },
-    { "Astah", "astah" }
+   { "Qt", qtmenu },
+   { "CMake", "cmake-gui" },
+   { "Devhelp", "devhelp" },
+   { "Astah", "astah" }
 }
 webtoolsmenu = {
-    { "Zenmap", "zenmap" },
-    { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" },
-    { "Wireshark", "wireshark" }
+   { "Zenmap", "zenmap" },
+   { "Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh" },
+   { "Wireshark", "wireshark" }
 }
 webcammenu = {
-    { "Guvcview", "guvcview" },
-    { "Cheese", "cheese" }
+   { "Guvcview", "guvcview" },
+   { "Cheese", "cheese" }
 }
 winemenu = {
-    { "QQ", "env LC_ALL=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
-    { "RHWUD", "env LC_ALL=en_us.utf8 WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
-    { "CAJViewer", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
-    { "SsReader", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" }
+   { "QQ", "env LC_ALL=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
+   { "RHWUD", "env LC_ALL=en_us.utf8 WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
+   { "CAJViewer", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
+   { "SsReader", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine .wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" }
 }
 gamemenu = {
-    {"Supertux2", "supertux2"},
-    {"mGBA", "mgba-qt" },
-    {"Steam", "steam" }
+   {"Supertux2", "supertux2"},
+   {"mGBA", "mgba-qt" },
+   {"Steam", "steam" }
 }
 othermenu = {
-    { "Shutter", "shutter" },
-    { "VirtualBox", "start-vbox" },
-    { "File Cleaner", "bleachbit" },
-    { "Manage Printing", "xdg-open http://localhost:631/"},
-    { "WebCam", webcammenu },
-    { "Bluetooth", "blueman-manager" },
-    { "Passwords and Keys", "seahorse" },
-    { "Font Editor", "fontforge" },
-    { "Hardware Topology", "lstopo" },
-    { "Stellarium", "stellarium" }
+   { "Shutter", "shutter" },
+   { "VirtualBox", "start-vbox" },
+   { "File Cleaner", "bleachbit" },
+   { "Manage Printing", "xdg-open http://localhost:631/"},
+   { "WebCam", webcammenu },
+   { "Bluetooth", "blueman-manager" },
+   { "Passwords and Keys", "seahorse" },
+   { "Font Editor", "fontforge" },
+   { "Hardware Topology", "lstopo" },
+   { "Stellarium", "stellarium" }
 }
 powermenu = {
-    { "Shutdown", "shutdown now" },
-    { "Power Off", "systemctl poweroff" },
-    { "Reboot", "systemctl reboot" },
-    { "Suspend", "systemctl suspend" },
-    { "Hibernate", "systemctl hibernate" },
-    { "Hybrid Sleep", "systemctl hybrid-sleep" }
+   { "Shutdown", "shutdown now" },
+   { "Power Off", "systemctl poweroff" },
+   { "Reboot", "systemctl reboot" },
+   { "Suspend", "systemctl suspend" },
+   { "Hibernate", "systemctl hibernate" },
+   { "Hybrid Sleep", "systemctl hybrid-sleep" }
 }
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    -- { "&firefox", "firefox", awful.util.getdir("config") .. "/firefox.png" },
-                                    { "Network", networkmenu },
-                                    { "Files", filemenu },
-                                    { "Math", mathmenu },
-                                    { "Editor", editormenu },
-                                    { "Office", officemenu },
-                                    { "Graphic", graphicmenu },
-                                    { "Multimedia", multimediamenu },
-                                    { "Development", developmentmenu },
-                                    { "Web Tools", webtoolsmenu },
-                                    { "Wine", winemenu },
-				    { "Games", gamemenu },
-                                    { "Others", othermenu },
-                                    { "Terminal", terminalmenu, beautiful.menu_terminal },
-                                    { "Power", powermenu }
-                                  }
-                        })
+mymainmenu = awful.menu({ items = {
+                             { "awesome", myawesomemenu, beautiful.awesome_icon },
+                             { "Network", networkmenu },
+                             { "Files", filemenu },
+                             { "Math", mathmenu },
+                             { "Editor", editormenu },
+                             { "Office", officemenu },
+                             { "Graphic", graphicmenu },
+                             { "Multimedia", multimediamenu },
+                             { "Development", developmentmenu },
+                             { "Web Tools", webtoolsmenu },
+                             { "Wine", winemenu },
+                             { "Games", gamemenu },
+                             { "Others", othermenu },
+                             { "Terminal", terminalmenu, beautiful.menu_terminal },
+                             { "Power", powermenu }
+                             }})
 
 -- Xdg_menu
 -- xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua
@@ -224,5 +225,5 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
 --                                   }
 --                         })
 
-menu_launcher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                        menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+                                     menu = mymainmenu })

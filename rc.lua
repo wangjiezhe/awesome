@@ -16,6 +16,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local hotkeys_popup = require("awful.hotkeys_popup.widget")
+
 -- Powerline
 -- package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
 -- require('powerline')
@@ -52,7 +54,7 @@ do
 
         naughty.notify({ preset = naughty.config.presets.critical,
                          title = "Oops, an error happened!",
-                         text = err })
+                         text = tostring(err) })
         in_error = false
     end)
 end
@@ -60,9 +62,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
--- gears.wallpaper.maximized("/usr/share/archlinux/wallpaper/archlinux-simplyblack.png", s, true)
-beautiful.init( awful.util.getdir("config") .. "/themes/default/theme.lua" )
+beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 revelation.init()
 
@@ -79,8 +79,7 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
-local layouts =
-{
+awful.layout.layouts = {
     awful.layout.suit.magnifier,
     awful.layout.suit.floating,
     awful.layout.suit.max,
@@ -93,7 +92,26 @@ local layouts =
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.corner.ne,
+    -- awful.layout.suit.corner.sw,
+    -- awful.layout.suit.corner.se,
 }
+-- }}}
+
+-- {{{ Helper functions
+local function client_menu_toggle_fn()
+    local instance = nil
+
+    return function ()
+        if instance and instance.wibox.visible then
+            instance:hide()
+            instance = nil
+        else
+            instance = awful.menu.clients({ theme = { width = 250 } })
+        end
+    end
+end
 -- }}}
 
 -- {{{ Wallpaper
@@ -112,12 +130,12 @@ tags = {
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.names, s, layouts[2])
+    tags[s] = awful.tag(tags.names, s, awful.layout.layouts[2])
 end
 -- }}}
 
 -- {{{ Autostart
--- awful.util.spawn_with_shell(terminal)
+-- awful.spawn_with_shell(terminal)
 -- }}}
 
 
@@ -127,8 +145,11 @@ local menu = require("menu")
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
-app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
+-- app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 -- }}}
+
+-- Keyboard map indicator and switcher
+mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -173,7 +194,8 @@ mytaglist.buttons = awful.util.table.join(
                     awful.button({ modkey }, 3, awful.client.toggletag),
                     awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
                     awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
-                    )
+                )
+
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
@@ -184,7 +206,7 @@ mytasklist.buttons = awful.util.table.join(
                                                   -- :isvisible() makes no sense
                                                   c.minimized = false
                                                   if not c:isvisible() then
-                                                      awful.tag.viewonly(c:tags()[1])
+                                                      awful.tag.viewonly(c.first_tag)
                                                   end
                                                   -- This will also un-minimize
                                                   -- the client, if needed
@@ -192,23 +214,12 @@ mytasklist.buttons = awful.util.table.join(
                                                   c:raise()
                                               end
                                           end),
-                     awful.button({ }, 3, function ()
-                                              if instance then
-                                                  instance:hide()
-                                                  instance = nil
-                                              else
-                                                  instance = awful.menu.clients({
-                                                      theme = { width = 250 }
-                                                  })
-                                              end
-                                          end),
+                     awful.button({ }, 3, client_menu_toggle_fn()),
                      awful.button({ }, 4, function ()
                                               awful.client.focus.byidx(1)
-                                              if client.focus then client.focus:raise() end
                                           end),
                      awful.button({ }, 5, function ()
                                               awful.client.focus.byidx(-1)
-                                              if client.focus then client.focus:raise() end
                                           end))
 
 for s = 1, screen.count() do
@@ -218,10 +229,10 @@ for s = 1, screen.count() do
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
     mylayoutbox[s]:buttons(awful.util.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
-                           awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
+                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
+                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
+                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     -- mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.noempty, mytaglist.buttons)
@@ -234,12 +245,13 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
-    left_layout:add(menu_launcher)
+    left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
     left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(mykeyboardlayout)
     right_layout:add(spacer)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(net_wireless)
@@ -277,72 +289,109 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey, "Shift"   }, "Left",   awful.tag.viewprev       ),
-    awful.key({ modkey, "Shift"   }, "Right",  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+              {description="show help", group="awesome"}),
+    awful.key({ modkey, "Shift"   }, "Left",   awful.tag.viewprev,
+              {description = "view previous", group = "tag"}),
+    awful.key({ modkey, "Shift"   }, "Right",  awful.tag.viewnext,
+              {description = "view next", group = "tag"}),
+    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
+              {description = "go back", group = "tag"}),
     awful.key({ modkey            }, "e",      revelation),
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
-            if client.focus then client.focus:raise() end
-        end),
+        end,
+        {description = "focus next by index", group = "client"}
+    ),
     awful.key({ modkey,           }, "k",
         function ()
             awful.client.focus.byidx(-1)
-            if client.focus then client.focus:raise() end
-        end),
-    awful.key({ modkey, "Shift"   }, "w", function () mymainmenu:show() end),
+        end,
+        {description = "focus previous by index", group = "client"}
+    ),
+    awful.key({ modkey, "Shift"   }, "w", function () mymainmenu:show() end,
+              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
+    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
+              {description = "swap with next client by index", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
+              {description = "swap with previous client by index", group = "client"}),
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+              {description = "focus the next screen", group = "screen"}),
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+              {description = "focus the previous screen", group = "screen"}),
+    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+              {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
             if client.focus then
                 client.focus:raise()
             end
-        end),
+        end,
+        {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-    awful.key({ modkey, "Control" }, "r", awesome.restart),
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+              {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "r", awesome.restart,
+              {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q",
         function ()
-            -- awful.util.spawn("killall sogou-qimpanel-watchdog")
+            -- awful.spawn("killall sogou-qimpanel-watchdog")
             awesome.quit()
-        end),
+        end,
+        {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.util.spawn("xlock -mode invert") end),
-    -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-    awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey,           }, "l",     function () awful.spawn("xlock -mode invert")   end),
+    -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end,
+    --           {description = "increase master width factor", group = "layout"}),
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+              {description = "decrease master width factor", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+              {description = "increase the number of master clients", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+              {description = "decrease the number of master clients", group = "layout"}),
+    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
+              {description = "increase the number of columns", group = "layout"}),
+    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+              {description = "decrease the number of columns", group = "layout"}),
+    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
+              {description = "select next", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
+              {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "n", awful.client.restore),
+    awful.key({ modkey, "Control" }, "n",
+              function ()
+                  c = awful.client.restore()
+                  -- Focus restored client
+                  if c then
+                      client.focus = c
+                      c:raise()
+                  end
+              end,
+              {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     function () mypromptbox[awful.screen.focused()]:run() end,
+              {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
+                  mypromptbox[awful.screen.focused()].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end),
+              end,
+              {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end),
+    awful.key({ modkey }, "p", function() menubar.show() end,
+              {description = "show the menubar", group = "launcher"}),
 
     -- Screenshot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
+    awful.key({ }, "Print", function () awful.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
 
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
@@ -350,40 +399,49 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end),
 
     -- Media control
-    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
-    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
-    awful.key({ }, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
-    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
+    awful.key({ }, "XF86AudioNext", function () awful.spawn("mpc next") end),
+    awful.key({ }, "XF86AudioPrev", function () awful.spawn("mpc prev") end),
+    awful.key({ }, "XF86AudioStop", function () awful.spawn("mpc stop") end),
+    awful.key({ }, "XF86AudioPlay", function () awful.spawn("mpc toggle") end),
 
     -- X backlight
-    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
 
     -- Kbd backlight
-    awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("asus-kbd-backlight up") end),
-    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("asus-kbd-backlight down") end),
+    awful.key({ }, "XF86KbdBrightnessUp", function () awful.spawn("asus-kbd-backlight up") end),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn("asus-kbd-backlight down") end),
 
     -- WebCam
-    awful.key({ }, "XF86WebCam", function () awful.util.spawn("guvcview") end),
+    awful.key({ }, "XF86WebCam", function () awful.spawn("guvcview") end),
 
     -- Touchpad toggle
-    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(home_path .. "bin/touchpad_toggle.sh") end),
+    awful.key({ }, "XF86TouchpadToggle", function () awful.spawn(home_path .. "bin/touchpad_toggle.sh") end),
 
     -- Transparency
-    awful.key({ modkey }, "Next", function (c) awful.util.spawn("transset-df --actual --inc 0.1") end),
-    awful.key({ modkey }, "Prior", function (c) awful.util.spawn("transset-df --actual --dec 0.1") end),
+    awful.key({ modkey }, "Next", function (c) awful.spawn("transset-df --actual --inc 0.1") end),
+    awful.key({ modkey }, "Prior", function (c) awful.spawn("transset-df --actual --dec 0.1") end),
 
     -- Xkill
-    awful.key({ modkey, "Control", "Shift" }, "x", function () awful.util.spawn("xkill") end)
+    awful.key({ modkey, "Control", "Shift" }, "x", function () awful.spawn("xkill") end)
 )
 
 clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+    awful.key({ modkey,           }, "f",
+        function (c)
+            c.fullscreen = not c.fullscreen
+            c:raise()
+        end),
+    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+              {description = "close", group = "client"}),
+    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+              {description = "toggle floating", group = "client"}),
+    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+              {description = "move to master", group = "client"}),
+    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ,
+              {description = "move to screen", group = "client"}),
+    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+              {description = "toggle keep on top", group = "client"}),
 
     -- Toggle titlebar visibility
     awful.key({ modkey, "Shift" }, "t", function (c) awful.titlebar.toggle(c) end),
@@ -393,12 +451,14 @@ clientkeys = awful.util.table.join(
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
-        end),
+        end ,
+        {description = "minimize", group = "client"}),
     awful.key({ modkey,           }, "m",
         function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c.maximized_vertical   = not c.maximized_vertical
-        end)
+            c.maximized = not c.maximized
+            c:raise()
+        end ,
+        {description = "maximize", group = "client"})
 )
 
 -- Bind all key numbers to tags.
@@ -409,21 +469,23 @@ for i = 1, 9 do
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        local screen = mouse.screen
+                        local screen = awful.screen.focused()
                         local tag = awful.tag.gettags(screen)[i]
                         if tag then
                            awful.tag.viewonly(tag)
                         end
-                  end),
+                  end,
+                  {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      local screen = mouse.screen
+                      local screen = awful.screen.focused()
                       local tag = awful.tag.gettags(screen)[i]
                       if tag then
                          awful.tag.viewtoggle(tag)
                       end
-                  end),
+                  end,
+                  {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
@@ -433,7 +495,8 @@ for i = 1, 9 do
                               awful.client.movetotag(tag)
                           end
                      end
-                  end))
+                  end,
+                  {description = "move focused client to tag #"..i, group = "tag"})
         -- Toggle tag.
 --        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
 --                  function ()
@@ -443,7 +506,9 @@ for i = 1, 9 do
 --                              awful.client.toggletag(tag)
 --                          end
 --                      end
---                  end))
+--                  end,
+--                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+    )
 end
 
 clientbuttons = awful.util.table.join(
@@ -463,225 +528,173 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
-                     size_hints_honor = false,
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    -- { rule = { class = "MPlayer" },
-    --   properties = { floating = true } },
-    -- { rule = { class = "pinentry" },
-    --   properties = { floating = true } },
-    -- { rule = { class = "gimp" },
-    --   properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+
+    -- Floating clients.
+    { rule_any = {
+        instance = {
+          "DTA",  -- Firefox addon DownThemAll.
+          -- "copyq",  -- Includes session name in class.
+        },
+        class = {
+           "feh"
+          -- "Arandr",
+          -- "Gpick",
+          -- "Kruler",
+          -- "MessageWin",  -- kalarm.
+          -- "Sxiv",
+          -- "Wpa_gui",
+          -- "pinentry",
+          -- "veromix",
+          -- "xtightvncviewer"
+        },
+        name = {
+          "Event Tester",  -- xev.
+        },
+        role = {
+          "AlarmWindow",  -- Thunderbird's calendar.
+          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+        }
+    }, properties = { floating = true }},
+
+    -- Maximized clients.
+    { rule_any = {
+         class = {
+            "URxvt",
+            "Gvim",
+            "Lxterminal",
+            "Roxterm"
+         }
+    }, properties = { maximized = true }},
+
+    -- Tagged clients.
+    { rule_any = {
+         class = {
+            "XTerm",
+            "UXTerm",
+            "Lxterminal",
+            "Roxterm"
+         }
+    }, properties = { tag = tags[1][1], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "Firefox",
+            "chromium",
+            "Yandex-browser-beta"
+         }
+    }, properties = { tag = tags[1][2], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "Pcmanfm",
+            "File-roller",
+            "Filezilla",
+            "Bleachbit",
+            "CAJVieweru.exe",
+            "SsReader.exe",
+            "RHUD30.EXE"
+         }
+    }, properties = { tag = tags[1][3], switchtotag = true }},
+    
+    { rule_any = {
+         instance = {
+            "libreoffice"
+         },
+         class = {
+            "Wps", "Et", "Wpp",
+            "Texmacs.bin",
+            "Gummi", "TexMaker", "TeXstudio", "Lyx",
+            "Gracket", "DrRacket",
+            "Poedit",
+            "Java", "Eclipse", "jetbrains-studio",
+            "jetbrains-pycharm", "Spyder", "Dreampie",
+            "Astah",
+            "assistant", "Assistant-qt4", "assistant-qt5", "Designer", "Designer-qt4",
+            "fontforge",
+            "cmake-gui",
+            "Bluefish", "Bluegriffon",
+            "OmegaT"
+         }
+    }, properties = { tag = tags[1][4], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "Gimp", "Inkscape", "Gcolor2",
+            "Geeqie",
+            "mpv", "MPlayer", "Kwplayer", "Ario", "Gmpc",
+            "Paman", "Pavucontrol", "Pavumeter",
+            "Lenmus",
+            "Cheese", "guvcview",
+            "Steam", "supertux2", "mGBA",
+            "stellarium"
+         }
+    }, properties = { tag = tags[1][5], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "VirtualBox",
+            "Zenmap", "Wireshark",
+            "Shutter"
+         }
+    }, properties = { tag = tags[1][6], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "Thunderbird",
+            "Pidgin",
+            "QQ.exe"
+         }
+    }, properties = { tag = tags[1][7], switchtotag = true }},
+    
+    { rule_any = {
+         name = {
+            "^sage$",
+            "gp", "gap", "Singular", "fricas", "yacas",
+            "reduce", "redcsl", "HyperDoc",
+            "Xmaxima", "Wxmaxima",
+            "Octave-gui",
+            "^R$", "RStudio"
+         },
+         class = {
+            
+         }
+    }, properties = { tag = tags[1][8], switchtotag = true }},
+    
+    { rule_any = {
+         class = {
+            "Transmission-gtk",
+            "115pan",
+            "Bcloud-gui",
+            "Seahorse",
+            "Wine"
+         }
+    }, properties = { tag = tags[1][9], switchtotag = true }},
+
+    -- Semi transparent clients.
     { rule = { class = "URxvt" },
-      properties = { maximized_vertical = true, maximized_horizontal = true, opacity = 0.8 }},
-    { rule = { class = "Gvim" },
-      properties = { floating=true, maximized_vertical = true, maximized_horizontal = true } },
-    { rule = { class = "Emacs" },
-      properties = { floating=true }},
-    { rule = { class = "xterm" },
-      properties = { floating = true, tag = tags[1][1] }},
-    { rule = { class = "Lxterminal" },
-      properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
-    { rule = { class = "Roxterm" },
-      properties = { maximized_vertical = true, maximized_horizontal = true, tag = tags[1][1] }},
-    { rule = { class = "Firefox" },
-      properties = { floating=true, tag = tags[1][2], switchtotag = true }},
-    { rule = { class = "chromium" },
-      properties = { tag = tags[1][2], switchtotag = true }},
-    { rule = { class = "Yandex-browser-beta" },
-      properties = { tag = tags[1][2], switchtotag = true }},
-    { rule = { class = "Pidgin" },
-      properties = { tag = tags[1][7], switchtotag = true }},
-    { rule = { class = "Pcmanfm" },
-      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "File-roller" },
-      properties = { floating = true }},
-    { rule = { class = "Filezilla" },
-      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "Bleachbit" },
-      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { instance = "libreoffice" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Wps" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Et" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Wpp" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Lyx" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Texmacs.bin" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "TexMaker" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Gummi" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "DrRacket" },
-      properties = { flaoting=true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Gracket" },
-      properties = { floating=true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Poedit" },
-      properties = { flaoting=true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "TeXstudio" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Spyder" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Eclipse" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Java" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "jetbrains-pycharm" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Dreampie" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Astah" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "jetbrains-studio" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "assistant" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Assistant-qt4" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "assistant-qt5" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Designer" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Designer-qt4" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "fontforge" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { instance = "cmake-gui" },
-      properties = { floating = true, tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Bluefish" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Bluegriffon" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "OmegaT" },
-      properties = { tag = tags[1][4], switchtotag = true }},
-    { rule = { class = "Gimp" },
-      properties = { tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Inkscape" },
-      properties = { tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Geeqie" },
-      properties = { tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "Gcolor2" },
-      properties = { tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "feh" },
-      properties = { floating = true }},
-    { rule = { class = "mpv" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "MPlayer" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Kwplayer" },
-      properties = { tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Ario" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Gmpc" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Paman" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Pavucontrol" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Pavumeter" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Lenmus" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Cheese" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "Steam" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "supertux2" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "mGBA" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { class = "stellarium" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { instance = "guvcview" },
-      properties = { floating = true, tag = tags[1][5], switchtotag = true }},
-    { rule = { instance = "VirtualBox" },
-      properties = { floating = true, tag = tags[1][6], switchtotag = true }},
-    { rule = { class = "Zenmap" },
-      properties = { floating = true, tag = tags[1][6], switchtotag = true }},
-    { rule = { class = "Wireshark" },
-      properties = { floating = true, tag = tags[1][6], switchtotag = true }},
-    { rule = { class = "Shutter" },
-      properties = { floating = true, tag = tags[1][6], switchtotag = true }},
-    { rule = { class = "Thunderbird" },
-      properties = { floating = true, tag = tags[1][7], switchtotag = true }},
-    { rule = { name = "^sage$" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "gp" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "gap" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "Singular" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "^R$" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { class = "Xmaxima" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { class = "Wxmaxima" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { class = "Octave-gui" },
-      properties = { tag = tags[1][8], switchtotag = true }},
-    { rule = { class = "RStudio" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "fricas" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "HyperDoc" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "yacas" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "reduce" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { name = "redcsl" },
-      properties = { floating = true, tag = tags[1][8], switchtotag = true }},
-    { rule = { class = "Transmission-gtk" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
-    { rule = { class = "Bcloud-gui" },
-      properties = { floating=true, tag = tags[1][9] }},
-    { rule = { class = "115pan" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
-    { rule = { class = "Seahorse" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
-    { rule = { class = "QQ.exe" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
-    { rule = { class = "RHUD30.EXE" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }},
-    { rule = { class = "CAJVieweru.exe" },
-      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "SsReader.exe" },
-      properties = { floating = true, tag = tags[1][3], switchtotag = true }},
-    { rule = { class = "Wine" },
-      properties = { floating = true, tag = tags[1][9], switchtotag = true }}
+      properties = { opacity = 0.8 }}
 }
 -- }}}
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function (c, startup)
-    -- Enable sloppy focus
-    c:connect_signal("mouse::enter", function(c)
-        if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-            and awful.client.focus.filter(c) then
-            client.focus = c
-        end
-    end)
-
-    if not startup then
+client.connect_signal("manage", function (c)
+    if not awesome.startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
         -- awful.client.setslave(c)
 
-        -- Put windows in a smart way, only if they does not set an initial position.
+        -- Put windows in a smart way, only if they do not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
         end
+    elseif not c.size_hints.user_position and not c.size_hints.program_position then
+        -- Prevent clients from being unreachable after screen count changes.
+        awful.placement.no_offscreen(c)
     end
 
     local titlebars_enabled = false
@@ -730,8 +743,14 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
+-- Enable sloppy focus
+client.connect_signal("mouse::enter", function(c)
+    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+        and awful.client.focus.filter(c) then
+        client.focus = c
+    end
+end)
+
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
--- client.connect_signal("exit", function () awful.util.spawn("exit.sh") end)
 -- }}}
