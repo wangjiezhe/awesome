@@ -297,7 +297,8 @@ globalkeys = awful.util.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
-    awful.key({ modkey            }, "e",      revelation),
+    awful.key({ modkey            }, "e",      revelation,
+       {description = "client control", group = "client"}),
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
@@ -345,7 +346,8 @@ globalkeys = awful.util.table.join(
         end,
         {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.spawn("xlock -mode invert")   end),
+    awful.key({ modkey,           }, "l",     function () awful.spawn("xlock -mode invert")   end,
+       {description = "lock screen", group = "utils"}),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end,
     --           {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
@@ -391,39 +393,56 @@ globalkeys = awful.util.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Screenshot
-    awful.key({ }, "Print", function () awful.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end),
+    awful.key({ }, "Print", function () awful.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end,
+       {description = "screenshot", group = "utils"}),
 
     -- Volume control
-    awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end),
-    awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end),
-    awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end,
+       {description = "volume up", group = "audio"}),
+    awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end,
+       {description = "volume down", group = "audio"}),
+    awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end,
+       {description = "mute volume", group = "audio"}),
 
     -- Media control
-    awful.key({ }, "XF86AudioNext", function () awful.spawn("mpc next") end),
-    awful.key({ }, "XF86AudioPrev", function () awful.spawn("mpc prev") end),
-    awful.key({ }, "XF86AudioStop", function () awful.spawn("mpc stop") end),
-    awful.key({ }, "XF86AudioPlay", function () awful.spawn("mpc toggle") end),
+    awful.key({ }, "XF86AudioNext", function () awful.spawn("mpc next") end,
+       {description = "next audio", group = "audio"}),
+    awful.key({ }, "XF86AudioPrev", function () awful.spawn("mpc prev") end,
+       {description = "previous audio", group = "audio"}),
+    awful.key({ }, "XF86AudioStop", function () awful.spawn("mpc stop") end,
+       {description = "stop audio", group = "audio"}),
+    awful.key({ }, "XF86AudioPlay", function () awful.spawn("mpc toggle") end,
+       {description = "play/pause audio", group = "audio"}),
 
     -- X backlight
-    awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end,
+       {description = "increase backlight of screen", group = "screen"}),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end,
+       {description = "decrease backlight of screen", group = "screen"}),
 
     -- Kbd backlight
-    awful.key({ }, "XF86KbdBrightnessUp", function () awful.spawn("asus-kbd-backlight up") end),
-    awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn("asus-kbd-backlight down") end),
+    awful.key({ }, "XF86KbdBrightnessUp", function () awful.spawn("asus-kbd-backlight up") end,
+       {description = "increase backlight of keyboard", group = "keyboard"}),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn("asus-kbd-backlight down") end,
+       {description = "decrease backlight of keyboard", group = "keyboard"}),
 
     -- WebCam
-    awful.key({ }, "XF86WebCam", function () awful.spawn("guvcview") end),
+    awful.key({ }, "XF86WebCam", function () awful.spawn("cheese") end,
+       {description = "webcam", group = "utils"}),
 
     -- Touchpad toggle
-    awful.key({ }, "XF86TouchpadToggle", function () awful.spawn(home_path .. "bin/touchpad_toggle.sh") end),
+    awful.key({ }, "XF86TouchpadToggle", function () awful.spawn(home_path .. "bin/touchpad_toggle.sh") end,
+       {description = "toggle touchpad", group = "touchpad"}),
 
     -- Transparency
-    awful.key({ modkey }, "Next", function (c) awful.spawn("transset-df --actual --inc 0.1") end),
-    awful.key({ modkey }, "Prior", function (c) awful.spawn("transset-df --actual --dec 0.1") end),
+    awful.key({ modkey }, "Next", function (c) awful.spawn("transset-df --actual --inc 0.1") end,
+       {description = "increase transparency", group = "screen"}),
+    awful.key({ modkey }, "Prior", function (c) awful.spawn("transset-df --actual --dec 0.1") end,
+       {description = "decrease transparency", group = "screen"}),
 
     -- Xkill
-    awful.key({ modkey, "Control", "Shift" }, "x", function () awful.spawn("xkill") end)
+    awful.key({ modkey, "Control", "Shift" }, "x", function () awful.spawn("xkill") end,
+       {description = "kill a client by its X resource", group = "utils"})
 )
 
 clientkeys = awful.util.table.join(
@@ -431,7 +450,8 @@ clientkeys = awful.util.table.join(
         function (c)
             c.fullscreen = not c.fullscreen
             c:raise()
-        end),
+        end,
+        {description = "fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
@@ -444,7 +464,8 @@ clientkeys = awful.util.table.join(
               {description = "toggle keep on top", group = "client"}),
 
     -- Toggle titlebar visibility
-    awful.key({ modkey, "Shift" }, "t", function (c) awful.titlebar.toggle(c) end),
+    awful.key({ modkey, "Shift" }, "t", function (c) awful.titlebar.toggle(c) end,
+       {description = "toggle titlebar", group = "client"}),
 
     awful.key({ modkey,           }, "n",
         function (c)
