@@ -62,7 +62,12 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
+local theme = dofile("/usr/share/awesome/themes/default/theme.lua")
+theme.font = "dejavu sans mono 8"
+theme.menu_height = 20
+theme.menu_width = 170
+theme.wallpaper = "/usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
+beautiful.init(theme)
 
 revelation.init()
 

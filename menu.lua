@@ -4,6 +4,8 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup.widget")
 
+-- local hotkeys_vim = require("awful.hotkeys_popup.keys.vim")
+
 -- FreeDesktop
 -- require('freedesktop.utils')
 -- require('freedesktop.menu')
