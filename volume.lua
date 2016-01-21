@@ -8,68 +8,69 @@ local pulse = true
 
 volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
-volume_widget:buttons(awful.util.table.join(
-    awful.button({}, 1, function() awful.util.spawn("pamixer --toggle-mute") end)
-    ))
+volume_widget:buttons(
+   awful.util.table.join(
+      awful.button({}, 1, function() awful.spawn("pamixer --toggle-mute") end)))
 
 function update_volume(widget)
-    local function isempty(s)
-        return s == nil or s == ''
-    end
+   local function isempty(s)
+      return s == nil or s == ''
+   end
 
-	local fd = io.popen("echo -n $(pamixer --get-volume)")
-	local volume = fd:read("*all")
-	fd:close()
+   local function get_output(cmd)
+      local fd = io.popen(cmd)
+      local ret = fd:read("*all")
+      fd:close()
+      return ret
+   end
 
-    if isempty(volume) then
-        pulse = false
-        local fd = io.popen("echo -n $(amixer get Master | grep 'Front Left:' | grep -o -E '\\[[[:digit:]]+%\\]') | grep -o -E '[[:digit:]]+'")
-        volume = fd:read("*all")
-    end
+   local volume = get_output("echo -n $(pamixer --get-volume)")
 
-	local fd = io.popen("echo -n $(pamixer --get-mute)")
-	local mute = fd:read("*all")
-	fd:close()
+   if isempty(volume) then
+      pulse = false
+      local volume = get_output("echo -n $(amixer get Master | grep 'Front Left:' | grep -o -E '\\[[[:digit:]]+%\\]') | grep -o -E '[[:digit:]]+' | tr -d '\n'")
+   end
 
-    if isempty(mute) then
-        pulse = false
-        local fd = io.popen("echo -n $(amixer get Master | grep 'Front Left:' | grep -o '\\[on\\]\\|\\[off\\]') | grep -o -E '[[:alpha:]]+'")
-        local status = fd:read("all")
-        if status == "on" then
-            mute = "false"
-        else
-            mute = "true"
-        end
-    end
+   local mute = get_output("echo -n $(pamixer --get-mute)")
 
-	if mute == "false" then
-		volume_text = "Vol:" .. volume .. "%"
-        bg = "black"
-	else
-		volume_text = "Vol:" .. volume .. "M"
-        bg = "grey"
-	end
+   if isempty(mute) then
+      pulse = false
+      local status = get_output("echo -n $(amixer get Master | grep 'Front Left:' | grep -o '\\[on\\]\\|\\[off\\]') | grep -o -E '[[:alpha:]]+' | tr -d '\n'")
+      if status == "on" then
+         mute = "false"
+      else
+         mute = "true"
+      end
+   end
 
-    fg = gradient(0, 100, tonumber(volume))
+   if mute == "false" then
+      volume_text = "Vol:" .. volume .. "%"
+      bg = "black"
+   else
+      volume_text = "Vol:" .. volume .. "M"
+      bg = "grey"
+   end
 
-    volume_markup = "<span foreground='" .. fg .. "' background='".. bg .. "'>" .. volume_text .. "</span>"
+   fg = gradient(0, 100, tonumber(volume))
 
-	widget:set_markup(volume_markup)
+   volume_markup = "<span foreground='" .. fg .. "' background='".. bg .. "'>" .. volume_text .. "</span>"
+
+   widget:set_markup(volume_markup)
 end
 
 function inc_volume(widget)
-	awful.util.spawn("pamixer --allow-boost --increase 1")
-	update_volume(widget)
+   awful.util.spawn("pamixer --allow-boost --increase 1")
+   update_volume(widget)
 end
 
 function dec_volume(widget)
-	awful.util.spawn("pamixer --allow-boost --decrease 1")
-	update_volume(widget)
+   awful.util.spawn("pamixer --allow-boost --decrease 1")
+   update_volume(widget)
 end
 
 function mute_volume(widget)
-	awful.util.spawn("pamixer --toggle-mute")
-	update_volume(widget)
+   awful.util.spawn("pamixer --toggle-mute")
+   update_volume(widget)
 end
 
 update_volume(volume_widget)
