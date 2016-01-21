@@ -2,6 +2,7 @@
      {"Archive Manager", "file-roller ", "/usr/share/icons/hicolor/16x16/apps/file-roller.png" },
      {"Character Map", "gucharmap", "/usr/share/icons/gnome/16x16/apps/accessories-character-map.png" },
      {"ClipIt", "clipit"},
+     {"GVim", "gvim -f ", "/usr/share/pixmaps/gvim.png" },
      {"Galculator", "galculator", "/usr/share/icons/hicolor/48x48/apps/galculator.png" },
      {"Go For It!", "go-for-it", "/usr/share/icons/hicolor/16x16/apps/go-for-it.svg" },
      {"Jupyter Qt console", "jupyter qtconsole", "///usr/lib/python3.5/site-packages/qtconsole/resources/icon/JupyterConsole.svg" },
@@ -9,15 +10,14 @@
      {"Qemu Launcher", "qemu-launcher"},
      {"Root Terminal", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
      {"Shutter", "shutter ", "/usr/share/icons/hicolor/16x16/apps/shutter.png" },
-     {"Vi IMproved", "gvim -f ", "/usr/share/pixmaps/gvim.png" },
      {"Xchm", "xchm ", "/usr/share/pixmaps/xchm-48.png" },
      {"Zim Desktop Wiki", "zim ", "/usr/share/pixmaps/zim.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
      {"bpython2", "xterm -e /usr/bin/bpython2", "/usr/share/pixmaps/bpython2.png" },
      {"compton", "compton", "/usr/share/icons/hicolor/48x48/apps/compton.png" },
      {"fcitx-qimpanel-configtool", "fcitx-qimpanel-configtool", "/usr/share/icons/hicolor/16x16/apps/fcitx.png" },
-     {"ipython", "xterm -e ipython"},
-     {"ipython2", "xterm -e ipython2"},
+     {"ipython", "xterm -e ipython", "/usr/share/pixmaps/ipython.png" },
+     {"ipython2", "xterm -e ipython2", "/usr/share/pixmaps/ipython2.png" },
  }
 
  local menu78059f1898ed518c6ccd6a6392fa82c1 = {
@@ -37,7 +37,9 @@
      {"DrRacket", "drracket -singleInstance ", "/usr/share/icons/hicolor/16x16/apps/drracket.png" },
      {"FriCAS", "xterm -e fricas", "/usr/share/pixmaps/fricas.xpm" },
      {"GNU Octave", "/usr/bin/octave --force-gui", "///usr/share/octave/4.0.0/imagelib/octave-logo.svg" },
+     {"GNU Solfege", "solfege", "/usr/share/pixmaps/solfege.svg" },
      {"GNU TeXmacs", "texmacs ", "/usr/share/pixmaps/TeXmacs.xpm" },
+     {"GeoGebra", "geogebra"},
      {"LenMus", "lenmus", "/usr/share/pixmaps/lenmus.png" },
      {"LibreOffice Math", "libreoffice --math ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-math.png" },
      {"Mendeley Desktop", "mendeleydesktop ", "/usr/share/icons/hicolor/16x16/apps/mendeleydesktop.png" },
@@ -94,6 +96,7 @@
      {"Tickr - Feed Reader", "/usr/bin/tickr"},
      {"Tor-Browser (en-US)", "/usr/bin/tor-browser-en", "///usr/share/pixmaps/tor-browser-en.png" },
      {"Transmission", "transmission-gtk ", "/usr/share/icons/hicolor/16x16/apps/transmission.png" },
+     {"Xware Desktop", "/usr/bin/xware-desktop ", "/usr/share/icons/hicolor/16x16/apps/xware-desktop.png" },
      {"Yandex Browser (beta)", "/usr/bin/yandex-browser-beta ", "/usr/share/icons/hicolor/16x16/apps/yandex-browser-beta.png" },
      {"Zenmap", "zenmap ", "///usr/share/zenmap/pixmaps/zenmap.png" },
      {"Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh ", "///usr/share/zenmap/pixmaps/zenmap.png" },
@@ -119,7 +122,6 @@
      {"LibreOffice Math", "libreoffice --math ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-math.png" },
      {"LibreOffice Writer", "libreoffice --writer ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-writer.png" },
      {"LyX Document Processor", "lyx ", "/usr/share/icons/hicolor/48x48/apps/lyx.png" },
-     {"ReText", "/usr/bin/retext ", "/usr/share/icons/hicolor/16x16/apps/retext.png" },
      {"ReText", "retext ", "/usr/share/icons/hicolor/16x16/apps/retext.png" },
      {"TeXstudio", "texstudio "},
      {"Texmaker", "texmaker ", "/usr/share/pixmaps/texmaker.png" },
@@ -173,8 +175,8 @@
      {"Spyder3", "spyder3 ", "/usr/share/pixmaps/spyder3.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
      {"bpython2", "xterm -e /usr/bin/bpython2", "/usr/share/pixmaps/bpython2.png" },
-     {"ipython", "xterm -e ipython"},
-     {"ipython2", "xterm -e ipython2"},
+     {"ipython", "xterm -e ipython", "/usr/share/pixmaps/ipython.png" },
+     {"ipython2", "xterm -e ipython2", "/usr/share/pixmaps/ipython2.png" },
  }
 
  local menu80d754c83abbbd4ef5d150904efcc86c = {
@@ -191,6 +193,7 @@
  local menu52dd1c847264a75f400961bfb4d1c849 = {
      {"Ario", "ario", "/usr/share/icons/hicolor/16x16/apps/ario.png" },
      {"Cheese", "cheese", "/usr/share/icons/hicolor/16x16/apps/cheese.png" },
+     {"GNU Solfege", "solfege", "/usr/share/pixmaps/solfege.svg" },
      {"GTK sound mixer", "/usr/bin/aumix", "///usr/share/aumix/aumix.xpm" },
      {"Gespeaker", "/usr/bin/gespeaker", "///usr/share/gespeaker/data/icons/gespeaker.svg" },
      {"Gnome Music Player Client", "gmpc", "/usr/share/icons/hicolor/16x16/apps/gmpc.png" },
@@ -205,6 +208,7 @@
      {"Qt V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
      {"guvcview", "guvcview", "///usr/share/pixmaps/guvcview/guvcview.png" },
      {"mpv Media Player", "mpv --profile=pseudo-gui -- ", "/usr/share/icons/hicolor/16x16/apps/mpv.png" },
+     {"tuxguitar", "tuxguitar  -Dorg.eclipse.swt.internal.gtk.cairoGraphics=false", "///usr/share/tuxguitar/share/skins/Lavender/icon-96x96.png" },
  }
 
  local menuee69799670a33f75d45c57d1d1cd0ab3 = {

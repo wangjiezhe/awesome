@@ -655,7 +655,8 @@ awful.rules.rules = {
             "Lenmus",
             "Cheese", "guvcview",
             "Steam", "supertux2", "mGBA",
-            "stellarium"
+            "stellarium",
+            "Solfege", "TuxGuitar"
          }
     }, properties = { tag = tags[1][5], switchtotag = true }},
     
@@ -682,7 +683,8 @@ awful.rules.rules = {
             "reduce", "redcsl", "HyperDoc",
             "Xmaxima", "Wxmaxima",
             "Octave-gui",
-            "^R$", "RStudio"
+            "^R$", "RStudio",
+            "GeoGebra"
          },
          class = {
             
