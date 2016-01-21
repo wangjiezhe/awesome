@@ -2,6 +2,8 @@
 
 local awful = require("awful")
 local wibox = require("wibox")
+local naughty = require("naughty")
+local beautiful = require("beautiful")
 
 battery_widget = wibox.widget.textbox()
 battery_widget:set_align("right")
