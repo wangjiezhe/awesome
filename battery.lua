@@ -12,45 +12,44 @@ local ac_adapter = "AC0"
 local bat_adapter = "BAT0"
 
 function show_battery (widget)
-    local fac = io.open("/sys/class/power_supply/" .. ac_adapter .. "/online")
-    local fful = io.open("/sys/class/power_supply/" .. bat_adapter .. "/energy_full")
-    local fcur = io.open("/sys/class/power_supply/" .. bat_adapter .. "/energy_now")
-    local fsta = io.open("/sys/class/power_supply/" .. bat_adapter .. "/status")
-    local ac = fac:read()
-    local ful = fful:read()
-    local cur = fcur:read()
-    local sta = fsta:read()
-    fac:close()
-    fful:close()
-    fcur:close()
-    fsta:close()
+   local function get_output (file)
+      local fd = io.open(file)
+      local ret = fd:read()
+      fd:close()
+      return ret
+   end
 
-    local battery = math.floor(cur * 100 / ful)
+   local ac = get_output("/sys/class/power_supply/" .. ac_adapter .. "/online")
+   local ful = get_output("/sys/class/power_supply/" .. bat_adapter .. "/energy_full")
+   local cur = get_output("/sys/class/power_supply/" .. bat_adapter .. "/energy_now")
+   local sta = get_output("/sys/class/power_supply/" .. bat_adapter .. "/status")
 
-    if ac:match("0") then
-        dir = "v"
-        if battery <= 10 then
-            naughty.notify({ title = "Battery Waring",
-                             text = "Batter low! Only ".. battery .. "% left!",
-                             timeout = 5,
-                             fg = beautiful.fg_focus,
-                             bg = beautiful.bg_focus})
-        end
-    elseif ac:match("1") then
-        if sta:match("Discharging") then
-            dir = "="
-        elseif sta:match("Charging") then
-            dir = "^"
-        end
-    end
+   local battery = math.floor(cur * 100 / ful)
 
-    sur = 100 - battery
-    fg = gradient(0, 100, sur)
+   if ac:match("0") then
+      dir = "v"
+      if battery <= 10 then
+         naughty.notify({ title = "Battery Waring",
+                          text = "Batter low! Only ".. battery .. "% left!",
+                          timeout = 5,
+                          fg = beautiful.fg_focus,
+                          bg = beautiful.bg_focus})
+      end
+   elseif ac:match("1") then
+      if sta:match("Discharging") then
+         dir = "="
+      elseif sta:match("Charging") then
+         dir = "^"
+      end
+   end
 
-    battery_text = "Bat: " .. dir .. battery .. "%" .. dir
-    battery_markup = "<span foreground='" .. fg .. "' background='black'>" .. battery_text .. "</span>"
+   sur = 100 - battery
+   fg = gradient(0, 100, sur)
 
-    widget:set_markup(battery_markup)
+   battery_text = "Bat: " .. dir .. battery .. "%" .. dir
+   battery_markup = "<span foreground='" .. fg .. "' background='black'>" .. battery_text .. "</span>"
+
+   widget:set_markup(battery_markup)
 end
 
 show_battery(battery_widget)

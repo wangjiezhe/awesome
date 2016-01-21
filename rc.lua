@@ -604,7 +604,7 @@ awful.rules.rules = {
             "Roxterm"
          }
     }, properties = { tag = tags[1][1], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "Firefox",
@@ -612,7 +612,7 @@ awful.rules.rules = {
             "Yandex-browser-beta"
          }
     }, properties = { tag = tags[1][2], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "Pcmanfm",
@@ -624,7 +624,7 @@ awful.rules.rules = {
             "RHUD30.EXE"
          }
     }, properties = { tag = tags[1][3], switchtotag = true }},
-    
+
     { rule_any = {
          instance = {
             "libreoffice"
@@ -645,7 +645,7 @@ awful.rules.rules = {
             "OmegaT"
          }
     }, properties = { tag = tags[1][4], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "Gimp", "Inkscape", "Gcolor2",
@@ -659,7 +659,7 @@ awful.rules.rules = {
             "Solfege", "TuxGuitar"
          }
     }, properties = { tag = tags[1][5], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "VirtualBox",
@@ -667,7 +667,7 @@ awful.rules.rules = {
             "Shutter"
          }
     }, properties = { tag = tags[1][6], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "Thunderbird",
@@ -675,7 +675,7 @@ awful.rules.rules = {
             "QQ.exe"
          }
     }, properties = { tag = tags[1][7], switchtotag = true }},
-    
+
     { rule_any = {
          name = {
             "^sage$",
@@ -687,10 +687,10 @@ awful.rules.rules = {
             "GeoGebra"
          },
          class = {
-            
+
          }
     }, properties = { tag = tags[1][8], switchtotag = true }},
-    
+
     { rule_any = {
          class = {
             "Transmission-gtk",

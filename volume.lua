@@ -10,16 +10,16 @@ volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
 volume_widget:buttons(
    awful.util.table.join(
-      awful.button({}, 1, function() awful.spawn("pamixer --toggle-mute") end)))
+      awful.button({}, 1, function () awful.spawn("pamixer --toggle-mute") end)))
 
-function update_volume(widget)
-   local function isempty(s)
+function update_volume (widget)
+   local function isempty (s)
       return s == nil or s == ''
    end
 
-   local function get_output(cmd)
+   local function get_output (cmd)
       local fd = io.popen(cmd)
-      local ret = fd:read("*all")
+      local ret = fd:read()
       fd:close()
       return ret
    end
@@ -58,17 +58,17 @@ function update_volume(widget)
    widget:set_markup(volume_markup)
 end
 
-function inc_volume(widget)
+function inc_volume (widget)
    awful.util.spawn("pamixer --allow-boost --increase 1")
    update_volume(widget)
 end
 
-function dec_volume(widget)
+function dec_volume (widget)
    awful.util.spawn("pamixer --allow-boost --decrease 1")
    update_volume(widget)
 end
 
-function mute_volume(widget)
+function mute_volume (widget)
    awful.util.spawn("pamixer --toggle-mute")
    update_volume(widget)
 end
