@@ -27,6 +27,7 @@ function show_battery (widget)
 
    -- local bat = math.floor(cur * 100 / ful)
    local bat = get_output("/sys/class/power_supply/" .. bat_adapter .. "/capacity")
+   bat = tonumber(bat)
 
    if ac:match("0") then
       dir = "v"
