@@ -642,6 +642,7 @@ awful.rules.rules = {
             "fontforge",
             "cmake-gui",
             "Bluefish", "Bluegriffon",
+            "Scribus",
             "OmegaT"
          }
     }, properties = { tag = tags[1][4], switchtotag = true }},

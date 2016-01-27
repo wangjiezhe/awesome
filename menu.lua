@@ -95,6 +95,7 @@ editormenu = {
    { "Eclipse", "eclipse" },
    { "Android Studio", "android-studio" },
    { "PoEdit", "poedit" },
+   { "Scribus", "scribus" },
    { "OmegaT", "omegat" }
 }
 libreofficemenu = {
