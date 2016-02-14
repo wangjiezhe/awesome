@@ -403,41 +403,49 @@ globalkeys = awful.util.table.join(
 
     -- Volume control
     awful.key({ }, "XF86AudioRaiseVolume", function () inc_volume(volume_widget) end,
-       {description = "volume up", group = "audio"}),
+       {description = "volume up -- Fn + F12", group = "audio"}),
     awful.key({ }, "XF86AudioLowerVolume", function () dec_volume(volume_widget) end,
-       {description = "volume down", group = "audio"}),
+       {description = "volume down -- Fn + F11", group = "audio"}),
     awful.key({ }, "XF86AudioMute", function () mute_volume(volume_widget) end,
-       {description = "mute volume", group = "audio"}),
+       {description = "toggle mute -- Fn + F10", group = "audio"}),
 
     -- Media control
     awful.key({ }, "XF86AudioNext", function () awful.spawn("mpc next") end,
-       {description = "next audio", group = "audio"}),
+       {description = "next audio -- Fn + Right", group = "audio"}),
     awful.key({ }, "XF86AudioPrev", function () awful.spawn("mpc prev") end,
-       {description = "previous audio", group = "audio"}),
+       {description = "previous audio -- Fn + Left", group = "audio"}),
     awful.key({ }, "XF86AudioStop", function () awful.spawn("mpc stop") end,
-       {description = "stop audio", group = "audio"}),
+       {description = "stop audio -- Fn + Up", group = "audio"}),
     awful.key({ }, "XF86AudioPlay", function () awful.spawn("mpc toggle") end,
-       {description = "play/pause audio", group = "audio"}),
+       {description = "play/pause audio -- Fn + Down", group = "audio"}),
 
     -- X backlight
     awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end,
-       {description = "increase backlight of screen", group = "screen"}),
+       {description = "increase backlight of screen (no use now) -- Fn + F6", group = "screen"}),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end,
-       {description = "decrease backlight of screen", group = "screen"}),
+       {description = "decrease backlight of screen (no use now) -- Fn + F5", group = "screen"}),
 
     -- Kbd backlight
     awful.key({ }, "XF86KbdBrightnessUp", function () awful.spawn("asus-kbd-backlight up") end,
-       {description = "increase backlight of keyboard", group = "keyboard"}),
+       {description = "increase backlight of keyboard -- Fn + F4", group = "keyboard"}),
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn("asus-kbd-backlight down") end,
-       {description = "decrease backlight of keyboard", group = "keyboard"}),
+       {description = "decrease backlight of keyboard -- Fn + F3", group = "keyboard"}),
 
     -- WebCam
     awful.key({ }, "XF86WebCam", function () awful.spawn("cheese") end,
-       {description = "webcam", group = "utils"}),
+       {description = "webcam -- Fn + v", group = "utils"}),
+
+    -- Calculator
+    awful.key({ }, "XF86Calculator", function () awful.spawn("gcalculator") end,
+       {description = "calculator", group = "utils"}),
+
+    -- Quick Launch
+    awful.key({ }, "XF86Launch6", function () awful.spawn("emacs") end,
+       {description = "quick launch 6 (start emacs) -- Fn + Space", group = "utils"}),
 
     -- Touchpad toggle
     awful.key({ }, "XF86TouchpadToggle", function () awful.spawn(home_path .. "bin/touchpad_toggle.sh") end,
-       {description = "toggle touchpad", group = "touchpad"}),
+       {description = "toggle touchpad -- Fn + F9", group = "touchpad"}),
 
     -- Transparency
     awful.key({ modkey }, "Next", function (c) awful.spawn("transset-df --actual --inc 0.1") end,
