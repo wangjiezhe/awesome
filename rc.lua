@@ -436,7 +436,7 @@ globalkeys = awful.util.table.join(
        {description = "webcam -- Fn + v", group = "utils"}),
 
     -- Calculator
-    awful.key({ }, "XF86Calculator", function () awful.spawn("gcalculator") end,
+    awful.key({ }, "XF86Calculator", function () awful.spawn("galculator") end,
        {description = "calculator", group = "utils"}),
 
     -- Quick Launch
