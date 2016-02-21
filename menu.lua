@@ -136,6 +136,7 @@ pamenu = {
    { "Volume Meter", "pavumeter" }
 }
 multimediamenu = {
+   { "FeelUOwn", "FeelUown" },
    { "KW Player", "kwplayer" },
    { "PulseAudio Control", pamenu },
    { "Ario", "ario" },
