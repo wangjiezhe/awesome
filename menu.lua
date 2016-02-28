@@ -38,6 +38,7 @@ networkmenu = {
    { "115 Pan", "115pan" },
    { "Filezilla", "filezilla" },
    { "Pidgin", "pidgin" },
+   { "WeChat", "electronic-wechat" },
    { "Linphone", "linphone" },
    { "Transmission", "transmission-gtk" },
    { "MEGASync", "megasync" }

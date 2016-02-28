@@ -681,7 +681,7 @@ awful.rules.rules = {
          class = {
             "Thunderbird",
             "Pidgin",
-            "QQ.exe",
+            "QQ.exe", "electronic-wechat",
             "Linphone", "Ekiga"
          }
     }, properties = { tag = tags[1][7], switchtotag = true }},
