@@ -665,7 +665,8 @@ awful.rules.rules = {
             "Cheese", "guvcview",
             "Steam", "supertux2", "mGBA", "bm2000.exe",
             "stellarium",
-            "Solfege", "TuxGuitar"
+            "Solfege", "TuxGuitar",
+            "Ardour-4.6.0"
          }
     }, properties = { tag = tags[1][5], switchtotag = true }},
 
