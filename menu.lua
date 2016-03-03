@@ -167,12 +167,16 @@ webcammenu = {
    { "Guvcview", "guvcview" },
    { "Cheese", "cheese" }
 }
+bridgemenu = {
+   { "Bridge Master 2000", "dex " .. home_path .. ".local/share/applications/'Bridge Master 2000.desktop'" },
+   { "Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" }
+}
 winemenu = {
    { "QQ", "env LC_ALL=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
    { "RHWUD", "env LC_ALL=en_us.utf8 WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
    { "CAJViewer", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
    { "SsReader", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" },
-   { "Bridge Master 2000", "wine " .. home_path .. "Documents/桥牌/bm2000/bm2000.exe" }
+   { "Bridge", bridgemenu }
 }
 gamemenu = {
    {"Supertux2", "supertux2"},

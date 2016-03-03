@@ -663,7 +663,7 @@ awful.rules.rules = {
             "Paman", "Pavucontrol", "Pavumeter",
             "Lenmus",
             "Cheese", "guvcview",
-            "Steam", "supertux2", "mGBA", "bm2000.exe",
+            "Steam", "supertux2", "mGBA", "bm2000.exe", "ltpb.exe",
             "stellarium",
             "Solfege", "TuxGuitar",
             "Ardour-4.6.0"
