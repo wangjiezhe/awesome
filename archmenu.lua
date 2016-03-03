@@ -10,6 +10,7 @@
      {"Qemu Launcher", "qemu-launcher"},
      {"Root Terminal", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
      {"Shutter", "shutter ", "/usr/share/icons/hicolor/16x16/apps/shutter.png" },
+     {"WizNote", "WizNote", "/usr/share/icons/hicolor/16x16/apps/wiznote.png" },
      {"Xchm", "xchm ", "/usr/share/pixmaps/xchm-48.png" },
      {"Zim Desktop Wiki", "zim ", "/usr/share/pixmaps/zim.png" },
      {"bpython", "xterm -e /usr/bin/bpython", "/usr/share/pixmaps/bpython.png" },
