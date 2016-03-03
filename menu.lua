@@ -86,6 +86,11 @@ webmenu = {
    { "Bluefish", "bluefish" },
    { "BlueGriffon", "bluegriffon" }
 }
+wikimenu = {
+   { "Zim", "zim" },
+   { "WizNote", "WizNote" },
+   { "MediaWiki", "xdg-open http://localhost/mediawiki/" }
+}
 editormenu = {
    { "Gvim", "gvim" },
    { "Emacs", "emacs" },
@@ -98,7 +103,8 @@ editormenu = {
    { "Android Studio", "android-studio" },
    { "PoEdit", "poedit" },
    { "Scribus", "scribus" },
-   { "OmegaT", "omegat" }
+   { "OmegaT", "omegat" },
+   { "Wiki & Note", wikimenu }
 }
 libreofficemenu = {
    { "Base", "lobase" },

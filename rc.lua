@@ -674,7 +674,8 @@ awful.rules.rules = {
          class = {
             "VirtualBox",
             "Zenmap", "Wireshark",
-            "Shutter"
+            "Shutter",
+            "WizNote", "Wiz"
          }
     }, properties = { tag = tags[1][6], switchtotag = true }},
 
