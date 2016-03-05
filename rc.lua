@@ -680,10 +680,13 @@ awful.rules.rules = {
     }, properties = { tag = tags[1][6], switchtotag = true }},
 
     { rule_any = {
+         name = {
+            "Electronic WeChat"
+         },
          class = {
             "Thunderbird",
             "Pidgin",
-            "QQ.exe", "electronic-wechat",
+            "QQ.exe",
             "Linphone", "Ekiga"
          }
     }, properties = { tag = tags[1][7], switchtotag = true }},
