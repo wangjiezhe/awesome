@@ -344,7 +344,7 @@ globalkeys = awful.util.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q",
+    awful.key({ modkey, "Control", "Shift" }, "q",
         function ()
             -- awful.spawn("killall sogou-qimpanel-watchdog")
             awesome.quit()
