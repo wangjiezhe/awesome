@@ -90,7 +90,7 @@
      {"Chromium", "chromium ", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
      {"ELinks", "xterm -e /usr/bin/elinks ", "/usr/share/icons/gnome/16x16/mimetypes/html.png" },
      {"Ekiga Softphone", "ekiga", "/usr/share/icons/hicolor/16x16/apps/ekiga.png" },
-     {"Electronic WeChat", "/usr/bin/electronic-wechat", "///usr/share/electronic-wechat/icon.png" },
+     {"Electronic WeChat", "/usr/bin/electronic-wechat", "///usr/share/electronic-wechat/assets/icon.png" },
      {"FileZilla", "filezilla", "/usr/share/icons/hicolor/16x16/apps/filezilla.png" },
      {"Firefox", "firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox.png" },
      {"Linphone", "linphone", "/usr/share/icons/hicolor/48x48/apps/linphone.png" },
