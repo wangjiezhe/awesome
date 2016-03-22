@@ -707,12 +707,14 @@ awful.rules.rules = {
     }, properties = { tag = tags[1][8], switchtotag = true }},
 
     { rule_any = {
+         name = {
+            "Wine"
+         },
          class = {
             "Transmission-gtk",
             "115pan",
             "Bcloud-gui",
-            "Seahorse",
-            "Wine"
+            "Seahorse"
          }
     }, properties = { tag = tags[1][9], switchtotag = true }},
 
