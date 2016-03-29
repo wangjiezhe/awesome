@@ -273,6 +273,8 @@ for s in screen do
             spacer,
             mytextclock,
             spacer,
+            battery_widget,
+            spacer,
             mylayoutbox[s],
         },
     }
