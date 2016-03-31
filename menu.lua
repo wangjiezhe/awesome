@@ -167,7 +167,8 @@ developmentmenu = {
 webtoolsmenu = {
    { "Zenmap", "zenmap" },
    { "Zenmap (as root)", "gksudo zenmap" },
-   { "Wireshark", "wireshark" }
+   { "Wireshark", "wireshark" },
+   { "Burp Suite", "burpsuite" }
 }
 webcammenu = {
    { "Guvcview", "guvcview" },

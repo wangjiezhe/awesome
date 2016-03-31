@@ -673,7 +673,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "VirtualBox",
-            "Zenmap", "Wireshark",
+            "Zenmap", "Wireshark", "burp-StartBurp",
             "Shutter",
             "WizNote", "Wiz"
          }
