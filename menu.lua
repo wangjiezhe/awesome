@@ -162,7 +162,8 @@ developmentmenu = {
    { "&Qt", qtmenu },
    { "&CMake", "cmake-gui" },
    -- { "&Astah", "astah" },
-   { "&Devhelp", "devhelp" }
+   { "&Devhelp", "devhelp" },
+   { "Heimdall &Frontend", "heimdall-frontend" }
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap" },

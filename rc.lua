@@ -676,7 +676,8 @@ awful.rules.rules = {
             "VirtualBox",
             "Zenmap", "Wireshark", "burp-StartBurp",
             "Shutter",
-            "WizNote", "Wiz"
+            "WizNote", "Wiz",
+            "heimdall-frontend"
          }
     }, properties = { tag = tags[screen[1]][6], switchtotag = true }},
 
