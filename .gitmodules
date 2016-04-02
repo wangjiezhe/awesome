@@ -4,3 +4,6 @@
 [submodule "net_widgets"]
 	path = net_widgets
 	url = https://github.com/plotnikovanton/net_widgets.git
+[submodule "pomodoro"]
+	path = pomodoro
+	url = https://github.com/nikolavp/awesome-pomodoro.git

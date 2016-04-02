@@ -186,6 +186,11 @@ net_wired = net_widgets.indicator({
     font="dejavu sans mono 8",
     })
 
+-- pomodoro widget
+local pomodoro = require("pomodoro")
+pomodoro.format = function (t) return "[<b>" .. t .. "</b>]" end
+pomodoro.init()
+
 -- bashets.start()
 
 -- Create a wibox for each screen and add it
@@ -272,6 +277,9 @@ for s in screen do
             volume_widget,
             spacer,
             mytextclock,
+            spacer,
+            pomodoro.icon_widget,
+            pomodoro.widget,
             spacer,
             battery_widget,
             spacer,
