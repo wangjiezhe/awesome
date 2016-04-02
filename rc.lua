@@ -659,7 +659,8 @@ awful.rules.rules = {
          class = {
             "Gimp", "Inkscape", "Gcolor2",
             "Geeqie",
-            "mpv", "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
+            "mpv",
+            "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
             "Paman", "Pavucontrol", "Pavumeter",
             "Lenmus",
             "Cheese", "guvcview",
