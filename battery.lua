@@ -13,20 +13,13 @@ local ac_adapter = "AC0"
 local bat_adapter = "BAT0"
 
 function show_battery (widget)
-   local function get_output (file)
-      local fd = io.open(file)
-      local ret = fd:read()
-      fd:close()
-      return ret
-   end
-
-   local ac = get_output("/sys/class/power_supply/" .. ac_adapter .. "/online")
-   -- local ful = get_output("/sys/class/power_supply/" .. bat_adapter .. "/energy_full")
-   -- local cur = get_output("/sys/class/power_supply/" .. bat_adapter .. "/energy_now")
-   local sta = get_output("/sys/class/power_supply/" .. bat_adapter .. "/status")
+   local ac = awful.spawn.pread("/sys/class/power_supply/" .. ac_adapter .. "/online")
+   -- local ful = awful.spawn.pread("/sys/class/power_supply/" .. bat_adapter .. "/energy_full")
+   -- local cur = awful.spawn.pread("/sys/class/power_supply/" .. bat_adapter .. "/energy_now")
+   local sta = awful.spawn.pread("/sys/class/power_supply/" .. bat_adapter .. "/status")
 
    -- local bat = math.floor(cur * 100 / ful)
-   local bat = get_output("/sys/class/power_supply/" .. bat_adapter .. "/capacity")
+   local bat = awful.spawn.pread("/sys/class/power_supply/" .. bat_adapter .. "/capacity")
    bat = tonumber(bat)
 
    if ac:match("0") then
