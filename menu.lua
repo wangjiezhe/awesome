@@ -205,9 +205,9 @@ othermenu = {
 }
 powermenu = {
    { "Shutdown", "shutdown now" },
-   { "&Power Off", "systemctl poweroff" },
-   { "&Reboot", "systemctl reboot" },
-   { "&Suspend", "systemctl suspend" },
+   { "Power Off", "systemctl poweroff" },
+   { "Reboot", "systemctl reboot" },
+   { "Suspend", "systemctl suspend" },
    { "Hibernate", "systemctl hibernate" },
    { "Hybrid Sleep", "systemctl hybrid-sleep" }
 }
@@ -226,7 +226,7 @@ mymainmenu = awful.menu({ items = {
                              { "&Games", gamemenu },
                              { "Other&s", othermenu },
                              { "Terminal", terminalmenu, beautiful.menu_terminal },
-                             { "&Power", powermenu }
+                             { "Power", powermenu }
                              }})
 
 -- Xdg_menu
