@@ -145,7 +145,7 @@ pamenu = {
 }
 multimediamenu = {
    { "&FeelUOwn", "FeelUOwn" },
-   { "&KW Player", "kwplayer" },
+   { "K&W Player", "kwplayer" },
    { "&PulseAudio Control", pamenu },
    { "&Ario", "ario" },
    { "&Gmpc", "gmpc" },
