@@ -121,9 +121,9 @@ end
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
-    for s in screen do
+    gears.screen.connect_for_each_screen(function(s)
         gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    end
+    end)
 end
 -- }}}
 
@@ -134,10 +134,10 @@ tag_t = {
     layouts = {}
 }
 tags = {}
-for s in screen do
+gears.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
-    tags[s] = awful.tag(tag_t.names, s, awful.layout.layouts[2])
-end
+    tags[s] = awful.tag(tag_t.names, s, awful.layout.layouts[1])
+end)
 -- }}}
 
 -- {{{ Autostart
@@ -233,7 +233,7 @@ mytasklist.buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
-for s in screen do
+gears.screen.connect_for_each_screen(function(s)
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
@@ -245,7 +245,6 @@ for s in screen do
                            awful.button({ }, 4, function () awful.layout.inc( 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
-    -- mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.noempty, mytaglist.buttons)
 
     -- Create a tasklist widget
@@ -286,7 +285,7 @@ for s in screen do
             mylayoutbox[s],
         },
     }
-end
+end)
 -- }}}
 
 -- {{{ Mouse bindings
@@ -536,7 +535,7 @@ for i = 1, 9 do
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"})
-        -- Toggle tag.
+        -- Toggle tag on focused client.
 --        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
 --                  function ()
 --                      if client.focus then
@@ -616,7 +615,7 @@ awful.rules.rules = {
             "Lxterminal",
             "Roxterm"
          }
-    }, properties = { tag = tags[1], switchtotag = true }},
+    }, properties = { tag = tags[screen.primary][1], switchtotag = true }},
 
     { rule_any = {
          class = {
