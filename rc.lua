@@ -98,9 +98,9 @@ awful.layout.layouts = {
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+    awful.layout.suit.corner.ne,
+    awful.layout.suit.corner.sw,
+    awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -436,7 +436,7 @@ globalkeys = awful.util.table.join(
        {description = "decrease backlight of keyboard -- Fn + F3", group = "keyboard"}),
 
     -- WebCam
-    awful.key({ }, "XF86WebCam", function () awful.spawn("cheese") end,
+    awful.key({ }, "XF86WebCam", function () awful.spawn("guvcview") end,
        {description = "webcam -- Fn + v", group = "utils"}),
 
     -- Calculator
