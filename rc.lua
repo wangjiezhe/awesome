@@ -651,7 +651,7 @@ awful.rules.rules = {
             "Gummi", "TexMaker", "TeXstudio", "Lyx",
             "Gracket", "DrRacket",
             "Poedit",
-            "Java", "Eclipse", "jetbrains-studio",
+            "Java", "Eclipse", "jetbrains-studio", "jetbrains-idea",
             "jetbrains-pycharm", "Spyder", "Dreampie",
             "Astah",
             "assistant", "Assistant-qt4", "assistant-qt5", "Designer", "Designer-qt4",

@@ -100,6 +100,7 @@ editormenu = {
    { "&Scheme", schememenu },
    { "&Web", webmenu },
    { "&Eclipse", "eclipse" },
+   { "&IntelliJ IDEA", "intellij-idea-ultimate-edition" },
    { "&Android Studio", "android-studio" },
    { "&PoEdit", "poedit" },
    { "Scribus", "scribus" },
