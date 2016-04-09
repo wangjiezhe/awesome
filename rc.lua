@@ -84,24 +84,24 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
-awful.layout.layouts = {
-    awful.layout.suit.magnifier,
-    awful.layout.suit.floating,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.sw,
-    awful.layout.suit.corner.se,
-}
+-- awful.layout.layouts = {
+--     awful.layout.suit.magnifier,
+--     awful.layout.suit.floating,
+--     awful.layout.suit.max,
+--     awful.layout.suit.max.fullscreen,
+--     awful.layout.suit.tile,
+--     awful.layout.suit.tile.left,
+--     awful.layout.suit.tile.bottom,
+--     awful.layout.suit.tile.top,
+--     awful.layout.suit.fair,
+--     awful.layout.suit.fair.horizontal,
+--     awful.layout.suit.spiral,
+--     awful.layout.suit.spiral.dwindle,
+--     awful.layout.suit.corner.nw,
+--     awful.layout.suit.corner.ne,
+--     awful.layout.suit.corner.sw,
+--     awful.layout.suit.corner.se,
+-- }
 -- }}}
 
 -- {{{ Helper functions
@@ -603,7 +603,8 @@ awful.rules.rules = {
             "URxvt",
             "Gvim",
             "Lxterminal",
-            "Roxterm"
+            "Roxterm",
+            "Emacs"
          }
     }, properties = { maximized = true }},
 
@@ -658,6 +659,7 @@ awful.rules.rules = {
             "cmake-gui",
             "Bluefish", "Bluegriffon",
             "Scribus",
+            "Aegisub-3.2",
             "OmegaT"
          }
     }, properties = { tag = tags[screen[1]][4], switchtotag = true }},
