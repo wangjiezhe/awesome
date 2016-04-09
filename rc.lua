@@ -121,7 +121,7 @@ end
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
-    gears.screen.connect_for_each_screen(function(s)
+    awful.screen.connect_for_each_screen(function(s)
         gears.wallpaper.maximized(beautiful.wallpaper, s, true)
     end)
 end
@@ -134,7 +134,7 @@ tag_t = {
     layouts = {}
 }
 tags = {}
-gears.screen.connect_for_each_screen(function(s)
+awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     tags[s] = awful.tag(tag_t.names, s, awful.layout.layouts[1])
 end)
@@ -233,7 +233,7 @@ mytasklist.buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
-gears.screen.connect_for_each_screen(function(s)
+awful.screen.connect_for_each_screen(function(s)
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
