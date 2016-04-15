@@ -652,6 +652,7 @@ awful.rules.rules = {
             "Gracket", "DrRacket",
             "Poedit",
             "Java", "Eclipse", "jetbrains-studio", "jetbrains-idea",
+            "com.oracle.javafx.scenebuilder.app.SceneBuilderApp",
             "jetbrains-pycharm", "Spyder", "Dreampie",
             "Astah",
             "assistant", "Assistant-qt4", "assistant-qt5", "Designer", "Designer-qt4",
