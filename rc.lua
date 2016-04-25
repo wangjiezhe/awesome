@@ -640,7 +640,8 @@ awful.rules.rules = {
 
     { rule_any = {
          instance = {
-            "libreoffice"
+            "libreoffice",
+            "sun-awt-X11-XFramePeer"
          },
          name = {
             "LibreOffice"
@@ -656,7 +657,6 @@ awful.rules.rules = {
             "jetbrains-pycharm", "Spyder", "Dreampie",
             "Astah",
             "assistant", "Assistant-qt4", "assistant-qt5", "Designer", "Designer-qt4",
-            "fontforge",
             "cmake-gui",
             "Bluefish", "Bluegriffon",
             "Scribus",
