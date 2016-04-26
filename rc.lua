@@ -608,9 +608,9 @@ awful.rules.rules = {
     }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    -- { rule_any = {type = { "normal", "dialog" }
-    --   }, properties = { titlebars_enabled = true }
-    -- },
+    { rule_any = {type = { "normal", "dialog" }
+      }, properties = { titlebars_enabled = true }
+    },
 
     -- Maximized clients.
     { rule_any = {
@@ -805,6 +805,8 @@ client.connect_signal("request::titlebars", function(c)
             },
             layout = wibox.layout.align.horizontal
         }
+
+        awful.titlebar.hide(c)
 end)
 
 -- Enable sloppy focus
