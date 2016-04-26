@@ -631,7 +631,7 @@ awful.rules.rules = {
             "Lxterminal",
             "Roxterm"
          }
-    }, properties = { screen = 1, tag = "|1.Term", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[1], switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -639,7 +639,7 @@ awful.rules.rules = {
             "chromium",
             "yandex-browser-beta"
          }
-    }, properties = { screen = 1, tag = "|2.WWW", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[2], switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -651,7 +651,7 @@ awful.rules.rules = {
             "SsReader.exe",
             "RHUD30.EXE"
          }
-    }, properties = { screen = 1, tag = "|3.Files", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[3], switchtotag = true }},
 
     { rule_any = {
          instance = {
@@ -678,7 +678,7 @@ awful.rules.rules = {
             "Aegisub-3.2",
             "OmegaT"
          }
-    }, properties = { screen = 1, tag = "|4.Edit", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -693,7 +693,7 @@ awful.rules.rules = {
             "Solfege", "TuxGuitar",
             "Ardour-4.6.0"
          }
-    }, properties = { screen = 1, tag = "|5.Entertainment", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[5], switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -703,7 +703,7 @@ awful.rules.rules = {
             "WizNote", "Wiz",
             "heimdall-frontend"
          }
-    }, properties = { screen = 1, tag = "|6.Wiki", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -715,7 +715,7 @@ awful.rules.rules = {
             "QQ.exe",
             "Linphone", "Ekiga"
          }
-    }, properties = { screen = 1, tag = "|7.Mail", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -730,7 +730,7 @@ awful.rules.rules = {
          class = {
 
          }
-    }, properties = { screen = 1, tag = "|8.Math", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[8], switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -742,7 +742,7 @@ awful.rules.rules = {
             "Bcloud-gui",
             "Seahorse"
          }
-    }, properties = { screen = 1, tag = "|9.Others", switchtotag = true }},
+    }, properties = { screen = 1, tag = tag_t.names[9], switchtotag = true }},
 
     -- Semi transparent clients.
     { rule = { class = "URxvt" },
