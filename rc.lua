@@ -7,7 +7,6 @@ local socket = require("socket")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
-awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
@@ -199,12 +198,20 @@ mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
-                    awful.button({ }, 1, awful.tag.viewonly),
-                    awful.button({ modkey }, 1, awful.client.movetotag),
+                    awful.button({ }, 1, function(t) t:view_only() end),
+                    awful.button({ modkey }, 1, function(t)
+                                              if client.focus then
+                                                  client.focus:move_to_tag(t)
+                                              end
+                                          end),
                     awful.button({ }, 3, awful.tag.viewtoggle),
-                    awful.button({ modkey }, 3, awful.client.toggletag),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
+                    awful.button({ modkey }, 3, function(t)
+                                              if client.focus then
+                                                  client.focus:toggle_tag(t)
+                                              end
+                                          end),
+                    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+                    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
 mytasklist = {}
@@ -216,8 +223,8 @@ mytasklist.buttons = awful.util.table.join(
                                                   -- Without this, the following
                                                   -- :isvisible() makes no sense
                                                   c.minimized = false
-                                                  if not c:isvisible() then
-                                                      awful.tag.viewonly(c.first_tag)
+                                                  if not c:isvisible() and c.first_tag then
+                                                      c.first_tag:view_only()
                                                   end
                                                   -- This will also un-minimize
                                                   -- the client, if needed
@@ -475,7 +482,7 @@ clientkeys = awful.util.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ,
+    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
@@ -508,9 +515,9 @@ for i = 1, 9 do
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
                         local screen = awful.screen.focused()
-                        local tag = awful.tag.gettags(screen)[i]
+                        local tag = screen.tags[i]
                         if tag then
-                           awful.tag.viewonly(tag)
+                           tag:view_only()
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
@@ -518,7 +525,7 @@ for i = 1, 9 do
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
                       local screen = awful.screen.focused()
-                      local tag = awful.tag.gettags(screen)[i]
+                      local tag = screen.tags[i]
                       if tag then
                          awful.tag.viewtoggle(tag)
                       end
@@ -528,24 +535,24 @@ for i = 1, 9 do
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          local tag = awful.tag.gettags(client.focus.screen)[i]
+                          local tag = client.focus.screen.tags[i]
                           if tag then
-                              awful.client.movetotag(tag)
+                              client.focus:move_to_tag(tag)
                           end
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"})
         -- Toggle tag on focused client.
---        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
---                  function ()
---                      if client.focus then
---                          local tag = awful.tag.gettags(client.focus.screen)[i]
---                          if tag then
---                              awful.client.toggletag(tag)
---                          end
---                      end
---                  end,
---                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+        -- awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+        --           function ()
+        --               if client.focus then
+        --                   local tag = client.focus.screen.tags[i]
+        --                   if tag then
+        --                       client.focus:toggle_tag(tag)
+        --                   end
+        --               end
+        --           end,
+        --           {description = "toggle focused client on tag #" .. i, group = "tag"})
     )
 end
 
@@ -568,25 +575,28 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
+                     buttons = clientbuttons,
+                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+     }
+    },
 
     -- Floating clients.
     { rule_any = {
         instance = {
           "DTA",  -- Firefox addon DownThemAll.
-          -- "copyq",  -- Includes session name in class.
+          "copyq",  -- Includes session name in class.
         },
         class = {
-           "feh"
-          -- "Arandr",
-          -- "Gpick",
-          -- "Kruler",
-          -- "MessageWin",  -- kalarm.
-          -- "Sxiv",
-          -- "Wpa_gui",
-          -- "pinentry",
-          -- "veromix",
-          -- "xtightvncviewer"
+          "feh",
+          "Arandr",
+          "Gpick",
+          "Kruler",
+          "MessageWin",  -- kalarm.
+          "Sxiv",
+          "Wpa_gui",
+          "pinentry",
+          "veromix",
+          "xtightvncviewer"
         },
         name = {
           "Event Tester",  -- xev.
@@ -597,14 +607,19 @@ awful.rules.rules = {
         }
     }, properties = { floating = true }},
 
+    -- Add titlebars to normal clients and dialogs
+    -- { rule_any = {type = { "normal", "dialog" }
+    --   }, properties = { titlebars_enabled = true }
+    -- },
+
     -- Maximized clients.
     { rule_any = {
          class = {
             "URxvt",
             "Gvim",
+            -- "Emacs",
             "Lxterminal",
-            "Roxterm",
-            "Emacs"
+            "Roxterm"
          }
     }, properties = { maximized = true }},
 
@@ -616,7 +631,7 @@ awful.rules.rules = {
             "Lxterminal",
             "Roxterm"
          }
-    }, properties = { tag = tags[screen.primary][1], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|1.Term", switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -624,7 +639,7 @@ awful.rules.rules = {
             "chromium",
             "yandex-browser-beta"
          }
-    }, properties = { tag = tags[screen[1]][2], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|2.WWW", switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -636,7 +651,7 @@ awful.rules.rules = {
             "SsReader.exe",
             "RHUD30.EXE"
          }
-    }, properties = { tag = tags[screen[1]][3], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|3.Files", switchtotag = true }},
 
     { rule_any = {
          instance = {
@@ -663,12 +678,11 @@ awful.rules.rules = {
             "Aegisub-3.2",
             "OmegaT"
          }
-    }, properties = { tag = tags[screen[1]][4], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|4.Edit", switchtotag = true }},
 
     { rule_any = {
          class = {
             "Gimp", "Inkscape", "Gcolor2",
-            "Geeqie",
             "mpv",
             "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
             "Paman", "Pavucontrol", "Pavumeter",
@@ -679,7 +693,7 @@ awful.rules.rules = {
             "Solfege", "TuxGuitar",
             "Ardour-4.6.0"
          }
-    }, properties = { tag = tags[screen[1]][5], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|5.Entertainment", switchtotag = true }},
 
     { rule_any = {
          class = {
@@ -689,7 +703,7 @@ awful.rules.rules = {
             "WizNote", "Wiz",
             "heimdall-frontend"
          }
-    }, properties = { tag = tags[screen[1]][6], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|6.Wiki", switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -701,7 +715,7 @@ awful.rules.rules = {
             "QQ.exe",
             "Linphone", "Ekiga"
          }
-    }, properties = { tag = tags[screen[1]][7], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|7.Mail", switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -716,7 +730,7 @@ awful.rules.rules = {
          class = {
 
          }
-    }, properties = { tag = tags[screen[1]][8], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|8.Math", switchtotag = true }},
 
     { rule_any = {
          name = {
@@ -728,7 +742,7 @@ awful.rules.rules = {
             "Bcloud-gui",
             "Seahorse"
          }
-    }, properties = { tag = tags[screen[1]][9], switchtotag = true }},
+    }, properties = { screen = 1, tag = "|9.Others", switchtotag = true }},
 
     -- Semi transparent clients.
     { rule = { class = "URxvt" },
@@ -739,23 +753,20 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
-    if not awesome.startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
-        -- awful.client.setslave(c)
+    -- if not awesome.startup then awful.client.setslave(c) end
 
-        -- Put windows in a smart way, only if they do not set an initial position.
-        if not c.size_hints.user_position and not c.size_hints.program_position then
-            awful.placement.no_overlap(c)
-            awful.placement.no_offscreen(c)
-        end
-    elseif not c.size_hints.user_position and not c.size_hints.program_position then
+    if awesome.startup and
+      not c.size_hints.user_position
+      and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+end)
 
-    local titlebars_enabled = false
-    if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
+-- Add a titlebar if titlebars_enabled is set to true in the rules.
+client.connect_signal("request::titlebars", function(c)
         -- buttons for the titlebar
         local buttons = awful.util.table.join(
             awful.button({ }, 1, function()
@@ -794,7 +805,6 @@ client.connect_signal("manage", function (c)
             },
             layout = wibox.layout.align.horizontal
         }
-    end
 end)
 
 -- Enable sloppy focus
