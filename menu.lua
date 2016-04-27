@@ -93,7 +93,7 @@ wikimenu = {
 }
 editormenu = {
    { "G&vim", "gvim" },
-   { "Emacs", "emacs" },
+   { "Emacs", "env LC_CTYPE=zh_CN.utf8 emacs" },
    { "Emacs (client)", "emacsclient -c" },
    { "&LaTeX", latexmenu },
    { "&Python", pythonmenu },

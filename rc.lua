@@ -451,7 +451,7 @@ globalkeys = awful.util.table.join(
        {description = "calculator", group = "utils"}),
 
     -- Quick Launch
-    awful.key({ }, "XF86Launch6", function () awful.spawn("emacs") end,
+    awful.key({ }, "XF86Launch6", function () awful.spawn("env LC_CTYPE=zh_CN.utf8 emacs") end,
        {description = "quick launch 6 (start emacs) -- Fn + Space", group = "utils"}),
 
     -- Touchpad toggle
