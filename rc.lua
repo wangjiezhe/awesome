@@ -118,27 +118,6 @@ local function client_menu_toggle_fn()
 end
 -- }}}
 
--- {{{ Wallpaper
-if beautiful.wallpaper then
-    awful.screen.connect_for_each_screen(function(s)
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    end)
-end
--- }}}
-
--- {{{ Tags
--- Define a tag table which hold all screen tags.
-tag_t = {
-    names = { '|1.Term', '|2.WWW', '|3.Files', '|4.Edit', '|5.Entertainment', '|6.Wiki', '|7.Mail', '|8.Math', '|9.Others' },
-    layouts = {}
-}
-tags = {}
-awful.screen.connect_for_each_screen(function(s)
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag(tag_t.names, s, awful.layout.layouts[1])
-end)
--- }}}
-
 -- {{{ Autostart
 -- awful.spawn_with_shell(terminal)
 -- }}}
@@ -240,7 +219,25 @@ mytasklist.buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
+tag_t = {
+    names = { '|1.Term', '|2.WWW', '|3.Files', '|4.Edit', '|5.Entertainment', '|6.Wiki', '|7.Mail', '|8.Math', '|9.Others' },
+    layouts = {}
+}
+
 awful.screen.connect_for_each_screen(function(s)
+    -- Wallpaper
+    if beautiful.wallpaper then
+        local wallpaper = beautiful.wallpaper
+        -- If wallpaper is a function, call it with the screen
+        if type(wallpaper) == "function" then
+            wallpaper = wallpaper(s)
+        end
+        gears.wallpaper.maximized(wallpaper, s, true)
+    end
+
+    -- Each screen has its own tag table.
+    awful.tag(tag_t.names, s, awful.layout.layouts[1])
+
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
