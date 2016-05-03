@@ -40,6 +40,7 @@ networkmenu = {
    { "&Pidgin", "pidgin" },
    { "&WeChat", "electronic-wechat" },
    { "&Linphone", "linphone" },
+   { "&Slack", "scudcloud" },
    { "Transmission", "transmission-gtk" },
    { "&MEGASync", "megasync" }
 }

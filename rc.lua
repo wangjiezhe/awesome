@@ -704,7 +704,7 @@ awful.rules.rules = {
 
     { rule_any = {
          name = {
-            "Electronic WeChat"
+            "Electronic WeChat" , "^ScudCloud$"
          },
          class = {
             "Thunderbird",
