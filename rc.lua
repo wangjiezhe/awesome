@@ -710,6 +710,7 @@ awful.rules.rules = {
             "Thunderbird",
             "Pidgin",
             "QQ.exe",
+            "Hexchat",
             "Linphone", "Ekiga"
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
