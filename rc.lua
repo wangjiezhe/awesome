@@ -129,7 +129,7 @@ local menu = require("menu")
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
+app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -710,7 +710,7 @@ awful.rules.rules = {
             "Thunderbird",
             "Pidgin",
             "QQ.exe",
-            "Hexchat",
+            -- "Hexchat",
             "Linphone", "Ekiga"
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
