@@ -207,9 +207,9 @@ othermenu = {
    { "&Stellarium", "stellarium" }
 }
 powermenu = {
-   { "Shutdown", "shutdown now" },
-   { "Power Off", "systemctl poweroff" },
-   { "Reboot", "systemctl reboot" },
+   { "Shutdown", "zenity --question --title 'Shutdown' --text 'Are you sure to <b>shutdown</b>?' --default-cancel && shutdown now" },
+   { "Power Off", "zenity --question --title 'Power Off' --text 'Are you sure to <b>power off</b>?' --default-cancel && poweroff" },
+   { "Reboot", "zenity --question --title 'Reboot' --text 'Are you sure to <b>reboot</b>?' --default-cancel && reboot" },
    { "Suspend", "systemctl suspend" },
    { "Hibernate", "systemctl hibernate" },
    { "Hybrid Sleep", "systemctl hybrid-sleep" }
