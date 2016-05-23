@@ -30,20 +30,20 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 networkmenu = {
-   { "&Chromium", "chromium" },
-   { "&Firefox", "firefox" },
-   { "&Yandex Browser", "yandex-browser-beta" },
-   { "&Thunderbird", "thunderbird" },
-   { "&Baidu Cloud", "bcloud-gui" },
-   { "115 Pan", "115pan" },
-   { "File&zilla", "filezilla" },
-   { "&Pidgin", "pidgin" },
-   { "&WeChat", "electronic-wechat" },
-   { "&Linphone", "linphone" },
-   { "He&xchat", "hexchat" },
-   { "&Slack", "scudcloud" },
-   { "Transmission", "transmission-gtk" },
-   { "&MEGASync", "megasync" }
+   { "&Chromium", "chromium", "/usr/share/icons/hicolor/32x32/apps/chromium.png" },
+   { "&Firefox", "firefox", "/usr/share/icons/hicolor/32x32/apps/firefox.png" },
+   { "&Yandex Browser", "yandex-browser-beta", "/usr/share/icons/hicolor/32x32/apps/yandex-browser-beta.png" },
+   { "&Thunderbird", "thunderbird", "/usr/share/icons/hicolor/32x32/apps/thunderbird.png" },
+   { "&Baidu Cloud", "bcloud-gui", "/usr/share/icons/hicolor/32x32/apps/bcloud.png" },
+   { "115 Pan", "115pan", "/usr/share/pixmaps/115pan.png" },
+   { "File&zilla", "filezilla", "/usr/share/icons/hicolor/32x32/apps/filezilla.png" },
+   { "&Pidgin", "pidgin", "/usr/share/icons/hicolor/32x32/apps/pidgin.png" },
+   { "&WeChat", "electronic-wechat", "/usr/share/electronic-wechat/assets/icon.png" },
+   { "&Linphone", "linphone", "/usr/share/icons/hicolor/48x48/apps/linphone.png" },
+   { "He&xchat", "hexchat", "/usr/share/icons/hicolor/48x48/apps/hexchat.png" },
+   { "&Slack", "scudcloud", "/usr/share/pixmaps/scudcloud.png" },
+   { "Transmission", "transmission-gtk", "/usr/share/icons/hicolor/32x32/apps/transmission.png" },
+   { "&MEGASync", "megasync", "/usr/share/icons/hicolor/32x32/apps/mega.png" }
 }
 -- filemenu = {
 --    { "&PCManFM", "pcmanfm" },
@@ -217,7 +217,7 @@ powermenu = {
 mymainmenu = awful.menu({ items = {
                              { "awesome", myawesomemenu, beautiful.awesome_icon },
                              { "&Network", networkmenu },
-                             { "&Files", "pcmanfm" },
+                             { "&Files", "pcmanfm", "/usr/share/icons/gnome/32x32/places/gtk-directory.png" },
                              { "M&ath", mathmenu },
                              { "&Editor", editormenu },
                              { "&Office", officemenu },
