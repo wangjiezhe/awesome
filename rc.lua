@@ -641,6 +641,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "Pcmanfm",
+            "Shotwell",
             "File-roller",
             "Filezilla",
             "Bleachbit",
@@ -679,13 +680,13 @@ awful.rules.rules = {
 
     { rule_any = {
          class = {
-            "Gimp", "Inkscape", "Gcolor2",
+            "Gimp", "Inkscape", "Gcolor2", "Blender",
             "mpv",
             "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
             "Paman", "Pavucontrol", "Pavumeter",
             "Lenmus",
             "Cheese", "guvcview",
-            "Steam", "supertux2", "mGBA", "bm2000.exe", "ltpb.exe",
+            "Steam", "supertux2", "mGBA", "bm2000.exe", "ltpb.exe", "Fceux", "Hiro",
             "stellarium",
             "Solfege", "TuxGuitar",
             "Ardour-4.6.0"

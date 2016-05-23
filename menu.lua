@@ -138,7 +138,9 @@ terminalmenu = {
 graphicmenu = {
    { "&GIMP", "gimp" },
    { "&Inkscape", "inkscape" },
+   { "&Blender", "blender" },
    { "Gee&qie", "geeqie" },
+   { "&Shotwell", "shotwell" },
    { "Gcolor2", "gcolor2" }
 }
 pamenu = {
@@ -190,9 +192,11 @@ winemenu = {
    { "&Bridge", bridgemenu }
 }
 gamemenu = {
-   {"Super&tux2", "supertux2"},
-   {"&mGBA", "mgba-qt" },
-   {"&Steam", "steam" }
+   { "Super&tux2", "supertux2"},
+   { "&mGBA", "mgba-qt" },
+   { "&Fceux", "fceux" },
+   { "Hi&gan", "higan" },
+   { "&Steam", "steam" }
 }
 othermenu = {
    { "Shutter", "shutter" },
