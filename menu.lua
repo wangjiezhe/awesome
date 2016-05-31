@@ -139,6 +139,7 @@ graphicmenu = {
    { "&GIMP", "gimp" },
    { "&Inkscape", "inkscape" },
    { "&Blender", "blender" },
+   { "&Darktable", "optirun darktable" },
    { "Gee&qie", "geeqie" },
    { "&Shotwell", "shotwell" },
    { "Gcolor2", "gcolor2" }
