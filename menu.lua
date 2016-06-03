@@ -138,6 +138,7 @@ terminalmenu = {
 graphicmenu = {
    { "&GIMP", "gimp" },
    { "&Inkscape", "inkscape" },
+   { "K&rita", "krita" },
    { "&Blender", "blender" },
    { "&Darktable", "optirun darktable" },
    { "Gee&qie", "geeqie" },

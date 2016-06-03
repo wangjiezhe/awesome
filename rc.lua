@@ -680,7 +680,7 @@ awful.rules.rules = {
 
     { rule_any = {
          class = {
-            "Gimp", "Inkscape", "Gcolor2", "Blender", "Darktable",
+            "Gimp", "Inkscape", "Gcolor2", "Blender", "Darktable", "krita",
             "mpv",
             "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
             "Paman", "Pavucontrol", "Pavumeter",
