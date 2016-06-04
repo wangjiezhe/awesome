@@ -95,8 +95,7 @@ wikimenu = {
 }
 editormenu = {
    { "G&vim", "gvim" },
-   { "Emacs", "env LC_CTYPE=zh_CN.utf8 emacs" },
-   { "Emacs (client)", "emacsclient -c" },
+   { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs" },
    { "&LaTeX", latexmenu },
    { "&Python", pythonmenu },
    { "&Scheme", schememenu },
@@ -110,12 +109,12 @@ editormenu = {
    { "&Wiki & Note", wikimenu }
 }
 libreofficemenu = {
-   { "&Base", "lobase" },
-   { "&Writer", "lowriter" },
-   { "&Calc", "localc" },
-   { "&Impress", "loimpress" },
-   { "&Draw", "lodraw" },
-   { "&Math", "lomath" }
+   { "&Base", "env LANG=zh_CN.UTF8 lobase" },
+   { "&Writer", "env LANG=zh_CN.UTF8 lowriter" },
+   { "&Calc", "env LANG=zh_CN.UTF8 localc" },
+   { "&Impress", "env LANG=zh_CN.UTF8 loimpress" },
+   { "&Draw", "env LANG=zh_CN.UTF8 lodraw" },
+   { "&Math", "env LANG=zh_CN.UTF8 lomath" }
 }
 wpsmenu = {
    { "&Writer", "wps" },
@@ -136,8 +135,8 @@ terminalmenu = {
    { "Lxterminal", "lxterminal" }
 }
 graphicmenu = {
-   { "&GIMP", "gimp" },
-   { "&Inkscape", "inkscape" },
+   { "&GIMP", "env LANG=zh_CN.UTF8 gimp" },
+   { "&Inkscape", "env LANG=zh_CN.UTF8 inkscape" },
    { "K&rita", "krita" },
    { "&Blender", "blender" },
    { "&Darktable", "optirun darktable" },
@@ -187,10 +186,10 @@ bridgemenu = {
    { "&Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" }
 }
 winemenu = {
-   { "&QQ", "env LC_ALL=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
-   { "&RHWUD", "env LC_ALL=en_us.utf8 WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
-   { "&CAJViewer", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
-   { "&SsReader", "env LC_ALL=zh_CN.utf8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" },
+   { "&QQ", "env LANG=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
+   { "&RHWUD", "WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
+   { "&CAJViewer", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
+   { "&SsReader", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" },
    { "&Bridge", bridgemenu }
 }
 gamemenu = {
