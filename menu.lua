@@ -143,7 +143,7 @@ graphicmenu = {
    { "&Darktable", "optirun darktable" },
    { "Gee&qie", "geeqie" },
    { "&Shotwell", "shotwell" },
-   { "Gcolor2", "gcolor2" }
+   { "G&color2", "gcolor2" }
 }
 pamenu = {
    { "&PulseAudio Manager", "paman" },
