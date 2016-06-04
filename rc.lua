@@ -739,7 +739,8 @@ awful.rules.rules = {
             "Transmission-gtk",
             "115pan",
             "Bcloud-gui",
-            "Seahorse"
+            "Seahorse",
+            "Blueman"
          }
     }, properties = { screen = 1, tag = tag_t.names[9], switchtotag = true }},
 
