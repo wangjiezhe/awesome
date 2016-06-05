@@ -62,7 +62,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 local theme = dofile(awful.util.get_themes_dir() .. "default/theme.lua")
-theme.font = "dejavu sans mono 8"
+-- theme.font = "dejavu sans mono 8"
 theme.menu_height = 20
 theme.menu_width = 170
 theme.wallpaper = "/usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
@@ -220,7 +220,7 @@ mytasklist.buttons = awful.util.table.join(
                                           end))
 
 tag_t = {
-    names = { '|1.Term', '|2.WWW', '|3.Files', '|4.Edit', '|5.Entertainment', '|6.Wiki', '|7.Mail', '|8.Math', '|9.Others' },
+    names = { '|1.TERM', '|2.WWW', '|3.FILES', '|4.EDIT', '|5.ENTERTAINMENT', '|6.WIKI', '|7.MAIL', '|8.MATH', '|9.OTHERS' },
     layouts = {}
 }
 

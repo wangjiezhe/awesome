@@ -212,7 +212,7 @@ othermenu = {
    { "&Stellarium", "stellarium" }
 }
 powermenu = {
-   { "Shutdown", "shutdown now" },
+   { "Shutdown", "shutdown -P now" },
    { "Power Off", "systemctl poweroff" },
    { "Reboot", "systemctl reboot" },
    { "Suspend", "systemctl suspend" },
