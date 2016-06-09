@@ -194,6 +194,7 @@ winemenu = {
 }
 gamemenu = {
    { "Super&tux2", "supertux2"},
+   { "OpenRA", "openra" },
    { "&mGBA", "mgba-qt" },
    { "&Fceux", "fceux" },
    { "Hi&gan", "higan" },
