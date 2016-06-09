@@ -167,6 +167,7 @@ qtmenu = {
 developmentmenu = {
    { "&Qt", qtmenu },
    { "&CMake", "cmake-gui" },
+   { "&Genymotion", "genymotion" },
    -- { "&Astah", "astah" },
    { "&Devhelp", "devhelp" },
    { "Heimdall &Frontend", "heimdall-frontend" }
@@ -194,7 +195,7 @@ winemenu = {
 }
 gamemenu = {
    { "Super&tux2", "supertux2"},
-   { "OpenRA", "openra" },
+   { "&OpenRA", "openra" },
    { "&mGBA", "mgba-qt" },
    { "&Fceux", "fceux" },
    { "Hi&gan", "higan" },
