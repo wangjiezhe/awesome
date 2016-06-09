@@ -59,6 +59,7 @@
  local menu251bd8143891238ecedc306508e29017 = {
      {"Dosbox", "dosbox", "/usr/share/pixmaps/dosbox.png" },
      {"Fceux", "/usr/bin/fceux", "///usr/share/pixmaps/fceux.png" },
+     {"OpenRA", "openra", "/usr/share/icons/hicolor/16x16/apps/openra.png" },
      {"PlayOnLinux", "playonlinux", "///usr/share/playonlinux/etc/playonlinux.png" },
      {"Steam", "/usr/bin/steam ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
      {"SuperTux 2", "supertux2", "/usr/share/pixmaps/supertux.png" },
@@ -69,6 +70,7 @@
 
  local menud334dfcea59127bedfcdbe0a3ee7f494 = {
      {"Blender", "blender ", "/usr/share/icons/hicolor/16x16/apps/blender.png" },
+     {"Darktable", "darktable ", "/usr/share/icons/hicolor/16x16/apps/darktable.png" },
      {"Dia Diagram Editor", "dia ", "/usr/share/icons/hicolor/16x16/apps/dia.png" },
      {"DjView4", "djview4 ", "/usr/share/icons/hicolor/32x32/mimetypes/djvulibre-djview4.png" },
      {"Document Viewer", "evince ", "/usr/share/icons/hicolor/16x16/apps/evince.png" },
@@ -79,11 +81,12 @@
      {"Gcolor2", "gcolor2", "///usr/share/pixmaps/gcolor2/icon.png" },
      {"Geeqie", "geeqie -r ", "/usr/share/pixmaps/geeqie.png" },
      {"Inkscape", "inkscape ", "/usr/share/icons/hicolor/16x16/apps/inkscape.png" },
+     {"Krita", "krita ", "/usr/share/icons/hicolor/16x16/apps/calligrakrita.png" },
      {"LRF Viewer", "lrfviewer ", "/usr/share/icons/hicolor/16x16/apps/calibre-viewer.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
      {"MComix", "mcomix ", "/usr/share/icons/hicolor/16x16/apps/mcomix.png" },
      {"Scribus", "scribus ", "/usr/share/icons/hicolor/32x32/apps/scribus.png" },
-     {"Shotwell", "shotwell ", "/usr/share/icons/hicolor/16x16/apps/shotwell.svg" },
+     {"Shotwell", "shotwell ", "/usr/share/icons/hicolor/16x16/apps/shotwell.png" },
      {"Slideshow", "/usr/bin/slideshow", "///usr/share/racket/slideshow-exe-icon.ico" },
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
      {"xgps", "xgps", "///usr/share/gpsd/gpsd-logo.png" },
@@ -155,7 +158,6 @@
  }
 
  local menu6311ae17c1ee52b36e68aaf4ad066387 = {
-     {"Gluon-scenebuilder", "gluon-scenebuilder", "/usr/share/pixmaps/gluon-scenebuilder.png" },
      {"Googleplaydownloader", "googleplaydownloader", "/usr/share/pixmaps/googleplaydownloader.png" },
      {"Logical Volume Management", "/usr/bin/system-config-lvm", "///usr/share/system-config-lvm/pixmaps/lv_icon.png" },
      {"Rocket.Chat+", "/opt/rocketchat/rocketchat", "///opt/rocketchat/icon.png" },
@@ -176,7 +178,9 @@
      {"Eclipse for Java EE", "eclipse-jee", "/usr/share/icons/hicolor/16x16/apps/eclipse-jee.png" },
      {"Emacs", "emacs ", "/usr/share/icons/hicolor/16x16/apps/emacs.png" },
      {"FLUID", "fluid ", "/usr/share/icons/hicolor/16x16/apps/fluid.png" },
+     {"Genymotion", "/usr/bin/genymotion", "///opt/genymotion/icons/icon.png" },
      {"Glade", "glade ", "/usr/share/icons/hicolor/16x16/apps/glade.png" },
+     {"Gluon-scenebuilder", "gluon-scenebuilder", "/usr/share/pixmaps/gluon-scenebuilder.png" },
      {"IntelliJ IDEA Ultimate Edition", "intellij-idea-ultimate-edition ", "/usr/share/pixmaps/intellij-idea-ultimate-edition.png" },
      {"Java Mission Control", "/usr/lib/jvm/java-8-jdk/bin/jmc", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
      {"Java Monitoring and Management Console", "/usr/lib/jvm/java-8-jdk/bin/jconsole", "/usr/share/icons/hicolor/16x16/apps/sun-java-jdk8.png" },
@@ -227,6 +231,7 @@
      {"Audacity", "env UBUNTU_MENUPROXY=0 audacity ", "/usr/share/icons/hicolor/16x16/apps/audacity.png" },
      {"Cheese", "cheese", "/usr/share/icons/hicolor/16x16/apps/org.gnome.Cheese.png" },
      {"DeaDBeeF", "deadbeef ", "/usr/share/icons/hicolor/16x16/apps/deadbeef.png" },
+     {"EasyTAG", "easytag ", "/usr/share/icons/hicolor/16x16/apps/easytag.png" },
      {"FFADO Mixer", "ffado-mixer", "/usr/share/pixmaps/ffado.png" },
      {"FeelUOwn", "feeluown", "/usr/share/pixmaps/feeluown.png" },
      {"GNU Solfege", "solfege", "/usr/share/pixmaps/solfege.svg" },
