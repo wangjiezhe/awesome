@@ -641,7 +641,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "Pcmanfm",
-            "Shotwell",
+            "Shotwell", "Gthumb",
             "File-roller",
             "Filezilla",
             "Bleachbit",

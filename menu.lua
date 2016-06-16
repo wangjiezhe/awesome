@@ -141,6 +141,7 @@ graphicmenu = {
    { "&Blender", "blender" },
    { "&Darktable", "optirun darktable" },
    { "Gee&qie", "geeqie" },
+   { "g&thumb", "Gthumb" },
    { "&Shotwell", "shotwell" },
    { "G&color2", "gcolor2" }
 }
