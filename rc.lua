@@ -684,7 +684,7 @@ awful.rules.rules = {
          },
          class = {
             "Gimp", "Inkscape", "Blender", "Darktable", "krita",
-            "mpv",
+            -- "mpv",
             "MPlayer", "Kwplayer", "Ario", "Gmpc", "FeelUOwn",
             "Paman", "Pavucontrol", "Pavumeter",
             "Lenmus",
