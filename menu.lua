@@ -4,6 +4,11 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup.widget")
 
+local app16 = "/usr/share/icons/hicolor/16x16/apps/"
+local app32 = "/usr/share/icons/hicolor/32x32/apps/"
+local app48 = "/usr/share/icons/hicolor/48x48/apps/"
+local pixmaps = "/usr/share/pixmaps/"
+
 -- local hotkeys_vim = require("awful.hotkeys_popup.keys.vim")
 
 -- FreeDesktop
@@ -30,20 +35,20 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 networkmenu = {
-   { "&Chromium", "chromium", "/usr/share/icons/hicolor/32x32/apps/chromium.png" },
-   { "&Firefox", "firefox", "/usr/share/icons/hicolor/32x32/apps/firefox.png" },
-   { "&Yandex Browser", "yandex-browser-beta", "/usr/share/icons/hicolor/32x32/apps/yandex-browser-beta.png" },
-   { "&Thunderbird", "thunderbird", "/usr/share/icons/hicolor/32x32/apps/thunderbird.png" },
-   { "&Baidu Cloud", "bcloud-gui", "/usr/share/icons/hicolor/32x32/apps/bcloud.png" },
-   { "115 Pan", "115pan", "/usr/share/pixmaps/115pan.png" },
-   { "File&zilla", "filezilla", "/usr/share/icons/hicolor/32x32/apps/filezilla.png" },
-   { "&Pidgin", "pidgin", "/usr/share/icons/hicolor/32x32/apps/pidgin.png" },
+   { "&Chromium", "chromium", app16 .. "chromium.png" },
+   { "&Firefox", "firefox", app16 .. "firefox.png" },
+   { "&Yandex Browser", "yandex-browser-beta", app16 .. "yandex-browser-beta.png" },
+   { "&Thunderbird", "thunderbird", app16 .. "thunderbird.png" },
+   { "&Baidu Cloud", "bcloud-gui", app16 .. "bcloud.png" },
+   { "115 Pan", "115pan", pixmaps .. "115pan.png" },
+   { "File&zilla", "filezilla", app16 .. "filezilla.png" },
+   { "&Pidgin", "pidgin", app16 .. "pidgin.png" },
    { "&WeChat", "electronic-wechat", "/usr/share/electronic-wechat/assets/icon.png" },
-   { "&Linphone", "linphone", "/usr/share/icons/hicolor/48x48/apps/linphone.png" },
-   { "He&xchat", "hexchat", "/usr/share/icons/hicolor/48x48/apps/hexchat.png" },
-   { "&Slack", "scudcloud", "/usr/share/pixmaps/scudcloud.png" },
-   { "Transmission", "transmission-gtk", "/usr/share/icons/hicolor/32x32/apps/transmission.png" },
-   { "&MEGASync", "megasync", "/usr/share/icons/hicolor/32x32/apps/mega.png" }
+   { "&Linphone", "linphone", app48 .. "linphone.png" },
+   { "He&xchat", "hexchat", app48 .. "hexchat.png" },
+   { "&Slack", "scudcloud", pixmaps .. "scudcloud.png" },
+   { "Transmission", "transmission-gtk", app16 .. "transmission.png" },
+   { "&MEGASync", "megasync", app16 .. "mega.png" }
 }
 -- filemenu = {
 --    { "&PCManFM", "pcmanfm" },
@@ -59,71 +64,67 @@ mathmenu = {
    { "Sage(Notebook)", terminal .. " -e sage -notebook" },
    { "GAP", terminal .. " -e gap" },
    { "GP/PARI", terminal .. " -e gp" },
-   { "&Maxiama", "wxmaxima" },
-   { "GNU &Octave", "octave --force-gui" },
+   { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
+   { "GNU &Octave", "octave --force-gui", app16 .. "octave.png" },
    { "Singular", terminal .. " -e Singular" },
-   { "&RStudio", "rstudio-bin" },
+   { "&RStudio", "rstudio-bin", app16 .. "rstudio.png" },
    { "FriCAS", terminal .. " -e fricas -nosman" },
    { "Yacas", terminal .. " -e yacas" },
    { "Reduce" , terminal .. " -e redcsl" }
 }
 latexmenu = {
-   { "&Gummi", "gummi" },
-   { "Tex&Maker", "texmaker" },
-   { "TeX&studio", "texstudio" },
-   { "&Lyx", "lyx" },
-   { "&TeXmacs", "texmacs" }
+   { "&Gummi", "gummi", pixmaps .. "gummi.png" },
+   { "Tex&Maker", "texmaker", pixmaps .. "texmaker.png" },
+   { "TeX&studio", "texstudio", "/usr/share/icons/hicolor/scalable/apps/texstudio.svg" }, -- TODO: Fix for find_icon
+   { "&Lyx", "lyx", app48 .. "lyx.png" },
+   { "&TeXmacs", "texmacs", pixmaps .. "TeXmacs.xpm" }
 }
 pythonmenu = {
-   { "&PyCharm", "pycharm" },
-   { "&Spyder", "spyder" },
-   { "Spyder (python&3)", "spyder3"},
-   { "&Dreampie", "dreampie" }
-}
-schememenu = {
-   { "&GRacket", "gracket" },
-   { "&DrRacket", "drracket" }
+   { "&PyCharm", "pycharm", pixmaps .. "pycharm.png" },
+   { "&Spyder", "spyder", pixmaps .. "spyder.png" },
+   { "Spyder (python&3)", "spyder3", pixmaps .. "spyder3.png" },
+   { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" }
 }
 webmenu = {
-   { "Blue&fish", "bluefish" },
-   { "Blue&Griffon", "bluegriffon" }
+   { "Blue&fish", "bluefish", app16 .. "bluefish.png" },
+   { "Blue&Griffon", "bluegriffon", app16 .. "bluegriffon.png" }
 }
 wikimenu = {
-   { "&Zim", "zim" },
-   { "&WizNote", "WizNote" },
+   { "&Zim", "zim", pixmaps .. "zim.png" },
+   { "&WizNote", "WizNote", app16 .."wiznote.png" },
    { "&MediaWiki", "xdg-open http://localhost/mediawiki/" }
 }
 editormenu = {
-   { "G&vim", "gvim" },
-   { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs" },
+   { "G&vim", "gvim", pixmaps .. "gvim.png" },
+   { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app16 .. "emacs.png" },
    { "&LaTeX", latexmenu },
    { "&Python", pythonmenu },
-   { "&Scheme", schememenu },
+   { "&DrRacket", "drracket", app16 .. "drracket.png" },
    { "&Web", webmenu },
-   { "&Eclipse", "eclipse" },
+   { "&Eclipse", "eclipse", app16 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition" },
-   { "&Android Studio", "android-studio" },
-   { "&PoEdit", "poedit" },
-   { "Scribus", "scribus" },
-   { "&OmegaT", "omegat" },
-   { "&Wiki & Note", wikimenu }
+   { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
+   { "&PoEdit", "poedit", app16 .. "poedit.png" },
+   { "Scribus", "scribus", app32 .. "scribus.png" },
+   { "&OmegaT", "omegat", pixmaps .. "omegat.png" },
+   { "Wiki & &Note", wikimenu }
 }
 libreofficemenu = {
-   { "&Base", "env LANG=zh_CN.UTF8 lobase" },
-   { "&Writer", "env LANG=zh_CN.UTF8 lowriter" },
-   { "&Calc", "env LANG=zh_CN.UTF8 localc" },
-   { "&Impress", "env LANG=zh_CN.UTF8 loimpress" },
-   { "&Draw", "env LANG=zh_CN.UTF8 lodraw" },
-   { "&Math", "env LANG=zh_CN.UTF8 lomath" }
+   { "&Base", "env LANG=zh_CN.UTF8 lobase", app16 .. "libreoffice-base.png" },
+   { "&Writer", "env LANG=zh_CN.UTF8 lowriter", app16 .. "libreoffice-writer.png" },
+   { "&Calc", "env LANG=zh_CN.UTF8 localc", app16 .. "libreoffice-calc.png" },
+   { "&Impress", "env LANG=zh_CN.UTF8 loimpress", app16 .. "libreoffice-impress.png" },
+   { "&Draw", "env LANG=zh_CN.UTF8 lodraw", app16 .. "libreoffice-draw.png" },
+   { "&Math", "env LANG=zh_CN.UTF8 lomath", app16 .. "libreoffice-math.png" }
 }
 wpsmenu = {
-   { "&Writer", "wps" },
-   { "&Spreadsheets", "et" },
-   { "&Presentation", "wpp" }
+   { "&Writer", "wps", app48 .. "wps-office-wpsmain.png" },
+   { "&Spreadsheets", "et", app48 .. "wps-office-etmain.png" },
+   { "&Presentation", "wpp", app48 .. "wps-office-wppmain.png" }
 }
 officemenu = {
-   { "&LibreOffice", libreofficemenu },
-   { "&WPS Office", wpsmenu }
+   { "&LibreOffice", libreofficemenu, app16 .. "libreoffice-main.png" },
+   { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" }
 }
 terminalmenu = {
    { "URxvt", "urxvt" },
@@ -225,7 +226,7 @@ powermenu = {
 mymainmenu = awful.menu({ items = {
                              { "awesome", myawesomemenu, beautiful.awesome_icon },
                              { "&Network", networkmenu },
-                             { "&Files", "pcmanfm", "/usr/share/icons/gnome/32x32/places/gtk-directory.png" },
+                             { "&Files", "pcmanfm", "/usr/share/icons/gnome/16x16/places/gtk-directory.png" },
                              { "M&ath", mathmenu },
                              { "&Editor", editormenu },
                              { "&Office", officemenu },
