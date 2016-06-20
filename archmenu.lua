@@ -13,7 +13,6 @@
      {"Root Terminal", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
      {"Shutter", "shutter ", "/usr/share/icons/hicolor/16x16/apps/shutter.png" },
      {"StarDict", "stardict", "/usr/share/pixmaps/stardict.png" },
-     {"VeraCrypt", "/usr/bin/veracrypt", "/usr/share/pixmaps/veracrypt.xpm" },
      {"WizNote", "WizNote", "/usr/share/icons/hicolor/16x16/apps/wiznote.png" },
      {"Xchm", "xchm ", "/usr/share/pixmaps/xchm-48.png" },
      {"Xournal", "xournal "},
@@ -89,6 +88,7 @@
      {"Shotwell", "shotwell ", "/usr/share/icons/hicolor/16x16/apps/shotwell.png" },
      {"Slideshow", "/usr/bin/slideshow", "///usr/share/racket/slideshow-exe-icon.ico" },
      {"XSane - Scanning", "xsane", "/usr/share/pixmaps/xsane.xpm" },
+     {"gThumb", "gthumb ", "/usr/share/icons/hicolor/16x16/apps/gthumb.png" },
      {"xgps", "xgps", "///usr/share/gpsd/gpsd-logo.png" },
      {"xgpsspeed", "xgpsspeed", "///usr/share/gpsd/gpsd-logo.png" },
  }
@@ -276,6 +276,7 @@
      {"Tilda", "/usr/bin/tilda", "/usr/share/pixmaps/tilda.png" },
      {"Tint2", "tint2"},
      {"UXTerm", "uxterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
+     {"VeraCrypt", "veracrypt", "/usr/share/pixmaps/veracrypt.xpm" },
      {"Wireshark (GTK+)", "wireshark-gtk ", "/usr/share/icons/hicolor/16x16/apps/wireshark.png" },
      {"XTerm", "xterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
      {"urxvt", "urxvt", "/usr/share/icons/gnome/16x16/apps/terminal.png" },
