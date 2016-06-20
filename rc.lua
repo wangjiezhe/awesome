@@ -722,7 +722,7 @@ awful.rules.rules = {
     { rule_any = {
          name = {
             "^sage$",
-            "gp", "^gap$", "Singular", "fricas", "yacas",
+            "^gp$", "^gap$", "Singular", "fricas", "yacas",
             "reduce", "redcsl", "HyperDoc",
             "Xmaxima", "Wxmaxima",
             "Octave-gui",
