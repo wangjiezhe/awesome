@@ -32,7 +32,7 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "quit", awesome.quit },
 }
 networkmenu = {
    { "&Chromium", "chromium", app16 .. "chromium.png" },
@@ -48,7 +48,7 @@ networkmenu = {
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&Slack", "scudcloud", pixmaps .. "scudcloud.png" },
    { "Transmission", "transmission-gtk", app16 .. "transmission.png" },
-   { "&MEGASync", "megasync", app16 .. "mega.png" }
+   { "&MEGASync", "megasync", app16 .. "mega.png" },
 }
 -- filemenu = {
 --    { "&PCManFM", "pcmanfm" },
@@ -70,29 +70,29 @@ mathmenu = {
    { "&RStudio", "rstudio-bin", app16 .. "rstudio.png" },
    { "FriCAS", terminal .. " -e fricas -nosman" },
    { "Yacas", terminal .. " -e yacas" },
-   { "Reduce" , terminal .. " -e redcsl" }
+   { "Re&duce" , terminal .. " -e redcsl", "/usr/share/icons/redcsl.png" },
 }
 latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
    { "Tex&Maker", "texmaker", pixmaps .. "texmaker.png" },
    { "TeX&studio", "texstudio", "/usr/share/icons/hicolor/scalable/apps/texstudio.svg" }, -- TODO: Fix for find_icon
    { "&Lyx", "lyx", app48 .. "lyx.png" },
-   { "&TeXmacs", "texmacs", pixmaps .. "TeXmacs.xpm" }
+   { "&TeXmacs", "texmacs", pixmaps .. "TeXmacs.xpm" },
 }
 pythonmenu = {
    { "&PyCharm", "pycharm", pixmaps .. "pycharm.png" },
    { "&Spyder", "spyder", pixmaps .. "spyder.png" },
    { "Spyder (python&3)", "spyder3", pixmaps .. "spyder3.png" },
-   { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" }
+   { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" },
 }
 webmenu = {
    { "Blue&fish", "bluefish", app16 .. "bluefish.png" },
-   { "Blue&Griffon", "bluegriffon", app16 .. "bluegriffon.png" }
+   { "Blue&Griffon", "bluegriffon", app16 .. "bluegriffon.png" },
 }
 wikimenu = {
    { "&Zim", "zim", pixmaps .. "zim.png" },
    { "&WizNote", "WizNote", app16 .."wiznote.png" },
-   { "&MediaWiki", "xdg-open http://localhost/mediawiki/" }
+   { "&MediaWiki", "xdg-open http://localhost/mediawiki/" },
 }
 editormenu = {
    { "G&vim", "gvim", pixmaps .. "gvim.png" },
@@ -107,7 +107,7 @@ editormenu = {
    { "&PoEdit", "poedit", app16 .. "poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },
    { "&OmegaT", "omegat", pixmaps .. "omegat.png" },
-   { "Wiki & &Note", wikimenu }
+   { "Wiki & &Note", wikimenu },
 }
 libreofficemenu = {
    { "&Base", "env LANG=zh_CN.UTF8 lobase", app16 .. "libreoffice-base.png" },
@@ -115,16 +115,16 @@ libreofficemenu = {
    { "&Calc", "env LANG=zh_CN.UTF8 localc", app16 .. "libreoffice-calc.png" },
    { "&Impress", "env LANG=zh_CN.UTF8 loimpress", app16 .. "libreoffice-impress.png" },
    { "&Draw", "env LANG=zh_CN.UTF8 lodraw", app16 .. "libreoffice-draw.png" },
-   { "&Math", "env LANG=zh_CN.UTF8 lomath", app16 .. "libreoffice-math.png" }
+   { "&Math", "env LANG=zh_CN.UTF8 lomath", app16 .. "libreoffice-math.png" },
 }
 wpsmenu = {
    { "&Writer", "wps", app48 .. "wps-office-wpsmain.png" },
    { "&Spreadsheets", "et", app48 .. "wps-office-etmain.png" },
-   { "&Presentation", "wpp", app48 .. "wps-office-wppmain.png" }
+   { "&Presentation", "wpp", app48 .. "wps-office-wppmain.png" },
 }
 officemenu = {
    { "&LibreOffice", libreofficemenu, app16 .. "libreoffice-main.png" },
-   { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" }
+   { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
 }
 terminalmenu = {
    { "URxvt", "urxvt" },
@@ -133,7 +133,7 @@ terminalmenu = {
    { "Xterm", "xterm" },
    { "UXterm", "uxterm" },
    { "Roxterm", "roxterm" },
-   { "Lxterminal", "lxterminal" }
+   { "Lxterminal", "lxterminal" },
 }
 graphicmenu = {
    { "&GIMP", "env LANG=zh_CN.UTF8 gimp" },
@@ -144,12 +144,12 @@ graphicmenu = {
    { "Gee&qie", "geeqie" },
    { "g&thumb", "Gthumb" },
    { "&Shotwell", "shotwell" },
-   { "G&color2", "gcolor2" }
+   { "G&color2", "gcolor2" },
 }
 pamenu = {
    { "&PulseAudio Manager", "paman" },
    { "Volume &Control", "pavucontrol" },
-   { "Volume &Meter", "pavumeter" }
+   { "Volume &Meter", "pavumeter" },
 }
 multimediamenu = {
    { "&FeelUOwn", "feeluown" },
@@ -158,13 +158,13 @@ multimediamenu = {
    { "&Ario", "ario" },
    { "&Gmpc", "gmpc" },
    { "&Osdlyrics", "osdlyrics" },
-   { "&Lenmus" , "lenmus" }
+   { "&Lenmus" , "lenmus" },
 }
 qtmenu = {
    { "Qt5 &Assistant", "assistant-qt5" },
    { "Qt4 Assistant", "assistant-qt4" },
    { "Qt5 &Designer", "designer-qt5" },
-   { "Qt4 Designer", "designer-qt4" }
+   { "Qt4 Designer", "designer-qt4" },
 }
 developmentmenu = {
    { "&Qt", qtmenu },
@@ -172,28 +172,28 @@ developmentmenu = {
    { "&Genymotion", "genymotion" },
    -- { "&Astah", "astah" },
    { "&Devhelp", "devhelp" },
-   { "Heimdall &Frontend", "heimdall-frontend" }
+   { "Heimdall &Frontend", "heimdall-frontend" },
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap" },
    { "&Zenmap (as root)", "gksudo zenmap" },
    { "&Wireshark", "wireshark-gtk" },
-   { "&Burp Suite", "burpsuite" }
+   { "&Burp Suite", "burpsuite" },
 }
 webcammenu = {
    { "&Guvcview", "guvcview" },
-   { "&Cheese", "cheese" }
+   { "&Cheese", "cheese" },
 }
 bridgemenu = {
    { "&Bridge Master 2000", "dex " .. home_path .. ".local/share/applications/'Bridge Master 2000.desktop'" },
-   { "&Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" }
+   { "&Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" },
 }
 winemenu = {
    { "&QQ", "env LANG=zh_CN.utf8 WINEPREFIX=" .. home_path .."QQLite WINEDEBUG=-all wine " .. home_path .. "QQLite/drive_c/'Program Files (x86)'/Tencent/QQLite/Bin/QQ.exe" },
    { "&RHWUD", "WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
    { "&CAJViewer", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
    { "&SsReader", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" },
-   { "&Bridge", bridgemenu }
+   { "&Bridge", bridgemenu },
 }
 gamemenu = {
    { "Super&tux2", "supertux2"},
@@ -201,7 +201,7 @@ gamemenu = {
    { "&mGBA", "mgba-qt" },
    { "&Fceux", "fceux" },
    { "Hi&gan", "higan" },
-   { "&Steam", "steam" }
+   { "&Steam", "steam" },
 }
 othermenu = {
    { "Shutter", "shutter" },
@@ -213,7 +213,7 @@ othermenu = {
    { "&Passwords and Keys", "seahorse" },
    { "&Font Editor", "fontforge" },
    { "Hardware Topology", "lstopo" },
-   { "&Stellarium", "stellarium" }
+   { "&Stellarium", "stellarium" },
 }
 powermenu = {
    { "Shutdown", "shutdown -P now" },
@@ -221,7 +221,7 @@ powermenu = {
    { "Reboot", "systemctl reboot" },
    { "Suspend", "systemctl suspend" },
    { "Hibernate", "systemctl hibernate" },
-   { "Hybrid Sleep", "systemctl hybrid-sleep" }
+   { "Hybrid Sleep", "systemctl hybrid-sleep" },
 }
 mymainmenu = awful.menu({ items = {
                              { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -238,7 +238,7 @@ mymainmenu = awful.menu({ items = {
                              { "&Games", gamemenu },
                              { "Other&s", othermenu },
                              { "Terminal", terminalmenu, beautiful.menu_terminal },
-                             { "Power", powermenu }
+                             { "Power", powermenu },
                              }})
 
 -- Xdg_menu

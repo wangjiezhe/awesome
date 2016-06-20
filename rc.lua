@@ -593,7 +593,7 @@ awful.rules.rules = {
           "Wpa_gui",
           "pinentry",
           "veromix",
-          "xtightvncviewer"
+          "xtightvncviewer",
         },
         name = {
           "Event Tester",  -- xev.
@@ -616,7 +616,7 @@ awful.rules.rules = {
             "Gvim",
             -- "Emacs",
             "Lxterminal",
-            "Roxterm"
+            "Roxterm",
          }
     }, properties = { maximized = true }},
 
@@ -626,7 +626,7 @@ awful.rules.rules = {
             "XTerm",
             "UXTerm",
             "Lxterminal",
-            "Roxterm"
+            "Roxterm",
          }
     }, properties = { screen = 1, tag = tag_t.names[1], switchtotag = true }},
 
@@ -634,7 +634,7 @@ awful.rules.rules = {
          class = {
             "Firefox",
             "chromium",
-            "yandex-browser-beta"
+            "yandex-browser-beta",
          }
     }, properties = { screen = 1, tag = tag_t.names[2], switchtotag = true }},
 
@@ -647,17 +647,17 @@ awful.rules.rules = {
             "Bleachbit",
             "CAJVieweru.exe",
             "SsReader.exe",
-            "RHUD30.EXE"
+            "RHUD30.EXE",
          }
     }, properties = { screen = 1, tag = tag_t.names[3], switchtotag = true }},
 
     { rule_any = {
          instance = {
             "libreoffice",
-            "sun-awt-X11-XFramePeer"
+            "sun-awt-X11-XFramePeer",
          },
          name = {
-            "LibreOffice"
+            "LibreOffice",
          },
          class = {
             "Wps", "Et", "Wpp",
@@ -674,13 +674,13 @@ awful.rules.rules = {
             "Bluefish", "Bluegriffon",
             "Scribus",
             "Aegisub-3.2",
-            "OmegaT"
+            "OmegaT",
          }
     }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 
     { rule_any = {
          name = {
-            "OpenRA"
+            "OpenRA",
          },
          class = {
             "Gimp", "Inkscape", "Blender", "Darktable", "krita",
@@ -692,7 +692,7 @@ awful.rules.rules = {
             "Steam", "supertux2", "mGBA", "bm2000.exe", "ltpb.exe", "Fceux", "Hiro",
             "stellarium",
             "Solfege", "TuxGuitar",
-            "Ardour-4.6.0"
+            "Ardour-4.6.0",
          }
     }, properties = { screen = 1, tag = tag_t.names[5], switchtotag = true }},
 
@@ -702,20 +702,20 @@ awful.rules.rules = {
             "Zenmap", "Wireshark", "burp-StartBurp",
             "Shutter",
             "WizNote", "Wiz",
-            "heimdall-frontend"
+            "heimdall-frontend",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 
     { rule_any = {
          name = {
-            "Electronic WeChat" , "^ScudCloud$"
+            "Electronic WeChat" , "^ScudCloud$",
          },
          class = {
             "Thunderbird",
             "Pidgin",
             "QQ.exe",
             -- "Hexchat",
-            "Linphone", "Ekiga"
+            "Linphone", "Ekiga",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 
@@ -727,7 +727,7 @@ awful.rules.rules = {
             "Xmaxima", "Wxmaxima",
             "Octave-gui",
             "^R$", "RStudio",
-            "GeoGebra"
+            "GeoGebra",
          },
          class = {
 
@@ -736,14 +736,14 @@ awful.rules.rules = {
 
     { rule_any = {
          name = {
-            "Wine"
+            "Wine",
          },
          class = {
             "Transmission-gtk",
             "115pan",
             "Bcloud-gui",
             "Seahorse",
-            "Blueman"
+            "Blueman",
          }
     }, properties = { screen = 1, tag = tag_t.names[9], switchtotag = true }},
 
