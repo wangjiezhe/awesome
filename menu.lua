@@ -107,7 +107,7 @@ editormenu = {
    { "&DrRacket", "drracket", app16 .. "drracket.png" },
    { "&Web", webmenu },
    { "&Eclipse", "eclipse", app16 .. "eclipse.png" },
-   { "&IntelliJ IDEA", "intellij-idea-ultimate-edition" },
+   { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
    { "&PoEdit", "poedit", app16 .. "poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import itertools
 
 
@@ -61,3 +62,13 @@ def find_icon(icon_name):
             )
             if os.path.isfile(filename):
                 return filename
+
+
+def main():
+    names = sys.argv[1:]
+    for name in names:
+        print("{}: {}".format(name, find_icon(name)))
+
+
+if __name__ == '__main__':
+    main()
