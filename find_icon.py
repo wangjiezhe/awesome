@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import os
+import itertools
 
 
 def find_icon(icon_name):
     home = os.getenv('HOME')
     xdg_data_dirs = os.getenv('XDG_DATA_DIRS') or '/usr/local/share:/usr/share'
     xdg_data_dirs = xdg_data_dirs.split(':')
-    icon_search_path = ['/']
     category_list = (
         'apps', 'places', 'devices', 'actions', 'animations',
         'categories', 'emblems', 'emotes', 'filesystems', 'intl',
@@ -20,40 +20,39 @@ def find_icon(icon_name):
     )
     theme_list = ('hicolor', 'gnome')
 
-    this_dir = os.path.join(home, '.icons')
-    if os.path.exists(this_dir):
-        icon_search_path.append(this_dir)
+    icon_search_home = (os.path.join(home, '.icons'),)
+    icon_search_size = (
+        os.path.join(
+            data_dir, 'icons', theme, '{s}x{s}'.format(s=size), category
+        )
+        for data_dir in xdg_data_dirs
+        for theme in theme_list
+        for size in size_list
+        for category in category_list
+    )
+    icon_search_scalable = (
+        os.path.join(data_dir, 'icons', theme, 'scalable', category)
+        for data_dir in xdg_data_dirs
+        for theme in theme_list
+        for category in category_list
+    )
+    icon_search_other = (
+        os.path.join(data_dir, 'icons', s)
+        for data_dir in xdg_data_dirs
+        for s in ('mini', '', 'large')
+    )
+    icon_search_pixmaps = ('/usr/share/pixmaps',)
 
-    for data_dir in xdg_data_dirs:
-        for theme in theme_list:
-            for size in size_list:
-                for category in category_list:
-                    this_dir = os.path.join(
-                        data_dir, 'icons', theme,
-                        '{s}x{s}'.format(s=size), category
-                    )
-                    if os.path.isdir(this_dir):
-                        icon_search_path.append(this_dir)
-
-            this_dir = os.path.join(
-                data_dir, 'icons', theme, 'scalable', category
-            )
-            if os.path.isdir(this_dir):
-                icon_search_path.append(this_dir)
-
-            this_dir = os.path.join(data_dir, 'icons', 'mini')
-            if os.path.isdir(this_dir):
-                icon_search_path.append(this_dir)
-
-            this_dir = os.path.join(data_dir, 'icons')
-            if os.path.isdir(this_dir):
-                icon_search_path.append(this_dir)
-
-            this_dir = os.path.join(data_dir, 'icons', 'large')
-            if os.path.isdir(this_dir):
-                icon_search_path.append(this_dir)
-
-    icon_search_path.append('/usr/share/pixmaps')
+    icon_search_path = (
+        this_dir for this_dir in itertools.chain(
+            icon_search_home,
+            icon_search_size,
+            icon_search_pixmaps,
+            icon_search_scalable,
+            icon_search_other,
+        )
+        if os.path.isdir(this_dir)
+    )
 
     for icon_dir in icon_search_path:
         for ext in ('', '.png', '.xpm', '.svg'):
