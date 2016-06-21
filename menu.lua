@@ -5,8 +5,13 @@ local beautiful = require("beautiful")
 local hotkeys_popup = require("awful.hotkeys_popup.widget")
 
 local app16 = "/usr/share/icons/hicolor/16x16/apps/"
+local app16g = "/usr/share/icons/gnome/16x16/apps/"
 local app32 = "/usr/share/icons/hicolor/32x32/apps/"
 local app48 = "/usr/share/icons/hicolor/48x48/apps/"
+local app64 = "/usr/share/icons/hicolor/64x64/apps/"
+local app128 = "/usr/share/icons/hicolor/128x128/apps/"
+local apps = "/usr/share/icons/hicolor/scalable/apps/"
+local dev16g = "/usr/share/icons/gnome/16x16/devices/"
 local pixmaps = "/usr/share/pixmaps/"
 
 -- local hotkeys_vim = require("awful.hotkeys_popup.keys.vim")
@@ -75,7 +80,7 @@ mathmenu = {
 latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
    { "Tex&Maker", "texmaker", pixmaps .. "texmaker.png" },
-   { "TeX&studio", "texstudio", "/usr/share/icons/hicolor/scalable/apps/texstudio.svg" }, -- TODO: Fix for find_icon
+   { "TeX&studio", "texstudio", apps .. "texstudio.svg" },
    { "&Lyx", "lyx", app48 .. "lyx.png" },
    { "&TeXmacs", "texmacs", pixmaps .. "TeXmacs.xpm" },
 }
@@ -127,38 +132,36 @@ officemenu = {
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
 }
 terminalmenu = {
-   { "URxvt", "urxvt" },
-   { "URxvt(client)", "urxvtc" },
-   { "URxvt(tabbed)", "urxvt-tabbed" },
-   { "Xterm", "xterm" },
-   { "UXterm", "uxterm" },
-   { "Roxterm", "roxterm" },
-   { "Lxterminal", "lxterminal" },
+   { "URxvt", "urxvt", app16g .. "terminal.png" },
+   { "Xterm", "xterm", pixmaps .. "xterm-color_48x48.xpm" },
+   { "UXterm", "uxterm", pixmaps .. "xterm-color_48x48.xpm" },
+   { "Roxterm", "roxterm", apps .. "roxterm.svg" },
+   { "Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
 }
 graphicmenu = {
-   { "&GIMP", "env LANG=zh_CN.UTF8 gimp" },
-   { "&Inkscape", "env LANG=zh_CN.UTF8 inkscape" },
-   { "K&rita", "krita" },
-   { "&Blender", "blender" },
-   { "&Darktable", "optirun darktable" },
-   { "Gee&qie", "geeqie" },
-   { "g&thumb", "Gthumb" },
-   { "&Shotwell", "shotwell" },
-   { "G&color2", "gcolor2" },
+   { "&GIMP", "env LANG=zh_CN.UTF8 gimp", app16 .. "gimp.png" },
+   { "&Inkscape", "env LANG=zh_CN.UTF8 inkscape", app16 .. "inkscape.png" },
+   { "K&rita", "krita", app16 .. "calligrakrita.png" },
+   { "&Blender", "blender", app16 .. "blender.png" },
+   { "&Darktable", "optirun darktable", app16 .. "darktable.png" },
+   { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
+   { "g&thumb", "Gthumb", app16 .. "gthumb.png" },
+   { "&Shotwell", "shotwell", app16 .. "shotwell.png" },
+   { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
 }
 pamenu = {
-   { "&PulseAudio Manager", "paman" },
-   { "Volume &Control", "pavucontrol" },
-   { "Volume &Meter", "pavumeter" },
+   { "&PulseAudio Manager", "paman", dev16g .. "audio-card.png" },
+   { "Volume &Control", "pavucontrol", app16g .. "multimedia-volume-control.png" },
+   { "Volume &Meter", "pavumeter", dev16g .."audio-input-microphone.png" },
 }
 multimediamenu = {
-   { "&FeelUOwn", "feeluown" },
-   { "K&W Player", "kwplayer" },
+   { "&FeelUOwn", "feeluown", pixmaps .. "feeluown.png" },
+   { "K&W Player", "kwplayer", app16 .. "kwplayer.png" },
    { "&PulseAudio Control", pamenu },
-   { "&Ario", "ario" },
-   { "&Gmpc", "gmpc" },
-   { "&Osdlyrics", "osdlyrics" },
-   { "&Lenmus" , "lenmus" },
+   { "&Ario", "ario", app16 .. "ario.png" },
+   { "&Gmpc", "gmpc", app16 .. "gmpc.png" },
+   { "&Osdlyrics", "osdlyrics", app64 .. "osdlyrics.png" },
+   { "&Lenmus" , "lenmus", pixmaps .. "lenmus.png" },
 }
 qtmenu = {
    { "Qt5 &Assistant", "assistant-qt5" },

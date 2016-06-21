@@ -623,8 +623,6 @@ awful.rules.rules = {
     -- Tagged clients.
     { rule_any = {
          class = {
-            "XTerm",
-            "UXTerm",
             "Lxterminal",
             "Roxterm",
          }
