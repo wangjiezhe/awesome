@@ -204,7 +204,7 @@ gamemenu = {
    { "&mGBA", "mgba-qt" },
    { "&Fceux", "fceux" },
    { "Hi&gan", "higan" },
-   { "&Steam", "steam" },
+   { "&Steam", "optirun steam" },
 }
 othermenu = {
    { "Shutter", "shutter" },
