@@ -199,8 +199,8 @@ winemenu = {
    { "&Bridge", bridgemenu },
 }
 gamemenu = {
-   { "Super&tux2", "supertux2"},
-   { "&OpenRA", "openra" },
+   { "Super&tux2", "optirun supertux2"},
+   { "&OpenRA", "optirun openra" },
    { "&mGBA", "mgba-qt" },
    { "&Fceux", "fceux" },
    { "Hi&gan", "higan" },
