@@ -12,6 +12,7 @@ local app64 = "/usr/share/icons/hicolor/64x64/apps/"
 local app128 = "/usr/share/icons/hicolor/128x128/apps/"
 local apps = "/usr/share/icons/hicolor/scalable/apps/"
 local dev16g = "/usr/share/icons/gnome/16x16/devices/"
+local mime16 = "/usr/share/icons/hicolor/16x16/mimetypes/"
 local pixmaps = "/usr/share/pixmaps/"
 
 -- local hotkeys_vim = require("awful.hotkeys_popup.keys.vim")
@@ -164,28 +165,28 @@ multimediamenu = {
    { "&Lenmus" , "lenmus", pixmaps .. "lenmus.png" },
 }
 qtmenu = {
-   { "Qt5 &Assistant", "assistant-qt5" },
-   { "Qt4 Assistant", "assistant-qt4" },
-   { "Qt5 &Designer", "designer-qt5" },
-   { "Qt4 Designer", "designer-qt4" },
+   { "Qt5 &Assistant", "assistant-qt5", app32 .. "assistant.png" },
+   { "Qt4 Assistant", "assistant-qt4", app32 .. "assistant-qt4.png" },
+   { "Qt5 &Designer", "designer-qt5", app128 .. "QtProject-designer.png" },
+   { "Qt4 Designer", "designer-qt4", app128 .. "designer-qt4.png" },
 }
 developmentmenu = {
    { "&Qt", qtmenu },
-   { "&CMake", "cmake-gui" },
-   { "&Genymotion", "genymotion" },
+   { "&CMake", "cmake-gui", app32 .. "CMakeSetup.png" },
+   { "&Genymotion", "genymotion", "/opt/genymotion/icons/icon.png" },
    -- { "&Astah", "astah" },
-   { "&Devhelp", "devhelp" },
-   { "Heimdall &Frontend", "heimdall-frontend" },
+   { "&Devhelp", "devhelp", app16 .. "devhelp.png" },
+   { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
 }
 webtoolsmenu = {
-   { "Zenmap", "zenmap" },
-   { "&Zenmap (as root)", "gksudo zenmap" },
-   { "&Wireshark", "wireshark-gtk" },
-   { "&Burp Suite", "burpsuite" },
+   { "Zenmap", "zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
+   { "&Zenmap (as root)", "gksudo zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
+   { "&Wireshark", "wireshark-gtk", app16 .. "wireshark.png" },
+   { "&Burp Suite", "burpsuite", pixmaps .. "burpsuite.png" },
 }
 webcammenu = {
-   { "&Guvcview", "guvcview" },
-   { "&Cheese", "cheese" },
+   { "&Guvcview", "guvcview", pixmaps .. "guvcview/guvcview.png" },
+   { "&Cheese", "cheese", app16 .. "org.gnome.Cheese.png" },
 }
 bridgemenu = {
    { "&Bridge Master 2000", "dex " .. home_path .. ".local/share/applications/'Bridge Master 2000.desktop'" },
@@ -199,24 +200,24 @@ winemenu = {
    { "&Bridge", bridgemenu },
 }
 gamemenu = {
-   { "Super&tux2", "optirun supertux2"},
-   { "&OpenRA", "optirun openra" },
-   { "&mGBA", "mgba-qt" },
-   { "&Fceux", "fceux" },
-   { "Hi&gan", "higan" },
-   { "&Steam", "optirun steam" },
+   { "Super&tux2", "optirun supertux2", pixmaps .. "supertux.png"},
+   { "&OpenRA", "optirun openra", app16 .. "openra.png" },
+   { "&mGBA", "mgba-qt", app16 .. "mgba.png" },
+   { "&Fceux", "fceux", pixmaps .. "fceux.png" },
+   { "Hi&gan", "higan", pixmaps .. "higan.png" },
+   { "&Steam", "optirun steam", app16 .. "steam.png" },
 }
 othermenu = {
-   { "Shutter", "shutter" },
-   { "&VirtualBox", "start-vbox" },
-   { "File &Cleaner", "bleachbit" },
-   { "Manage &Printing", "xdg-open http://localhost:631/"},
+   { "Shutter", "shutter", app16 .. "shutter.png" },
+   { "&VirtualBox", "start-vbox", mime16 .. "virtualbox.png" },
+   { "File &Cleaner", "bleachbit", pixmaps .. "bleachbit.png" },
+   { "Manage &Printing", "xdg-open http://localhost:631/", app16 .. "cups.png" },
    { "&WebCam", webcammenu },
-   { "&Bluetooth", "blueman-manager" },
-   { "&Passwords and Keys", "seahorse" },
-   { "&Font Editor", "fontforge" },
+   { "&Bluetooth", "blueman-manager", app16 .. "blueman.png" },
+   { "&Passwords and Keys", "seahorse", app16 .. "seahorse.png" },
+   { "&Font Editor", "fontforge", app16 .. "fontforge.png" },
    { "Hardware Topology", "lstopo" },
-   { "&Stellarium", "stellarium" },
+   { "&Stellarium", "stellarium", app16 .. "stellarium.png" },
 }
 powermenu = {
    { "Shutdown", "shutdown -P now" },
@@ -240,7 +241,7 @@ mymainmenu = awful.menu({ items = {
                              { "&Wine", winemenu },
                              { "&Games", gamemenu },
                              { "Other&s", othermenu },
-                             { "Terminal", terminalmenu, beautiful.menu_terminal },
+                             { "Terminal", terminalmenu },
                              { "Power", powermenu },
                              }})
 
