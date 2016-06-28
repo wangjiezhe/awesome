@@ -695,6 +695,9 @@ awful.rules.rules = {
     }, properties = { screen = 1, tag = tag_t.names[5], switchtotag = true }},
 
     { rule_any = {
+         instance = {
+            "Navicat.exe",
+         },
          class = {
             "VirtualBox",
             "Zenmap", "Wireshark", "burp-StartBurp",

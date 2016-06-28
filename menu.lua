@@ -170,14 +170,18 @@ qtmenu = {
    { "Qt5 &Designer", "designer-qt5", app128 .. "QtProject-designer.png" },
    { "Qt4 Designer", "designer-qt4", app128 .. "designer-qt4.png" },
 }
+sqlmenu = {
+   { "&Sqliteman", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
+   { "&Navicat", "navicat", "/opt/navicat/Navicat/help/img/icon_navicat.png" },
+}
 developmentmenu = {
    { "&Qt", qtmenu },
+   { "&Sql", sqlmenu },
    { "&CMake", "cmake-gui", app32 .. "CMakeSetup.png" },
    { "&Genymotion", "genymotion", "/opt/genymotion/icons/icon.png" },
    -- { "&Astah", "astah" },
    { "&Devhelp", "devhelp", app16 .. "devhelp.png" },
    { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
-   { "&Sqliteman", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
