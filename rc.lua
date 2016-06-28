@@ -700,7 +700,7 @@ awful.rules.rules = {
             "Zenmap", "Wireshark", "burp-StartBurp",
             "Shutter",
             "WizNote", "Wiz",
-            "heimdall-frontend",
+            "heimdall-frontend", "Sqliteman",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 

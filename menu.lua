@@ -177,6 +177,7 @@ developmentmenu = {
    -- { "&Astah", "astah" },
    { "&Devhelp", "devhelp", app16 .. "devhelp.png" },
    { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
+   { "&Sqliteman", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
