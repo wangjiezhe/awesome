@@ -158,16 +158,29 @@ net_wireless = net_widgets.wireless({
     interface="wlp4s0",
     indent=1,
     font="dejavu sans mono 8",
-    })
+})
 net_wired = net_widgets.indicator({
     interfaces = {"enp5s0"},
     font="dejavu sans mono 8",
-    })
+})
+
+-- Github contribution indicator
+github_contributed = awful.util.getdir("config") .. "/images/github_contributed.png"
+github_not_contributed = awful.util.getdir("config") .. "/images/github_not_contributed.png"
+github_widget = wibox.widget.imagebox()
+function update_github(has_contributions)
+    if has_contributions then
+        github_widget:set_image(github_contributed)
+    else
+        github_widget:set_image(github_not_contributed)
+    end
+end
+update_github(false)
 
 -- pomodoro widget
-local pomodoro = require("pomodoro")
-pomodoro.format = function (t) return "[<b>" .. t .. "</b>]" end
-pomodoro.init()
+-- local pomodoro = require("pomodoro")
+-- pomodoro.format = function (t) return "[<b>" .. t .. "</b>]" end
+-- pomodoro.init()
 
 -- bashets.start()
 
@@ -281,8 +294,9 @@ awful.screen.connect_for_each_screen(function(s)
             spacer,
             mytextclock,
             spacer,
-            pomodoro.icon_widget,
-            pomodoro.widget,
+            github_widget,
+            -- pomodoro.icon_widget,
+            -- pomodoro.widget,
             spacer,
             battery_widget,
             spacer,
