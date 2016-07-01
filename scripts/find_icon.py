@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
 import itertools
+import argparse
 
 
 def find_icon(icon_name):
@@ -65,8 +65,14 @@ def find_icon(icon_name):
 
 
 def main():
-    names = sys.argv[1:]
-    for name in names:
+    parser = argparse.ArgumentParser(
+        description='Get icon file name for programs.\nPorted from `xdg_menu`.',
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument('program', nargs='+',
+                        help='program name')
+    args = parser.parse_args()
+    for name in args.program:
         print("{}: {}".format(name, find_icon(name)))
 
 
