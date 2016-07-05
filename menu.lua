@@ -110,6 +110,7 @@ editormenu = {
    { "&Eclipse", "eclipse", app16 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
+   { "Li&teIDE", "liteide", pixmaps .. "liteide.png" },
    { "&PoEdit", "poedit", app16 .. "poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },
    { "&OmegaT", "omegat", pixmaps .. "omegat.png" },

@@ -687,6 +687,7 @@ awful.rules.rules = {
             "Scribus",
             "Aegisub-3.2",
             "OmegaT",
+            "liteide",
          }
     }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 
