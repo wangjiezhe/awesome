@@ -17,18 +17,25 @@ function update_volume (widget)
       return s == nil or s == ''
    end
 
-   local volume = awful.spawn.pread("echo -n $(pamixer --get-volume)")
+   local function get_output (cmd)
+      local fd = io.popen(cmd)
+      local ret = fd:read()
+      fd:close()
+      return ret
+   end
+
+   local volume = get_output("echo -n $(pamixer --get-volume)")
 
    if isempty(volume) then
       pulse = false
-      local volume = awful.spawn.pread("echo -n $(amixer get Master | grep 'Front Left:' | grep -o -E '\\[[[:digit:]]+%\\]') | grep -o -E '[[:digit:]]+' | tr -d '\n'")
+      local volume = get_output("echo -n $(amixer get Master | grep 'Front Left:' | grep -o -E '\\[[[:digit:]]+%\\]') | grep -o -E '[[:digit:]]+' | tr -d '\n'")
    end
 
-   local mute = awful.spawn.pread("echo -n $(pamixer --get-mute)")
+   local mute = get_output("echo -n $(pamixer --get-mute)")
 
    if isempty(mute) then
       pulse = false
-      local status = awful.spawn.pread("echo -n $(amixer get Master | grep 'Front Left:' | grep -o '\\[on\\]\\|\\[off\\]') | grep -o -E '[[:alpha:]]+' | tr -d '\n'")
+      local status = get_output("echo -n $(amixer get Master | grep 'Front Left:' | grep -o '\\[on\\]\\|\\[off\\]') | grep -o -E '[[:alpha:]]+' | tr -d '\n'")
       if status == "on" then
          mute = "false"
       else
