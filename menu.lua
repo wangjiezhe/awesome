@@ -162,8 +162,9 @@ multimediamenu = {
    { "&PulseAudio Control", pamenu },
    { "&Ario", "ario", app16 .. "ario.png" },
    { "&Gmpc", "gmpc", app16 .. "gmpc.png" },
+   { "&Lollypop", "lollypop", app16 .. "lollypop.png" },
    { "&Osdlyrics", "osdlyrics", app64 .. "osdlyrics.png" },
-   { "&Lenmus" , "lenmus", pixmaps .. "lenmus.png" },
+   { "Len&mus" , "lenmus", pixmaps .. "lenmus.png" },
 }
 qtmenu = {
    { "Qt5 &Assistant", "assistant-qt5", app32 .. "assistant.png" },
