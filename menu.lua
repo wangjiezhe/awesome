@@ -145,6 +145,10 @@ terminalmenu = {
    { "Roxterm", "roxterm", apps .. "roxterm.svg" },
    { "Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
 }
+colormenu = {
+   { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
+   { "G&pick", "gpick", app48 .. "gpick.png"}
+}
 graphicmenu = {
    { "&GIMP", "env LANG=zh_CN.UTF8 gimp", app16 .. "gimp.png" },
    { "&Inkscape", "env LANG=zh_CN.UTF8 inkscape", app16 .. "inkscape.png" },
@@ -154,7 +158,7 @@ graphicmenu = {
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
    { "g&thumb", "Gthumb", app16 .. "gthumb.png" },
    { "&Shotwell", "shotwell", app16 .. "shotwell.png" },
-   { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
+   { "&Color", colormenu },
 }
 pamenu = {
    { "&PulseAudio Manager", "paman", dev16g .. "audio-card.png" },
