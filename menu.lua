@@ -100,10 +100,15 @@ wikimenu = {
    { "&WizNote", "WizNote", app16 .."wiznote.png" },
    { "&MediaWiki", "xdg-open http://localhost/mediawiki/" },
 }
+markdownmenu = {
+   { "&Retext", "retext", app16 .. "retext.png" },
+   { "&Marp", "marp", pixmaps .. "marp.png" },
+}
 editormenu = {
    { "G&vim", "gvim", pixmaps .. "gvim.png" },
    { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app16 .. "emacs.png" },
    { "&LaTeX", latexmenu },
+   { "&Markdown", markdownmenu },
    { "&Python", pythonmenu },
    { "&DrRacket", "drracket", app16 .. "drracket.png" },
    { "&Web", webmenu },
