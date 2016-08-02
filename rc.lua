@@ -719,6 +719,7 @@ awful.rules.rules = {
             "Shutter",
             "WizNote", "Wiz",
             "heimdall-frontend", "Sqliteman",
+            "Gnucash",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 

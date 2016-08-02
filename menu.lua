@@ -224,6 +224,7 @@ gamemenu = {
    { "&Steam", "optirun steam", app16 .. "steam.png" },
 }
 othermenu = {
+   { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "Shutter", "shutter", app16 .. "shutter.png" },
    { "&VirtualBox", "start-vbox", mime16 .. "virtualbox.png" },
    { "File &Cleaner", "bleachbit", pixmaps .. "bleachbit.png" },
