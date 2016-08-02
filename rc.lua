@@ -373,7 +373,7 @@ globalkeys = awful.util.table.join(
         end,
         {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "l",     function () awful.spawn("xlock -mode invert")   end,
+    awful.key({ modkey,           }, "l",     function () awful.spawn("xlock")   end,
        {description = "lock screen", group = "utils"}),
     -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end,
     --           {description = "increase master width factor", group = "layout"}),
