@@ -137,6 +137,8 @@ wpsmenu = {
 officemenu = {
    { "&LibreOffice", libreofficemenu, app16 .. "libreoffice-main.png" },
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
+   { "&Evince", "evince", app16 .. "evince.png" },
+   { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
 }
 terminalmenu = {
    { "URxvt", "urxvt", app16g .. "terminal.png" },
@@ -224,7 +226,6 @@ gamemenu = {
    { "&Steam", "optirun steam", app16 .. "steam.png" },
 }
 othermenu = {
-   { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "Shutter", "shutter", app16 .. "shutter.png" },
    { "&VirtualBox", "start-vbox", mime16 .. "virtualbox.png" },
    { "File &Cleaner", "bleachbit", pixmaps .. "bleachbit.png" },
