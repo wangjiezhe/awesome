@@ -139,6 +139,7 @@ officemenu = {
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
    { "&Evince", "evince", app16 .. "evince.png" },
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
+   { "Kee&PassX", "keepassx", app16 .. "keepassx.png"},
 }
 terminalmenu = {
    { "URxvt", "urxvt", app16g .. "terminal.png" },
