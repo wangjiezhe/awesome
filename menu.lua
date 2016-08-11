@@ -178,6 +178,7 @@ multimediamenu = {
    { "&Lollypop", "lollypop", app16 .. "lollypop.png" },
    { "&Osdlyrics", "osdlyrics", app64 .. "osdlyrics.png" },
    { "Len&mus" , "lenmus", pixmaps .. "lenmus.png" },
+   { "Kid3", "kid3-qt", app16 .. "kid3-qt.png" },
 }
 qtmenu = {
    { "Qt5 &Assistant", "assistant-qt5", app32 .. "assistant.png" },

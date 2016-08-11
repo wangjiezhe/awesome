@@ -706,6 +706,7 @@ awful.rules.rules = {
             "stellarium",
             "Solfege", "TuxGuitar",
             "Ardour-4.6.0",
+            "Kid3",
          }
     }, properties = { screen = 1, tag = tag_t.names[5], switchtotag = true }},
 
