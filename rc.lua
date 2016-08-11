@@ -744,10 +744,9 @@ awful.rules.rules = {
             "Xmaxima", "Wxmaxima",
             "Octave-gui",
             "^R$", "RStudio",
-            "GeoGebra",
          },
          class = {
-
+            "org-geogebra-desktop-GeoGebra3D",
          }
     }, properties = { screen = 1, tag = tag_t.names[8], switchtotag = true }},
 

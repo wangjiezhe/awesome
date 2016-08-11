@@ -77,6 +77,7 @@ mathmenu = {
    { "FriCAS", terminal .. " -e fricas -nosman" },
    { "Yacas", terminal .. " -e yacas" },
    { "Re&duce" , terminal .. " -e redcsl", "/usr/share/icons/redcsl.png" },
+   { "&GeoGebra", "geogebra", apps .. "geogebra.svg" },
 }
 latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
