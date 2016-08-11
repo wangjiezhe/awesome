@@ -631,6 +631,7 @@ awful.rules.rules = {
             -- "Emacs",
             "Lxterminal",
             "Roxterm",
+            "Terminix",
          }
     }, properties = { maximized = true }},
 
@@ -639,6 +640,7 @@ awful.rules.rules = {
          class = {
             "Lxterminal",
             "Roxterm",
+            "Terminix",
          }
     }, properties = { screen = 1, tag = tag_t.names[1], switchtotag = true }},
 
