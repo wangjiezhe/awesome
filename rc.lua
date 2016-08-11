@@ -720,6 +720,7 @@ awful.rules.rules = {
             "WizNote", "Wiz",
             "heimdall-frontend", "Sqliteman",
             "Gnucash",
+            "com-xk72-charles-gui-MainWithClassLoader",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 

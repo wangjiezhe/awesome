@@ -203,6 +203,7 @@ webtoolsmenu = {
    { "&Zenmap (as root)", "gksudo zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
    { "&Wireshark", "wireshark-gtk", app16 .. "wireshark.png" },
    { "&Burp Suite", "burpsuite", pixmaps .. "burpsuite.png" },
+   { "Charles", "charles", app16 .. "charles.png" },
 }
 webcammenu = {
    { "&Guvcview", "guvcview", pixmaps .. "guvcview/guvcview.png" },
