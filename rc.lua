@@ -648,7 +648,9 @@ awful.rules.rules = {
          class = {
             "Firefox",
             "chromium",
-            "yandex-browser-beta",
+         },
+         name = {
+            "Yandex",
          }
     }, properties = { screen = 1, tag = tag_t.names[2], switchtotag = true }},
 
