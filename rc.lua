@@ -709,7 +709,7 @@ awful.rules.rules = {
             "Steam", "supertux2", "mGBA", "bm2000.exe", "ltpb.exe", "Fceux", "Hiro",
             "stellarium",
             "Solfege", "TuxGuitar",
-            "Ardour-4.6.0",
+            "Ardour-4.6.0", "Audacity",
             "Kid3",
          }
     }, properties = { screen = 1, tag = tag_t.names[5], switchtotag = true }},
