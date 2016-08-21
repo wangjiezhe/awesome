@@ -199,6 +199,7 @@ developmentmenu = {
    -- { "&Astah", "astah" },
    { "&Devhelp", "devhelp", app16 .. "devhelp.png" },
    { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
+   { "&BeanShell", "/usr/lib/jvm/java-7-openjdk/bin/java -jar /usr/share/java/bsh.jar" },
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
