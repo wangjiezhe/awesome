@@ -67,7 +67,6 @@ networkmenu = {
 -- }
 mathmenu = {
    { "Sage", terminal .. " -e sage" },
-   { "Sage(Notebook)", terminal .. " -e sage -notebook" },
    { "GAP", terminal .. " -e gap" },
    { "GP/PARI", terminal .. " -e gp" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
