@@ -154,11 +154,11 @@ colormenu = {
    { "G&pick", "gpick", app48 .. "gpick.png"}
 }
 graphicmenu = {
-   { "&GIMP", "env LANG=zh_CN.UTF8 gimp", app16 .. "gimp.png" },
-   { "&Inkscape", "env LANG=zh_CN.UTF8 inkscape", app16 .. "inkscape.png" },
-   { "K&rita", "krita", app16 .. "calligrakrita.png" },
-   { "&Blender", "blender", app16 .. "blender.png" },
-   { "&Darktable", "primusrun darktable", app16 .. "darktable.png" },
+   { "&GIMP", "env LANG=zh_CN.UTF8 optirun gimp", app16 .. "gimp.png" },
+   { "&Inkscape", "env optirun inkscape", app16 .. "inkscape.png" },
+   { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
+   { "&Blender", "optirun blender", app16 .. "blender.png" },
+   { "&Darktable", "optirun darktable", app16 .. "darktable.png" },
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
    { "g&thumb", "Gthumb", app16 .. "gthumb.png" },
    { "&Shotwell", "shotwell", app16 .. "shotwell.png" },
@@ -223,12 +223,12 @@ winemenu = {
    { "&Bridge", bridgemenu },
 }
 gamemenu = {
-   { "Super&tux2", "primusrun supertux2", pixmaps .. "supertux.png"},
-   { "&OpenRA", "primusrun openra", app16 .. "openra.png" },
+   { "Super&tux2", "optirun supertux2", pixmaps .. "supertux.png"},
+   { "&OpenRA", "optirun openra", app16 .. "openra.png" },
    { "&mGBA", "mgba-qt", app16 .. "mgba.png" },
    { "&Fceux", "fceux", pixmaps .. "fceux.png" },
    { "Hi&gan", "higan", pixmaps .. "higan.png" },
-   { "&Steam", "primusrun steam", app16 .. "steam.png" },
+   { "&Steam", "optirun steam", app16 .. "steam.png" },
 }
 othermenu = {
    { "Shutter", "shutter", app16 .. "shutter.png" },
