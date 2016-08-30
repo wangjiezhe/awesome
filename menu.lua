@@ -232,7 +232,7 @@ gamemenu = {
 }
 othermenu = {
    { "Shutter", "shutter", app16 .. "shutter.png" },
-   { "&VirtualBox", "start-vbox", mime16 .. "virtualbox.png" },
+   { "&VirtualBox", "virtualbox", mime16 .. "virtualbox.png" },
    { "File &Cleaner", "bleachbit", pixmaps .. "bleachbit.png" },
    { "Manage &Printing", "xdg-open http://localhost:631/", app16 .. "cups.png" },
    { "&WebCam", webcammenu },
