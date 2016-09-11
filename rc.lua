@@ -747,12 +747,13 @@ awful.rules.rules = {
             "^sage$",
             "^gp$", "^gap$", "Singular", "fricas", "yacas",
             "reduce", "redcsl", "HyperDoc",
-            "Xmaxima", "Wxmaxima",
-            "Octave-gui",
-            "^R$", "RStudio",
+            "^R$",
          },
          class = {
             "org-geogebra-desktop-GeoGebra3D",
+            "Octave-gui",
+            "Xmaxima", "Wxmaxima",
+            "RStudio",
          }
     }, properties = { screen = 1, tag = tag_t.names[8], switchtotag = true }},
 
