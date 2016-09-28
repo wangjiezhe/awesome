@@ -105,7 +105,7 @@ markdownmenu = {
    { "&Marp", "marp", pixmaps .. "marp.png" },
 }
 editormenu = {
-   { "G&vim", "gvim", pixmaps .. "gvim.png" },
+   { "G&vim", "gvim", app48 .. "gvim.png" },
    { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app16 .. "emacs.png" },
    { "&LaTeX", latexmenu },
    { "&Markdown", markdownmenu },
@@ -118,7 +118,7 @@ editormenu = {
    { "Li&teIDE", "liteide", pixmaps .. "liteide.png" },
    { "PoE&dit", "poedit", app16 .. "poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },
-   { "&OmegaT", "omegat", pixmaps .. "omegat.png" },
+   { "&OmegaT", "omegat", pixmaps .. "omegat.svg" },
    { "Wiki & &Note", wikimenu },
 }
 libreofficemenu = {
