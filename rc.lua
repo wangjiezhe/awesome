@@ -237,8 +237,7 @@ tag_t = {
     layouts = {}
 }
 
-awful.screen.connect_for_each_screen(function(s)
-    -- Wallpaper
+local function set_wallpaper(s)
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
         -- If wallpaper is a function, call it with the screen
@@ -247,6 +246,14 @@ awful.screen.connect_for_each_screen(function(s)
         end
         gears.wallpaper.maximized(wallpaper, s, true)
     end
+end
+
+-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+screen.connect_signal("property::geometry", set_wallpaper)
+
+awful.screen.connect_for_each_screen(function(s)
+    -- Wallpaper
+    set_wallpaper(s)
 
     -- Each screen has its own tag table.
     awful.tag(tag_t.names, s, awful.layout.layouts[1])
@@ -587,6 +594,7 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
+                     screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
