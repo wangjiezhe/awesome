@@ -148,6 +148,7 @@ terminalmenu = {
    { "Roxterm", "roxterm", apps .. "roxterm.svg" },
    { "Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
    { "Terminix", "terminix", app16 .. "com.gexperts.Terminix.png" },
+   { "Terminator", "terminator", app16 .. "terminator.png" },
 }
 colormenu = {
    { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
