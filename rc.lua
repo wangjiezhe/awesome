@@ -778,6 +778,7 @@ awful.rules.rules = {
             "Octave-gui",
             "Xmaxima", "Wxmaxima",
             "RStudio",
+            "CoqIde",
          }
     }, properties = { screen = 1, tag = tag_t.names[8], switchtotag = true }},
 

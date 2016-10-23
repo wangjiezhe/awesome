@@ -77,6 +77,7 @@ mathmenu = {
    { "Yacas", terminal .. " -e yacas" },
    { "Re&duce" , terminal .. " -e redcsl", "/usr/share/icons/redcsl.png" },
    { "&GeoGebra", "geogebra", apps .. "geogebra.svg" },
+   { "&CoqIde", "coqide", "/usr/share/coq/coq.png" },
 }
 latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
