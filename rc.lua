@@ -671,7 +671,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "Firefox",
-            "chromium",
+            "Chromium",
          },
          name = {
             "Yandex",
