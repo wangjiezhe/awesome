@@ -779,6 +779,7 @@ awful.rules.rules = {
             "Xmaxima", "Wxmaxima",
             "RStudio",
             "CoqIde",
+            "Qreduce",
          }
     }, properties = { screen = 1, tag = tag_t.names[8], switchtotag = true }},
 
