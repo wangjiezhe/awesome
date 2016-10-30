@@ -57,6 +57,6 @@
 
 (module+ main
   (command-line
-   #:usage-help "Get icon file name for programs" "Proted from xdg_menu"
+   #:usage-help "Get icon file name for programs" "Ported from xdg_menu"
    #:args programs
    (for-each displayln (map find-icon programs))))
