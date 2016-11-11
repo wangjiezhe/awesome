@@ -702,7 +702,7 @@ awful.rules.rules = {
          class = {
             "Wps", "Et", "Wpp",
             "Texmacs.bin",
-            "Gummi", "TexMaker", "TeXstudio", "Lyx",
+            "Gummi", "TexMaker", "TeXstudio", "lyx",
             "Gracket", "DrRacket",
             "Poedit",
             "Java", "Eclipse", "jetbrains-studio", "jetbrains-idea",
