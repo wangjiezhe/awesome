@@ -26,7 +26,7 @@ local pixmaps = "/usr/share/pixmaps/"
 --     { "manual", terminal .. " -e man awesome", freedesktop.utils.lookup_icon({ icon = 'system-help' }) },
 --     { "edit config", editor_cmd .. " " .. awesome.conffile, freedesktop.utils.lookup_icon({ icon = 'package_settings' }) },
 --     { "restart", awesome.restart, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) },
---     { "quit", awesome.quit, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
+--     { "quit", fuction() awesome.quit() end, freedesktop.utils.lookup_icon({ icon = 'system-shutdown' }) }
 -- }
 -- table.insert(menu_items, { "Awesome", myawesomemenu, beautiful.awesome_icon })
 -- table.insert(menu_items, { "Wallpaper", wallmenu, freedesktop.utils.lookup_icon({ icon = 'gnome-settings-background' })})
@@ -278,7 +278,7 @@ mymainmenu = awful.menu({ items = {
 --     { "manual", terminal .. " -e man awesome" },
 --     { "edit config", editor_cmd .. " " .. awesome.conffile },
 --     { "restart", awesome.restart },
---     { "quit", awesome.quit }
+--     { "quit", function() awesome.quit() end }
 -- }
 -- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
 --                                     { "Applications", xdgmenu },
