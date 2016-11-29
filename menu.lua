@@ -182,6 +182,7 @@ multimediamenu = {
    { "&Osdlyrics", "osdlyrics", app64 .. "osdlyrics.png" },
    { "Len&mus" , "lenmus", pixmaps .. "lenmus.png" },
    { "Kid3", "kid3-qt", app16 .. "kid3-qt.png" },
+   { "Audacity", "audacity", app16 .. "audacity.png" },
 }
 qtmenu = {
    { "Qt5 &Assistant", "assistant-qt5", app32 .. "assistant.png" },
