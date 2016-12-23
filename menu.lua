@@ -107,6 +107,7 @@ markdownmenu = {
    { "&Marp", "marp", pixmaps .. "marp.png" },
 }
 editormenu = {
+   { "Atom", "atom", app16 .. "atom.png" },
    { "G&vim", "gvim", app48 .. "gvim.png" },
    { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app16 .. "emacs.png" },
    { "&LaTeX", latexmenu },

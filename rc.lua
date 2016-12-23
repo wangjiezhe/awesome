@@ -716,6 +716,7 @@ awful.rules.rules = {
             "Aegisub-3.2",
             "OmegaT",
             "liteide",
+            "Atom",
          }
     }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 
