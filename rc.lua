@@ -759,7 +759,7 @@ awful.rules.rules = {
 
     { rule_any = {
          name = {
-            "Electronic WeChat" , "^ScudCloud$",
+            "Electronic WeChat" ,
          },
          class = {
             "Thunderbird",
@@ -767,6 +767,7 @@ awful.rules.rules = {
             "QQ.exe",
             -- "Hexchat",
             "Linphone", "Ekiga",
+            "Scudcloud", "Rocket.Chat+",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 

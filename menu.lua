@@ -53,6 +53,7 @@ networkmenu = {
    { "&Linphone", "linphone", app48 .. "linphone.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&Slack", "scudcloud", pixmaps .. "scudcloud.png" },
+   { "&Rocket.Chat", "/opt/rocketchat/rocketchat", "/opt/rocketchat/icon.png" },
    { "Transmission", "transmission-gtk", app16 .. "transmission.png" },
    { "&MEGASync", "megasync", app16 .. "mega.png" },
 }
