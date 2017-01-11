@@ -730,7 +730,7 @@ awful.rules.rules = {
          class = {
             "Gimp", "Inkscape", "Blender", "Darktable", "krita",
             -- "mpv", "MPlayer",
-            "Kwplayer", "Ario", "Gmpc", "FeelUOwn", "Lollypop",
+            "Kwplayer", "Ario", "Gmpc", "FeelUOwn", "Lollypop", "netease-cloud-music",
             "Paman", "Pavucontrol", "Pavumeter",
             "Lenmus",
             "Cheese", "guvcview",

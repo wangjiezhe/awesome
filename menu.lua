@@ -177,6 +177,7 @@ pamenu = {
 }
 multimediamenu = {
    { "&FeelUOwn", "feeluown", pixmaps .. "feeluown.png" },
+   { "&NetEase Cloud Music", "netease-cloud-music", apps .. "netease-cloud-music.svg" },
    { "K&W Player", "kwplayer", app16 .. "kwplayer.png" },
    { "&PulseAudio Control", pamenu },
    { "&Ario", "ario", app16 .. "ario.png" },
