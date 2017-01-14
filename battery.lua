@@ -4,6 +4,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
+local gears = require("gears")
 local color = require("color")
 
 battery_widget = wibox.widget.textbox()
@@ -57,6 +58,6 @@ end
 
 show_battery(battery_widget)
 
-battery_timer = timer({ timeout = 10 })
+battery_timer = gears.timer({ timeout = 10 })
 battery_timer:connect_signal("timeout", function () show_battery(battery_widget) end)
 battery_timer:start()

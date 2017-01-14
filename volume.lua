@@ -3,6 +3,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local color = require("color")
+local gears = require("gears")
 
 local pulse = true
 
@@ -75,6 +76,6 @@ end
 
 update_volume(volume_widget)
 
-volume_timer = timer({ timeout = 1 })
+volume_timer = gears.timer({ timeout = 1 })
 volume_timer:connect_signal("timeout", function () update_volume(volume_widget) end)
 volume_timer:start()
