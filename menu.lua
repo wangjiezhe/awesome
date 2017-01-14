@@ -182,7 +182,7 @@ multimediamenu = {
    { "&PulseAudio Control", pamenu },
    { "&Ario", "ario", app16 .. "ario.png" },
    { "&Gmpc", "gmpc", app16 .. "gmpc.png" },
-   { "&Lollypop", "lollypop", app16 .. "lollypop.png" },
+   { "&Lollypop", "lollypop", app16 .. "org.gnome.Lollypop.png" },
    { "&Osdlyrics", "osdlyrics", app64 .. "osdlyrics.png" },
    { "Len&mus" , "lenmus", pixmaps .. "lenmus.png" },
    { "Kid3", "kid3-qt", app16 .. "kid3-qt.png" },
