@@ -10,6 +10,7 @@ local app32 = "/usr/share/icons/hicolor/32x32/apps/"
 local app48 = "/usr/share/icons/hicolor/48x48/apps/"
 local app64 = "/usr/share/icons/hicolor/64x64/apps/"
 local app128 = "/usr/share/icons/hicolor/128x128/apps/"
+local app512 = "/usr/share/icons/hicolor/512x512/apps/"
 local apps = "/usr/share/icons/hicolor/scalable/apps/"
 local dev16g = "/usr/share/icons/gnome/16x16/devices/"
 local mime16 = "/usr/share/icons/hicolor/16x16/mimetypes/"
@@ -53,7 +54,7 @@ networkmenu = {
    { "&Linphone", "linphone", app48 .. "linphone.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&Slack", "scudcloud", pixmaps .. "scudcloud.png" },
-   { "&Rocket.Chat", "/opt/rocketchat/rocketchat", "/opt/rocketchat/icon.png" },
+   { "&Rocket.Chat+", "/opt/Rocket.Chat+/rocketchat", app512 .. "rocketchat.png" },
    { "Transmission", "transmission-gtk", app16 .. "transmission.png" },
    { "&MEGASync", "megasync", app16 .. "mega.png" },
 }
