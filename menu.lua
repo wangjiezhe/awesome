@@ -145,7 +145,7 @@ officemenu = {
    { "&Evince", "evince", app16 .. "evince.png" },
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
-   { "Kee&PassX", "keepassx", app16 .. "keepassx.png"},
+   { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
 }
 terminalmenu = {
    { "URxvt", "urxvt", app16g .. "terminal.png" },
