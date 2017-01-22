@@ -11,7 +11,7 @@
      {"Go For It!", "go-for-it", "/usr/share/icons/hicolor/16x16/apps/go-for-it.svg" },
      {"GooglePlayDownloader", "googleplaydownloader", "/usr/share/pixmaps/googleplaydownloader.png" },
      {"KeePass Password Safe", "keepass", "/usr/share/icons/hicolor/16x16/apps/keepass.png" },
-     {"KeePassX", "keepassx ", "/usr/share/icons/hicolor/16x16/apps/keepassx.png" },
+     {"KeePassXC", "keepassxc ", "/usr/share/icons/hicolor/16x16/apps/keepassxc.png" },
      {"KeeWeb Password Safe", "KeeWeb ", "/usr/share/icons/hicolor/128x128/apps/keeweb.png" },
      {"Marp", "/usr/bin/marp", "/usr/share/pixmaps/marp.png" },
      {"Passwords and Keys", "/usr/bin/seahorse", "/usr/share/icons/hicolor/16x16/apps/seahorse.png" },
