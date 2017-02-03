@@ -707,7 +707,7 @@ awful.rules.rules = {
             "OpenRA",
          },
          class = {
-            "Gimp", "Inkscape", "Blender", "Darktable", "krita",
+            "Gimp", "Inkscape", "Blender", "Darktable", "krita", "Openscad",
             -- "mpv", "MPlayer",
             "Kwplayer", "Ario", "Gmpc", "FeelUOwn", "Lollypop", "netease-cloud-music",
             "Paman", "Pavucontrol", "Pavumeter",
