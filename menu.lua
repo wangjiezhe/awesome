@@ -16,8 +16,6 @@ local dev16g = "/usr/share/icons/gnome/16x16/devices/"
 local mime16 = "/usr/share/icons/hicolor/16x16/mimetypes/"
 local pixmaps = "/usr/share/pixmaps/"
 
--- local hotkeys_vim = require("awful.hotkeys_popup.keys.vim")
-
 -- FreeDesktop
 -- require('freedesktop.utils')
 -- require('freedesktop.menu')
