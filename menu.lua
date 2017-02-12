@@ -69,6 +69,7 @@ mathmenu = {
    { "Sage", terminal .. " -e sage" },
    { "GAP", terminal .. " -e gap" },
    { "GP/PARI", terminal .. " -e gp" },
+   { "CoCoA", terminal .. " -e cocoa5" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
    { "GNU &Octave", "octave --force-gui", app16 .. "octave.png" },
    { "Singular", terminal .. " -e Singular" },
