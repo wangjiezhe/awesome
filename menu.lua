@@ -164,6 +164,7 @@ graphicmenu = {
    { "&Inkscape", "env optirun inkscape", app16 .. "inkscape.png" },
    { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
    { "&Blender", "optirun blender", app16 .. "blender.png" },
+   { "&FreeCAD", "optirun freecad", "/usr/share/freecad/freecad.xpm" },
    { "&OpenSCAD", "optirun openscad", pixmaps .. "openscad.png" },
    { "&Darktable", "optirun darktable", app16 .. "darktable.png" },
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
