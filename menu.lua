@@ -78,6 +78,7 @@ mathmenu = {
    { "Yacas", terminal .. " -e yacas" },
    { "Re&duce" , terminal .. " -e redcsl", "/usr/share/icons/redcsl.png" },
    { "&Qreduce", "qreduce", "/usr/share/qreduce/Bumblebee.png" },
+   { "JGEX", "jgex", "/opt/jgex0_80/gexicon.gif" },
    { "&GeoGebra", "geogebra", apps .. "geogebra.svg" },
    { "&CoqIde", "coqide", "/usr/share/coq/coq.png" },
 }
