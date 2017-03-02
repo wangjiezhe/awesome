@@ -770,10 +770,11 @@ awful.rules.rules = {
             "^gp$", "^gap$", "Singular", "fricas", "yacas",
             "reduce", "redcsl", "HyperDoc",
             "^R$",
+            "Maple",
          },
          class = {
             "org-geogebra-desktop-GeoGebra3D",
-            "Octave-gui",
+            "Octave-gui", "MATLAB", "Mathematica",
             "Xmaxima", "Wxmaxima",
             "RStudio",
             "CoqIde",

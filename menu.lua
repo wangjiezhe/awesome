@@ -71,6 +71,9 @@ mathmenu = {
    { "GP/PARI", terminal .. " -e gp" },
    { "CoCoA", terminal .. " -e cocoa5" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
+   { "M&atlab", "optirun matlab -desktop -nosplash", "/opt/MATLAB/R2016b/bin/glnxa64/cef_resources/matlab_icon.png" },
+   { "Ma&thematica", "optirun Mathematica", app32 .. "wolfram-mathematica.png" },
+   { "Ma&ple", "optirun xmaple", "/opt/maple2016/bin/Maple2016.png" },
    { "GNU &Octave", "octave --force-gui", app16 .. "octave.png" },
    { "Singular", terminal .. " -e Singular" },
    { "&RStudio", "rstudio-bin", app16 .. "rstudio.png" },
@@ -78,7 +81,7 @@ mathmenu = {
    { "Yacas", terminal .. " -e yacas" },
    { "Re&duce" , terminal .. " -e redcsl", "/usr/share/icons/redcsl.png" },
    { "&Qreduce", "qreduce", "/usr/share/qreduce/Bumblebee.png" },
-   { "JGEX", "jgex", "/opt/jgex0_80/gexicon.gif" },
+   { "JG&EX", "jgex", "/opt/jgex0_80/gexicon.gif" },
    { "&GeoGebra", "geogebra", apps .. "geogebra.svg" },
    { "&CoqIde", "coqide", "/usr/share/coq/coq.png" },
 }
