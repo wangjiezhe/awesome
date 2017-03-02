@@ -774,7 +774,7 @@ awful.rules.rules = {
          },
          class = {
             "org-geogebra-desktop-GeoGebra3D",
-            "Octave-gui", "MATLAB", "Mathematica",
+            "octave-gui", "MATLAB", "Mathematica",
             "Xmaxima", "Wxmaxima",
             "RStudio",
             "CoqIde",
