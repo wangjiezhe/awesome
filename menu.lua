@@ -151,13 +151,13 @@ officemenu = {
    { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
 }
 terminalmenu = {
-   { "URxvt", "urxvt", app16g .. "terminal.png" },
+   { "&URxvt", "urxvt", app16g .. "terminal.png" },
    { "Xterm", "xterm", pixmaps .. "xterm-color_48x48.xpm" },
    { "UXterm", "uxterm", pixmaps .. "xterm-color_48x48.xpm" },
-   { "Roxterm", "roxterm", apps .. "roxterm.svg" },
-   { "Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
-   { "Terminix", "terminix", app16 .. "com.gexperts.Terminix.png" },
-   { "Terminator", "terminator", app16 .. "terminator.png" },
+   { "&Roxterm", "roxterm", apps .. "roxterm.svg" },
+   { "&Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
+   { "Termini&x", "terminix", app16 .. "com.gexperts.Terminix.png" },
+   { "&Terminator", "terminator", app16 .. "terminator.png" },
 }
 colormenu = {
    { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
@@ -274,11 +274,11 @@ mymainmenu = awful.menu({ items = {
                              { "G&raphic", graphicmenu },
                              { "&Multimedia", multimediamenu },
                              { "&Development", developmentmenu },
-                             { "Web &Tools", webtoolsmenu },
+                             { "Web Too&ls", webtoolsmenu },
                              { "&Wine", winemenu },
                              { "&Games", gamemenu },
                              { "Other&s", othermenu },
-                             { "Terminal", terminalmenu },
+                             { "&Terminal", terminalmenu },
                              { "Power", powermenu },
                              }})
 
