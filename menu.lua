@@ -71,7 +71,7 @@ mathmenu = {
    { "GP/PARI", terminal .. " -e gp" },
    { "CoCoA", terminal .. " -e cocoa5" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
-   { "M&atlab", "optirun matlab -desktop -nosplash", "/opt/MATLAB/R2016b/bin/glnxa64/cef_resources/matlab_icon.png" },
+   { "M&atlab", "optirun matlab -desktop", "/opt/MATLAB/R2016b/bin/glnxa64/cef_resources/matlab_icon.png" },
    { "Ma&thematica", "optirun Mathematica", app32 .. "wolfram-mathematica.png" },
    { "Ma&ple", "optirun xmaple", "/opt/maple2016/bin/Maple2016.png" },
    { "GNU &Octave", "octave --force-gui", app16 .. "octave.png" },
