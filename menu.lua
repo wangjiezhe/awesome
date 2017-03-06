@@ -148,6 +148,7 @@ officemenu = {
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
    { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
+   { "&Zotero", "zotero", app16 .. "zotero.png" },
 }
 terminalmenu = {
    { "&URxvt", "urxvt", app16g .. "terminal.png" },

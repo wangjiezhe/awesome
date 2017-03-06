@@ -747,6 +747,7 @@ awful.rules.rules = {
             "heimdall-frontend", "Sqliteman",
             "Gnucash",
             "com-xk72-charles-gui-MainWithClassLoader",
+            "Zotero",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 
