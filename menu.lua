@@ -53,7 +53,7 @@ networkmenu = {
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&Slack", "scudcloud", pixmaps .. "scudcloud.png" },
    { "&Rocket.Chat+", "/opt/Rocket.Chat+/rocketchat", app512 .. "rocketchat.png" },
-   { "Transmission", "transmission-gtk", app16 .. "transmission.png" },
+   { "Tr&ansmission", "transmission-gtk", app16 .. "transmission.png" },
    { "&MEGASync", "megasync", app16 .. "mega.png" },
 }
 -- filemenu = {
