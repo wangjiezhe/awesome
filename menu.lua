@@ -86,6 +86,7 @@ mathmenu = {
 }
 latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
+   { "TeX&works", "texworks", pixmaps .. "TeXworks.png" },
    { "Tex&Maker", "texmaker", pixmaps .. "texmaker.png" },
    { "TeX&studio", "texstudio", apps .. "texstudio.svg" },
    { "&Lyx", "lyx", app48 .. "lyx.png" },
