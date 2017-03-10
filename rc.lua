@@ -20,7 +20,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys.vim")
 
 -- Powerline
--- package.path = package.path .. ';/usr/lib/python2.7/site-packages/powerline/bindings/awesome/powerline.lua'
+-- package.path = package.path .. ';/usr/lib/python3.6/site-packages/powerline/bindings/awesome/powerline.lua'
 -- require('powerline')
 
 -- Revelation
@@ -277,6 +277,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            -- powerline_widget,
             mykeyboardlayout,
             spacer,
             wibox.widget.systray(),
