@@ -174,11 +174,6 @@ function update_github(has_contributions)
 end
 update_github(false)
 
--- pomodoro widget
--- local pomodoro = require("pomodoro")
--- pomodoro.format = function (t) return "[<b>" .. t .. "</b>]" end
--- pomodoro.init()
-
 -- bashets.start()
 
 -- Create a wibox for each screen and add it
@@ -295,8 +290,6 @@ awful.screen.connect_for_each_screen(function(s)
             mytextclock,
             spacer,
             github_widget,
-            -- pomodoro.icon_widget,
-            -- pomodoro.widget,
             spacer,
             battery_widget,
             spacer,
