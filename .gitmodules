@@ -1,6 +1,6 @@
 [submodule "revelation"]
 	path = revelation
-	url = https://github.com/guotsuan/awesome-revelation.git
+	url = https://github.com/wangjiezhe/awesome-revelation.git
 [submodule "net_widgets"]
 	path = net_widgets
 	url = https://github.com/wangjiezhe/net_widgets.git
