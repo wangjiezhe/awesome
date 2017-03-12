@@ -11,7 +11,7 @@ local timeout = 1
 volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
 volume_widget:buttons(
-   awful.util.table.join(
+   gears.table.join(
       awful.button({}, 1, function () awful.spawn("pamixer --toggle-mute") end)))
 
 function update_volume (widget)
