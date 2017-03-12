@@ -688,7 +688,7 @@ awful.rules.rules = {
          },
          class = {
             "Wps", "Et", "Wpp",
-            "Texmacs.bin",
+            "Texmacs.bin", "Gvedit",
             "Gummi", "TexMaker", "TeXstudio", "lyx", "TeXworks",
             "Gracket", "DrRacket",
             "Poedit",
