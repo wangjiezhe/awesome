@@ -6,6 +6,7 @@ local color = require("color")
 local gears = require("gears")
 
 local pulse = true
+local timeout = 1
 
 volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
@@ -76,6 +77,5 @@ end
 
 update_volume(volume_widget)
 
-volume_timer = gears.timer({ timeout = 1 })
-volume_timer:connect_signal("timeout", function () update_volume(volume_widget) end)
-volume_timer:start()
+local timer = gears.timer.start_new(timeout, function () update_volume(volume_widget)
+                                       return true end)

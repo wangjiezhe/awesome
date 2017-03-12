@@ -12,6 +12,7 @@ battery_widget:set_align("right")
 
 local ac_adapter = "AC0"
 local bat_adapter = "BAT0"
+local timeout = 1
 
 function show_battery (widget)
    local function get_output (file)
@@ -58,6 +59,5 @@ end
 
 show_battery(battery_widget)
 
-battery_timer = gears.timer({ timeout = 10 })
-battery_timer:connect_signal("timeout", function () show_battery(battery_widget) end)
-battery_timer:start()
+local timer = gears.timer.start_new(timeout, function () show_battery(battery_widget)
+                                       return true end)
