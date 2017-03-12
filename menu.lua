@@ -166,7 +166,7 @@ colormenu = {
 }
 graphicmenu = {
    { "&GIMP", "env LANG=zh_CN.UTF8 optirun gimp", app16 .. "gimp.png" },
-   { "&Inkscape", "env optirun inkscape", app16 .. "inkscape.png" },
+   { "&Inkscape", "optirun inkscape", app16 .. "inkscape.png" },
    { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
    { "&Blender", "optirun blender", app16 .. "blender.png" },
    { "&FreeCAD", "optirun freecad", "/usr/share/freecad/freecad.xpm" },
