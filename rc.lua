@@ -704,6 +704,7 @@ awful.rules.rules = {
             "OmegaT",
             "liteide",
             "Atom",
+            "Master PDF Editor", "Pdfedit", "Krop", "org.pdfsam.PdfsamApp",
          }
     }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 

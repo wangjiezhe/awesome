@@ -13,6 +13,7 @@ local app128 = "/usr/share/icons/hicolor/128x128/apps/"
 local app512 = "/usr/share/icons/hicolor/512x512/apps/"
 local apps = "/usr/share/icons/hicolor/scalable/apps/"
 local dev16g = "/usr/share/icons/gnome/16x16/devices/"
+local act16g = "/usr/share/icons/gnome/16x16/actions/"
 local mime16 = "/usr/share/icons/hicolor/16x16/mimetypes/"
 local pixmaps = "/usr/share/pixmaps/"
 
@@ -111,11 +112,18 @@ markdownmenu = {
    { "&Retext", "retext", app16 .. "retext.png" },
    { "&Marp", "marp", pixmaps .. "marp.png" },
 }
+pdfmenu = {
+   { "Master PDF Editor", "masterpdfeditor4", "/opt/master-pdf-editor-4/masterpdfeditor4.png" },
+   { "  PDF Editor", "pdfedit", "/usr/share/pdfedit/icon/pdfedit_logo.png" },
+   { "Crop PDF files", "krop", act16g .. "edit-cut.png" },
+   { "PDFsam", "pdfsam", pixmaps .. "pdfsam.png" },
+}
 editormenu = {
    { "Atom", "atom", app16 .. "atom.png" },
    { "G&vim", "gvim", app48 .. "gvim.png" },
    { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app16 .. "emacs.png" },
    { "&LaTeX", latexmenu },
+   { "PD&F", pdfmenu },
    { "&GVEdit", "gvedit" },
    { "&Markdown", markdownmenu },
    { "&Python", pythonmenu },
@@ -147,6 +155,7 @@ officemenu = {
    { "&LibreOffice", libreofficemenu, app16 .. "libreoffice-main.png" },
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
    { "&Evince", "evince", app16 .. "evince.png" },
+   { "&Okular", "okular", app16 .. "okular.png" },
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
    { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
