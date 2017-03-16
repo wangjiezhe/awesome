@@ -28,7 +28,7 @@ local revelation = require("revelation")
 
 -- Bashets
 -- local bashets = require("bashets")
--- bashets.set_script_path = awful.util.getdir("config") .. "bashets"
+-- bashets.set_script_path = gears.filesystem.get_dir("config") .. "bashets"
 -- bashets.set_temporary_path = "/dev/shm/tmp"
 
 -- Naughty
@@ -63,7 +63,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 local theme = beautiful.get()
 -- theme.font = "dejavu sans mono 8"
 theme.menu_height = 20
@@ -162,8 +162,8 @@ net_wired = net_widgets.indicator({
 })
 
 -- Github contribution indicator
-github_contributed = awful.util.getdir("config") .. "/images/github_contributed.png"
-github_not_contributed = awful.util.getdir("config") .. "/images/github_not_contributed.png"
+github_contributed = gears.filesystem.get_dir("config") .. "/images/github_contributed.png"
+github_not_contributed = gears.filesystem.get_dir("config") .. "/images/github_not_contributed.png"
 github_widget = wibox.widget.imagebox()
 function update_github(has_contributions)
     if has_contributions then
@@ -407,7 +407,7 @@ globalkeys = gears.table.join(
                     prompt       = "Run Lua code: ",
                     textbox      = awful.screen.focused().mypromptbox.widget,
                     exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
+                    history_path = gears.filesystem.get_cache_dir() .. "/history_eval"
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
