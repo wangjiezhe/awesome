@@ -89,7 +89,7 @@ function add_applications_icons(arg)
                 label = arg.showlabels and program.Name or nil,
                 icon = program.icon_path,
                 screen = arg.screen,
-                click = function () awful.util.spawn(program.cmdline) end
+                click = function () awful.spawn(program.cmdline) end
             })
         end
     end
@@ -114,7 +114,7 @@ function add_dirs_and_files_icons(arg)
                 label = arg.showlabels and file.filename or nil,
                 icon = file.icon,
                 screen = arg.screen,
-                click = function () awful.util.spawn(arg.open_with .. ' ' .. file.path) end
+                click = function () awful.spawn(arg.open_with .. ' ' .. file.path) end
             })
         end
     end

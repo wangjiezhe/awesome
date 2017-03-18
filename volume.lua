@@ -61,17 +61,17 @@ function update_volume (widget)
 end
 
 function inc_volume (widget)
-   awful.util.spawn("pamixer --allow-boost --increase 1")
+   awful.spawn("pamixer --allow-boost --increase 1")
    update_volume(widget)
 end
 
 function dec_volume (widget)
-   awful.util.spawn("pamixer --allow-boost --decrease 1")
+   awful.spawn("pamixer --allow-boost --decrease 1")
    update_volume(widget)
 end
 
 function mute_volume (widget)
-   awful.util.spawn("pamixer --toggle-mute")
+   awful.spawn("pamixer --toggle-mute")
    update_volume(widget)
 end
 
