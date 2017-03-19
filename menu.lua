@@ -287,7 +287,7 @@ mymainmenu = awful.menu({ items = {
                              { "G&raphic", graphicmenu },
                              { "&Multimedia", multimediamenu },
                              { "&Development", developmentmenu },
-                             { "Web Too&ls", webtoolsmenu },
+                             { "We&b Tools", webtoolsmenu },
                              { "&Wine", winemenu },
                              { "&Games", gamemenu },
                              { "Other&s", othermenu },
