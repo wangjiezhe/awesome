@@ -225,6 +225,7 @@ developmentmenu = {
    { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
    { "&BeanShell", "/usr/lib/jvm/java-7-openjdk/bin/java -jar /usr/share/java/bsh.jar" },
    { "H&opper Disassembler v3", "hopper-v3", app16 .. "hopper-disassembler-v3.png" },
+   { "&IDA Demo", "/opt/ida-demo/idaq", app64 .. "ida.png" },
 }
 webtoolsmenu = {
    { "Zenmap", "zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
