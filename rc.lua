@@ -743,6 +743,7 @@ awful.rules.rules = {
             "Gnucash",
             "com-xk72-charles-gui-MainWithClassLoader",
             "Zotero",
+            "Hopper",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 
