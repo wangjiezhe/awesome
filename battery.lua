@@ -12,7 +12,7 @@ battery_widget:set_align("right")
 
 local ac_adapter = "AC0"
 local bat_adapter = "BAT0"
-local timeout = 1
+local timeout = 5
 
 function show_battery (widget)
    local function get_output (file)
@@ -36,7 +36,7 @@ function show_battery (widget)
       if bat <= 10 then
          naughty.notify({ title = "Battery Waring",
                           text = "Batter low! Only ".. bat .. "% left!",
-                          timeout = 5,
+                          timeout = timeout,
                           fg = beautiful.fg_focus,
                           bg = beautiful.bg_focus})
       end
