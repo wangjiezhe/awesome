@@ -742,7 +742,7 @@ awful.rules.rules = {
             "heimdall-frontend", "Sqliteman",
             "Gnucash",
             "com-xk72-charles-gui-MainWithClassLoader",
-            "Zotero",
+            "Zotero", "Mendeley Desktop",
             "Hopper", "IDA",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},

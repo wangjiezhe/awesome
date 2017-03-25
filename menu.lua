@@ -160,6 +160,7 @@ officemenu = {
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
    { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
    { "&Zotero", "zotero", app16 .. "zotero.png" },
+   { "&Mendeley Desktop", "mendeleydesktop", app16 .. "mendeleydesktop.png" },
 }
 terminalmenu = {
    { "&URxvt", "urxvt", app16g .. "terminal.png" },
