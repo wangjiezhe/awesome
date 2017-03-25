@@ -758,7 +758,7 @@ awful.rules.rules = {
             "QQ.exe",
             -- "Hexchat",
             "Linphone", "Ekiga",
-            "ScudCloud", "Rocket.Chat+",
+            "ScudCloud", "Rocket.Chat+", "Slack",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 
