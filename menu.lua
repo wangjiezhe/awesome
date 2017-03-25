@@ -296,7 +296,7 @@ mymainmenu = awful.menu({ items = {
                              }})
 
 -- Xdg_menu
--- xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~/.config/awesome/archmenu.lua
+-- xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu | awk -F, '{if (a!=$1) print $a; a=$1}' >~/.config/awesome/archmenu.lua
 -- xdg_menu = require("archmenu")
 -- myawesomemenu = {
 --     { "manual", terminal .. " -e man awesome" },
