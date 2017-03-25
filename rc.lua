@@ -744,6 +744,7 @@ awful.rules.rules = {
             "com-xk72-charles-gui-MainWithClassLoader",
             "Zotero", "Mendeley Desktop",
             "Hopper", "IDA",
+            "calibre",
          }
     }, properties = { screen = 1, tag = tag_t.names[6], switchtotag = true }},
 

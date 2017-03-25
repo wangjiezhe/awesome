@@ -155,6 +155,7 @@ officemenu = {
    { "&LibreOffice", libreofficemenu, app16 .. "libreoffice-main.png" },
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
    { "&Evince", "evince", app16 .. "evince.png" },
+   { "Calibre", "calibre --detach", app16 .. "calibre-gui.png" },
    { "&Okular", "okular", app16 .. "okular.png" },
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
