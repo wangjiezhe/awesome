@@ -51,6 +51,7 @@ networkmenu = {
    { "&Pidgin", "pidgin", app16 .. "pidgin.png" },
    { "&WeChat", "electronic-wechat", "/usr/share/electronic-wechat/assets/icon.png" },
    { "&Linphone", "linphone", app48 .. "linphone.png" },
+   { "&Ekiga Softphone", "ekiga", app16 .. "ekiga.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&ScudCloud", "scudcloud", pixmaps .. "scudcloud.png" },
    { "Slack", "slack", pixmaps .. "slack.png" },
