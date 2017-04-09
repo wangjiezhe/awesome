@@ -131,6 +131,7 @@ editormenu = {
    { "&Python", pythonmenu },
    { "Dr&Racket", "drracket", app16 .. "drracket.png" },
    { "&Web", webmenu },
+   { "&CLion", "clion", pixmaps .. "clion.svg" },
    { "&Eclipse", "eclipse", app16 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
