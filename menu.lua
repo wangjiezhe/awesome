@@ -91,7 +91,7 @@ latexmenu = {
    { "&Gummi", "gummi", pixmaps .. "gummi.png" },
    { "TeX&works", "texworks", pixmaps .. "TeXworks.png" },
    { "Tex&Maker", "texmaker", pixmaps .. "texmaker.png" },
-   { "TeX&studio", "texstudio", apps .. "texstudio.svg" },
+   { "TeX&studio", "texstudio", app16 .. "texstudio.png" },
    { "&Lyx", "lyx", app48 .. "lyx.png" },
    { "&TeXmacs", "texmacs", pixmaps .. "TeXmacs.xpm" },
 }
@@ -185,7 +185,7 @@ graphicmenu = {
    { "&Inkscape", "optirun inkscape", app16 .. "inkscape.png" },
    { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
    { "&Blender", "optirun blender", app16 .. "blender.png" },
-   { "&FreeCAD", "optirun freecad", "/usr/share/freecad/freecad.xpm" },
+   { "&FreeCAD", "optirun freecad", app16 .. "freecad.png" },
    { "&OpenSCAD", "optirun openscad", pixmaps .. "openscad.png" },
    { "&Darktable", "optirun darktable", app16 .. "darktable.png" },
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
