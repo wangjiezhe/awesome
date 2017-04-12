@@ -135,6 +135,7 @@ editormenu = {
    { "&Eclipse", "eclipse", app16 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
+   { "&QtCreator", "qtcreator", app16 .. "QtProject-qtcreator.png" },
    { "Li&teIDE", "liteide", pixmaps .. "liteide.png" },
    { "PoE&dit", "poedit", app16 .. "poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },
