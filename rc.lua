@@ -221,7 +221,7 @@ local tasklist_buttons = gears.table.join(
                                           end))
 
 tag_t = {
-    names = { '|1.TERM', '|2.WWW', '|3.FILES', '|4.EDIT', '|5.ENTERTAINMENT', '|6.WIKI', '|7.MAIL', '|8.MATH', '|9.OTHERS' },
+    names = { '|1.TERM', '|2.WWW', '|3.FILES', '|4.EDIT', '|5.ENTERTAINMENT', '|6.WIKI', '|7.MAIL', '|8.MATH', '|9.OTHERS', '|0.LOGS' },
     layouts = {}
 }
 
@@ -531,7 +531,7 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 10 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
