@@ -54,9 +54,9 @@ networkmenu = {
    { "&Ekiga Softphone", "ekiga", app16 .. "ekiga.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
    { "&ScudCloud", "scudcloud", pixmaps .. "scudcloud.png" },
-   { "Slack", "slack", pixmaps .. "slack.png" },
+   { "Sl&ack", "slack", pixmaps .. "slack.png" },
    { "&Rocket.Chat+", "/opt/Rocket.Chat+/rocketchat", app512 .. "rocketchat.png" },
-   { "Tr&ansmission", "transmission-gtk", app16 .. "transmission.png" },
+   { "Tra&nsmission", "transmission-gtk", app16 .. "transmission.png" },
    { "&MEGASync", "megasync", app16 .. "mega.png" },
 }
 -- filemenu = {
