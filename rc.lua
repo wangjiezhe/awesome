@@ -659,7 +659,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "Firefox",
-            "Chromium",
+            "Chromium", "Chromium-dev",
          },
          name = {
             "Yandex",

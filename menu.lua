@@ -41,7 +41,8 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 networkmenu = {
-   { "&Chromium", "chromium", app16 .. "chromium.png" },
+   -- { "&Chromium", "chromium", app16 .. "chromium.png" },
+   { "&Chromium Dev", "chromium-dev", app16 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app16 .. "firefox.png" },
    { "&Yandex Browser", "yandex-browser-beta", app16 .. "yandex-browser-beta.png" },
    { "&Thunderbird", "thunderbird", app16 .. "thunderbird.png" },
