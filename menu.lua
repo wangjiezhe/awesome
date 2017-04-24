@@ -161,7 +161,7 @@ officemenu = {
    { "&WPS Office", wpsmenu, app16 .. "wps-office-kingsoft.png" },
    { "&Evince", "evince", app16 .. "evince.png" },
    { "Calibre", "calibre --detach", app16 .. "calibre-gui.png" },
-   { "&Okular", "okular", app16 .. "okular.png" },
+   { "Ok&ular", "okular", app16 .. "okular.png" },
    { "&GnuCash", "gnucash", app16 .. "gnucash-icon.png"},
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
    { "Kee&PassXC", "keepassxc", app16 .. "keepassxc.png"},
