@@ -10,6 +10,7 @@ local app32 = "/usr/share/icons/hicolor/32x32/apps/"
 local app48 = "/usr/share/icons/hicolor/48x48/apps/"
 local app64 = "/usr/share/icons/hicolor/64x64/apps/"
 local app128 = "/usr/share/icons/hicolor/128x128/apps/"
+local app256 = "/usr/share/icons/hicolor/256x256/apps/"
 local app512 = "/usr/share/icons/hicolor/512x512/apps/"
 local apps = "/usr/share/icons/hicolor/scalable/apps/"
 local dev16g = "/usr/share/icons/gnome/16x16/devices/"
@@ -186,6 +187,7 @@ graphicmenu = {
    { "&Inkscape", "optirun inkscape", app16 .. "inkscape.png" },
    { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
    { "&Blender", "optirun blender", app16 .. "blender.png" },
+   { "&OBS", "optirun obs", app256 .. "obs.png" },
    { "&FreeCAD", "optirun freecad", app16 .. "freecad.png" },
    { "&OpenSCAD", "optirun openscad", pixmaps .. "openscad.png" },
    { "&Darktable", "optirun darktable", app16 .. "darktable.png" },
