@@ -145,12 +145,12 @@ editormenu = {
    { "Wiki & &Note", wikimenu },
 }
 libreofficemenu = {
-   { "&Base", "env LANG=zh_CN.UTF8 lobase", app16 .. "libreoffice-base.png" },
-   { "&Writer", "env LANG=zh_CN.UTF8 lowriter", app16 .. "libreoffice-writer.png" },
-   { "&Calc", "env LANG=zh_CN.UTF8 localc", app16 .. "libreoffice-calc.png" },
-   { "&Impress", "env LANG=zh_CN.UTF8 loimpress", app16 .. "libreoffice-impress.png" },
-   { "&Draw", "env LANG=zh_CN.UTF8 lodraw", app16 .. "libreoffice-draw.png" },
-   { "&Math", "env LANG=zh_CN.UTF8 lomath", app16 .. "libreoffice-math.png" },
+   { "&Base", "lobase", app16 .. "libreoffice-base.png" },
+   { "&Writer", "lowriter", app16 .. "libreoffice-writer.png" },
+   { "&Calc", "localc", app16 .. "libreoffice-calc.png" },
+   { "&Impress", "loimpress", app16 .. "libreoffice-impress.png" },
+   { "&Draw", "lodraw", app16 .. "libreoffice-draw.png" },
+   { "&Math", "lomath", app16 .. "libreoffice-math.png" },
 }
 wpsmenu = {
    { "&Writer", "wps", app48 .. "wps-office-wpsmain.png" },
@@ -183,7 +183,7 @@ colormenu = {
    { "G&pick", "gpick", app48 .. "gpick.png"}
 }
 graphicmenu = {
-   { "&GIMP", "env LANG=zh_CN.UTF8 optirun gimp", app16 .. "gimp.png" },
+   { "&GIMP", "optirun gimp", app16 .. "gimp.png" },
    { "&Inkscape", "optirun inkscape", app16 .. "inkscape.png" },
    { "K&rita", "optirun krita", app16 .. "calligrakrita.png" },
    { "&Blender", "optirun blender", app16 .. "blender.png" },
