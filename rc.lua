@@ -734,7 +734,7 @@ awful.rules.rules = {
 
     { rule_any = {
          instance = {
-            "Navicat.exe",
+            "Navicat.exe", "sqlitebrowser",
          },
          class = {
             "VirtualBox",

@@ -221,7 +221,8 @@ qtmenu = {
    { "Qt4 Designer", "designer-qt4", app128 .. "designer-qt4.png" },
 }
 sqlmenu = {
-   { "&Sqliteman", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
+   { "&Sqlitebrowser", "sqlitebrowser", app256 .. "sqlitebrowser.png" },
+   { "Sqlite&man", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
    { "&Navicat", "navicat", "/opt/navicat/Navicat/help/img/icon_navicat.png" },
 }
 developmentmenu = {
