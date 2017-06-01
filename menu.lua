@@ -175,7 +175,7 @@ terminalmenu = {
    { "UXterm", "uxterm", pixmaps .. "xterm-color_48x48.xpm" },
    { "&Roxterm", "roxterm", apps .. "roxterm.svg" },
    { "&Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
-   { "Termini&x", "terminix", app16 .. "com.gexperts.Terminix.png" },
+   { "Tili&x", "tilix", app16 .. "com.gexperts.Tilix.png" },
    { "&Terminator", "terminator", app16 .. "terminator.png" },
 }
 colormenu = {
