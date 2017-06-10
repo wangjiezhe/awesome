@@ -202,7 +202,7 @@ pamenu = {
    { "Volume &Meter", "pavumeter", dev16g .."audio-input-microphone.png" },
 }
 multimediamenu = {
-   { "&FeelUOwn", "feeluown", pixmaps .. "feeluown.png" },
+   { "&FeelUOwn", home_path .. ".local/bin/feeluown", home_path .. ".local/share/pixmaps/feeluown.png" },
    { "&NetEase Cloud Music", "netease-cloud-music", apps .. "netease-cloud-music.svg" },
    { "K&W Player", "kwplayer", app16 .. "kwplayer.png" },
    { "&PulseAudio Control", pamenu },
