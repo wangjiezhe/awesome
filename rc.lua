@@ -660,6 +660,7 @@ awful.rules.rules = {
          class = {
             "Firefox",
             "Chromium", "Chromium-dev",
+            "qutebrowser",
          },
          name = {
             "Yandex",

@@ -46,6 +46,7 @@ networkmenu = {
    { "&Chromium Dev", "chromium-dev", app16 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app16 .. "firefox.png" },
    { "&Yandex Browser", "yandex-browser-beta", app16 .. "yandex-browser-beta.png" },
+   { "&Qutebrowser", "qutebrowser", app16 .. "qutebrowser.png" },
    { "&Thunderbird", "thunderbird", app16 .. "thunderbird.png" },
    { "&Baidu Cloud", "bcloud-gui", app16 .. "bcloud.png" },
    { "115 Pan", "115pan", pixmaps .. "115pan.png" },
