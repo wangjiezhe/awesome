@@ -587,12 +587,31 @@ clientbuttons = gears.table.join(
 root.keys(globalkeys)
 -- }}}
 
+function myfocus_filter(c)
+  if awful.client.focus.filter(c) then
+    -- This works with tooltips and some popup-menus
+    if c.class == 'Wine' and c.above == true then
+      return nil
+    elseif c.class == 'Wine'
+      and c.type == 'dialog'
+      and c.skip_taskbar == true
+      and c.size_hints.max_width and c.size_hints.max_width < 160
+      then
+      -- for popup item menus of Photoshop CS5
+      return nil
+    else
+      return c
+    end
+  end
+end
+
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = { focus = myfocus_filter,
+                     border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
@@ -753,17 +772,23 @@ awful.rules.rules = {
 
     { rule_any = {
          name = {
-            "Electronic WeChat" ,
+            "Electronic WeChat",
          },
          class = {
             "Thunderbird",
             "Pidgin",
-            "QQ.exe",
             -- "Hexchat",
             "Linphone", "Ekiga",
             "ScudCloud", "Rocket.Chat+", "Slack",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
+
+    { rule_any = {
+         class = {
+            "TM.exe", "QQ.exe", "WeChat.exe",
+         }
+    }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true,
+                      focusable = true, floating = true, border_width = 0 }},
 
     { rule_any = {
          name = {
