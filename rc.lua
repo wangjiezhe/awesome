@@ -800,7 +800,7 @@ awful.rules.rules = {
             "Maple",
          },
          class = {
-            "org-geogebra-desktop-GeoGebra3D",
+            "org-geogebra-desktop-GeoGebra3D", "wprover-GExpert",
             "octave-gui", "MATLAB", "Mathematica",
             "Xmaxima", "Wxmaxima",
             "RStudio",
