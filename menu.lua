@@ -73,9 +73,9 @@ networkmenu = {
 --    { "wxMaxima", "wxmaxima" }
 -- }
 mathmenu = {
-   { "Sage", terminal .. " -e sage" },
+   { "&Sage", terminal .. " -e sage" },
    { "GAP", terminal .. " -e gap" },
-   { "GP/PARI", terminal .. " -e gp" },
+   { "GP/PAR&I", terminal .. " -e gp" },
    { "CoCoA", terminal .. " -e cocoa5" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
    { "M&atlab", "optirun matlab -desktop", pixmaps .. "matlab.png" },
