@@ -101,8 +101,8 @@ latexmenu = {
 }
 pythonmenu = {
    { "&PyCharm", "pycharm", pixmaps .. "pycharm.png" },
-   { "&Spyder", "spyder", pixmaps .. "spyder.png" },
-   { "Spyder (python&3)", "spyder3", pixmaps .. "spyder3.png" },
+   { "Spyder2", "spyder2", apps .. "spyder2.svg" },
+   { "&Spyder3", "spyder3", apps .. "spyder3.svg" },
    { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" },
 }
 webmenu = {
