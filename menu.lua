@@ -85,7 +85,7 @@ mathmenu = {
    { "Singular", terminal .. " -e Singular" },
    { "&RStudio", "rstudio-bin", app16 .. "rstudio.png" },
    { "FriCAS", terminal .. " -e fricas -nosman" },
-   { "Yacas", terminal .. " -e yacas" },
+   { "&Yacas", "yacas-gui", pixmaps .. "yacas-gui.png" },
    { "&Qreduce", "qreduce", "/usr/share/qreduce/Bumblebee.png" },
    { "JG&EX", "jgex", "/opt/jgex0_80/gexicon.gif" },
    { "&GeoGebra", "geogebra", apps .. "geogebra.svg" },
