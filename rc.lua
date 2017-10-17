@@ -16,6 +16,7 @@ require("awful.autofocus")
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -70,9 +71,9 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 local theme = beautiful.get()
--- theme.font = "dejavu sans mono 8"
-theme.menu_height = 20
-theme.menu_width = 170
+theme.font = "sans 7"
+theme.menu_height = dpi(25)
+theme.menu_width = dpi(200)
 theme.wallpaper = "/usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
 
 revelation.init()
