@@ -162,7 +162,7 @@ net_wireless = net_widgets.wireless({
     font="dejavu sans mono 8",
 })
 net_wired = net_widgets.indicator({
-    interfaces = {"enp5s0"},
+    interfaces = {"enp0s20u2"},
     font="dejavu sans mono 8",
 })
 
