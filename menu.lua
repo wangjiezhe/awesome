@@ -175,6 +175,7 @@ terminalmenu = {
    { "&URxvt", "urxvt", app16g .. "terminal.png" },
    { "Xterm", "xterm", pixmaps .. "xterm-color_48x48.xpm" },
    { "UXterm", "uxterm", pixmaps .. "xterm-color_48x48.xpm" },
+   { "&Gnome Terminal", "gnome-terminal", app16g .. "gnome-terminal.png" },
    { "&Roxterm", "roxterm", apps .. "roxterm.svg" },
    { "&Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
    { "Tili&x", "tilix", app16 .. "com.gexperts.Tilix.png" },
