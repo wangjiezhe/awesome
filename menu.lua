@@ -256,7 +256,8 @@ bridgemenu = {
    { "&Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" },
 }
 winemenu = {
-   { "&QQ", "/opt/deepinwine/apps/Deepin-QQ/run.sh", app16 .. "deepin.com.qq.im.svg" },
+   { "&TIM", "/opt/deepinwine/apps/Deepin-TIM/run.sh", app16 .. "deepin.com.qq.office.svg" },
+--   { "&QQ", "/opt/deepinwine/apps/Deepin-QQ/run.sh", app16 .. "deepin.com.qq.im.svg" },
    { "&Wechat", "/opt/deepinwine/apps/Deepin-WeChat/run.sh", app16 .. "deepin.com.wechat.svg" },
    { "&RHWUD", "env WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
    { "&CAJViewer", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
