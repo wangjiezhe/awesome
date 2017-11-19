@@ -48,7 +48,7 @@ networkmenu = {
    { "&Firefox", "firefox", app16 .. "firefox.png" },
    { "Firefox Developer", "firefox-developer --class firefox-developer", app16 .. "firefox-developer.png" },
    { "&Yandex Browser", "yandex-browser-beta", app16 .. "yandex-browser-beta.png" },
-   { "&Qutebrowser", "qutebrowser", app16 .. "qutebrowser.png" },
+   { "&Qutebrowser (webkit)", "qutebrowser --backend webkit", app16 .. "qutebrowser.png" },
    { "Q&utebrowser (webengine)", "qutebrowser --backend webengine" , app16 .. "qutebrowser.png" },
    { "&Thunderbird", "thunderbird", app16 .. "thunderbird.png" },
    { "&Baidu Cloud", "bcloud-gui", app16 .. "bcloud.png" },
