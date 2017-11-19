@@ -45,6 +45,7 @@ networkmenu = {
    { "&Chrome", "google-chrome-unstable", app16 .. "google-chrome-unstable.png" },
    { "Chromium &Dev", "chromium-dev", app16 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app16 .. "firefox.png" },
+   { "Firefox Developer", "firefox-developer --class firefox-developer", app16 .. "firefox-developer.png" },
    { "&Yandex Browser", "yandex-browser-beta", app16 .. "yandex-browser-beta.png" },
    { "&Qutebrowser", "qutebrowser", app16 .. "qutebrowser.png" },
    { "Q&utebrowser (webengine)", "qutebrowser --backend webengine" , app16 .. "qutebrowser.png" },
