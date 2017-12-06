@@ -71,7 +71,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 local theme = beautiful.get()
-theme.font = "sans 7"
+theme.font = "sans 9"
 theme.menu_height = dpi(25)
 theme.menu_width = dpi(200)
 theme.wallpaper = "/usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
