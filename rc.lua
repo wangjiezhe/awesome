@@ -678,6 +678,7 @@ awful.rules.rules = {
             "Lxterminal",
             "Roxterm",
             "Terminix",
+            "Evince",
          }
     }, properties = { maximized = true }},
 
