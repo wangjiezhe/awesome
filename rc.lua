@@ -688,6 +688,7 @@ awful.rules.rules = {
             "Lxterminal",
             "Roxterm",
             "Terminix",
+            "cool-retro-term",
          }
     }, properties = { screen = 1, tag = tag_t.names[1], switchtotag = true }},
 

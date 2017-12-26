@@ -182,6 +182,7 @@ terminalmenu = {
    { "&Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
    { "Tili&x", "tilix", app48 .. "com.gexperts.Tilix.png" },
    { "&Terminator", "terminator", app48 .. "terminator.png" },
+   { "&Cool Retro Term", "cool-retro-term", app64 .. "cool-retro-term.png" },
 }
 colormenu = {
    { "G&color2", "gcolor2", pixmaps .. "gcolor2/icon.png" },
