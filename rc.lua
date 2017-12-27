@@ -802,6 +802,9 @@ awful.rules.rules = {
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 
     { rule_any = {
+         instance = {
+            "tim.exe",
+         },
          class = {
             "TM.exe", "QQ.exe", "WeChat.exe",
          }
@@ -838,6 +841,12 @@ awful.rules.rules = {
             "Blueman",
          }
     }, properties = { screen = 1, tag = tag_t.names[9], switchtotag = true }},
+
+    { rule_any = {
+         name = {
+            "journalctl",
+         },
+    }, properties = { screen = 1, tag = tag_t.names[10], switchtotag = true }},
 
     -- Semi transparent clients.
     { rule = { class = "URxvt" },
