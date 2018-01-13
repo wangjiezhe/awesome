@@ -738,7 +738,7 @@ awful.rules.rules = {
             "Astah",
             "assistant", "Assistant-qt4", "assistant-qt5", "Designer", "Designer-qt4",
             "cmake-gui",
-            "Bluefish", "Bluegriffon",
+            "Bluefish", "Bluegriffon", "jetbrains-webstorm",
             "Scribus",
             "Aegisub-3.2",
             "OmegaT",

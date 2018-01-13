@@ -108,6 +108,7 @@ pythonmenu = {
    { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" },
 }
 webmenu = {
+   { "&WebStorm", "webstorm", pixmaps .. "webstorm.svg" },
    { "Blue&fish", "bluefish", app48 .. "bluefish.png" },
    { "Blue&Griffon", "bluegriffon", app48 .. "bluegriffon.png" },
 }
