@@ -673,7 +673,7 @@ awful.rules.rules = {
     { rule_any = {
          class = {
             "URxvt",
-            -- "Gvim",
+            "Gvim",
             -- "Emacs",
             "Lxterminal",
             "Roxterm",
