@@ -807,6 +807,7 @@ awful.rules.rules = {
          },
          class = {
             "TM.exe", "QQ.exe", "WeChat.exe",
+            "TelegramDesktop",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true,
                       focusable = true, floating = true, border_width = 0 }},
