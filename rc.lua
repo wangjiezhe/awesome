@@ -732,7 +732,7 @@ awful.rules.rules = {
             "Gracket", "DrRacket",
             "Poedit",
             "Java", "Eclipse", "jetbrains-studio", "jetbrains-idea",
-            "jetbrains-clion", "QtCreator",
+            "jetbrains-clion", "QtCreator", "Anjuta",
             "com.oracle.javafx.scenebuilder.app.SceneBuilderApp", "bsh-Console",
             "jetbrains-pycharm", "Spyder", "Dreampie",
             "Astah",

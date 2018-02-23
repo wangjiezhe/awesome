@@ -131,7 +131,7 @@ pdfmenu = {
 editormenu = {
    { "Atom", "atom", app48 .. "atom.png" },
    { "G&vim", "gvim", app48 .. "gvim.png" },
-   { "Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app48 .. "emacs.png" },
+   { "&Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app48 .. "emacs.png" },
    { "&LaTeX", latexmenu },
    { "PD&F", pdfmenu },
    { "&GVEdit", "gvedit" },
@@ -140,7 +140,8 @@ editormenu = {
    { "Dr&Racket", "drracket", app48 .. "drracket.png" },
    { "&Web", webmenu },
    { "&CLion", "clion", pixmaps .. "clion.svg" },
-   { "&Eclipse", "eclipse", app48 .. "eclipse.png" },
+   { "Anjuta", "anjuta", app48 .. "anjuta.png" },
+   { "Eclip&se", "eclipse", app48 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
    { "&QtCreator", "qtcreator", app48 .. "QtProject-qtcreator.png" },
