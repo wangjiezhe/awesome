@@ -47,6 +47,7 @@ networkmenu = {
    { "Chromium &Dev", "chromium-dev", app48 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app48 .. "firefox.png" },
    { "Firef&ox Developer", "firefox-developer-edition", app48 .. "firefox-developer-edition.png" },
+   { "&Vivaldi", "vivaldi-stable", app48 .. "vivaldi.png" },
    { "&Yandex Browser", "yandex-browser-beta", app48 .. "yandex-browser-beta.png" },
    { "&Qutebrowser (webkit)", "qutebrowser --backend webkit", app48 .. "qutebrowser.png" },
    { "Q&utebrowser (webengine)", "qutebrowser --backend webengine" , app48 .. "qutebrowser.png" },

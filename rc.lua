@@ -697,7 +697,7 @@ awful.rules.rules = {
             "Firefox", "firefox-developer",
             "Chromium", "Chromium-dev",
             "Google-chrome-unstable",
-            "qutebrowser",
+            "qutebrowser", "Vivaldi-stable",
          },
          name = {
             "Yandex",
