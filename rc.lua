@@ -428,8 +428,8 @@ globalkeys = gears.table.join(
     -- Menubar
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --           {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "p", function() awful.spawn("dmenu_run") end,
-       {description = "show dynamic menubar", group = "launcher"}),
+    awful.key({ modkey }, "p", function() awful.spawn("rofi -show combi") end,
+       {description = "show launcher", group = "launcher"}),
 
     -- Screenshot
     awful.key({ }, "Print", function () awful.spawn("scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'") end,
