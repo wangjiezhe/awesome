@@ -171,11 +171,12 @@ officemenu = {
    { "&Evince", "evince", app48 .. "evince.png" },
    { "Calibre", "calibre --detach", app48 .. "calibre-gui.png" },
    { "Ok&ular", "okular", app48 .. "okular.png" },
-   { "&GnuCash", "gnucash", app48 .. "gnucash-icon.png"},
+   { "&GnuCash", "gnucash", app48 .. "gnucash-icon.png" },
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
+   { "&MindMaster", "mindmaster", "/usr/share/icons/mindmaster.png" },
    { "Kee&PassXC", "keepassxc", app48 .. "keepassxc.png"},
    { "&Zotero", "zotero", app48 .. "zotero.png" },
-   { "&Mendeley Desktop", "mendeleydesktop", app48 .. "mendeleydesktop.png" },
+   { "Mendeley &Desktop", "mendeleydesktop", app48 .. "mendeleydesktop.png" },
 }
 terminalmenu = {
    { "&URxvt", "urxvt", app48g .. "terminal.png" },
