@@ -56,7 +56,7 @@ networkmenu = {
    { "115 Pan", "115pan", pixmaps .. "115pan.png" },
    { "File&zilla", "filezilla", app48 .. "filezilla.png" },
    { "&Pidgin", "pidgin", app48 .. "pidgin.png" },
-   { "Telegram", "telegram-desktop", app48 .. "telegram-desktop.png" },
+   { "Telegram", "telegram-desktop", app48 .. "telegram.png" },
    { "Electron &WeChat", "electronic-wechat", "/usr/share/electronic-wechat/assets/icon.png" },
    { "&Linphone", "linphone", app48 .. "linphone.png" },
    { "&Ekiga Softphone", "ekiga", app48 .. "ekiga.png" },
