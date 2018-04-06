@@ -278,7 +278,7 @@ gamemenu = {
    { "&mGBA", "mgba-qt", app48 .. "mgba.png" },
    { "&Fceux", "fceux", pixmaps .. "fceux.png" },
    { "Hi&gan", "higan", pixmaps .. "higan.png" },
-   { "&Steam", "optirun steam", app48 .. "steam.png" },
+   { "&Steam", "optirun /usr/lib/steam/steam", app48 .. "steam.png" },
 }
 othermenu = {
    { "Shutter", "shutter", app48 .. "shutter.png" },
