@@ -120,6 +120,7 @@ wikimenu = {
    { "&MediaWiki", "xdg-open http://localhost/mediawiki/" },
 }
 markdownmenu = {
+   { "&Typora", "typora", app64 .. "typora.png" },
    { "&Retext", "retext", app48 .. "retext.png" },
    { "&Marp", "marp", pixmaps .. "marp.png" },
 }
