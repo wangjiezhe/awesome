@@ -811,6 +811,7 @@ awful.rules.rules = {
             -- "Hexchat",
             "Linphone", "Ekiga",
             "ScudCloud", "Rocket.Chat+", "Slack",
+            "wewechat",
          }
     }, properties = { screen = 1, tag = tag_t.names[7], switchtotag = true }},
 
