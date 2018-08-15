@@ -8,12 +8,6 @@ local gears = require("gears")
 local pulse = true
 local timeout = 1
 
-volume_widget = wibox.widget.textbox()
-volume_widget:set_align("right")
-volume_widget:buttons(
-   gears.table.join(
-      awful.button({}, 1, function () awful.spawn("pamixer --toggle-mute") end)))
-
 function update_volume (widget)
    local function isempty (s)
       return s == nil or s == ''
@@ -74,6 +68,14 @@ function mute_volume (widget)
    awful.spawn("pamixer --toggle-mute")
    update_volume(widget)
 end
+
+volume_widget = wibox.widget.textbox()
+volume_widget:set_align("right")
+volume_widget:buttons(
+   gears.table.join(
+      awful.button({}, 1, function () mute_volume(volume_widget) end),
+      awful.button({}, 4, function () inc_volume(volume_widget) end),
+      awful.button({}, 5, function () dec_volume(volume_widget) end)))
 
 update_volume(volume_widget)
 
