@@ -489,7 +489,31 @@ globalkeys = gears.table.join(
 
     -- Xkill
     awful.key({ modkey, "Control", "Shift" }, "x", function () awful.spawn("xkill") end,
-       {description = "kill a client by its X resource", group = "utils"})
+       {description = "kill a client by its X resource", group = "utils"}),
+
+    -- Dict
+    awful.key({ modkey }, "d",
+       function ()
+          awful.prompt.run {
+             prompt = "<span color='cyan'>ydcv: </span>",
+             textbox = awful.screen.focused().mypromptbox.widget,
+             exe_callback =
+                function (word)
+                   local f = io.popen("ydcv " .. word)
+                   local fr = ""
+                   for line in f:lines() do
+                      fr = fr .. line .. '\n'
+                   end
+                   f:close ()
+                   naughty.notify({text = fr,
+                                   font = 'sans 20',
+                                   opacity = 0.9,
+                                   fg = 'violet',
+                                   timeout = 10})
+                end
+          }
+       end,
+       {description = "Youdao dict", group = "utils"})
 )
 
 clientkeys = gears.table.join(
