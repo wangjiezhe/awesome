@@ -41,7 +41,7 @@ function show_battery (widget)
                           bg = beautiful.bg_focus})
       end
    elseif ac:match("1") then
-      if sta:match("Discharging") then
+      if sta:match("Discharging") or sta:match("Not charging") then
          dir = "="
       elseif sta:match("Charging") then
          dir = "^"
