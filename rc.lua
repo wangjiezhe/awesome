@@ -513,7 +513,16 @@ globalkeys = gears.table.join(
                 end
           }
        end,
-       {description = "Youdao dict", group = "utils"})
+       {description = "Youdao dict", group = "utils"}),
+
+    -- Hide/show wibox
+    awful.key({ modkey }, "b",
+       function ()
+          myscreen = awful.screen.focused()
+          myscreen.mywibox.visible = not myscreen.mywibox.visible
+       end,
+       {description = "toggle statusbar"}
+    )
 )
 
 clientkeys = gears.table.join(
