@@ -174,6 +174,7 @@ officemenu = {
    { "Ok&ular", "okular", app48 .. "okular.png" },
    { "&GnuCash", "gnucash", app48 .. "gnucash-icon.png" },
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
+   { "&XMind", "XMind", app16 .. "XMind.png" },
    { "&MindMaster", "mindmaster", "/usr/share/icons/mindmaster.png" },
    { "Kee&PassXC", "keepassxc", app48 .. "keepassxc.png"},
    { "&Zotero", "zotero", app48 .. "zotero.png" },

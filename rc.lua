@@ -790,7 +790,7 @@ awful.rules.rules = {
             "liteide",
             "Atom",
             "Master PDF Editor", "Pdfedit", "Krop", "org.pdfsam.PdfsamApp",
-            "MindMaster",
+            "MindMaster", "XMind ZEN",
          }
     }, properties = { screen = 1, tag = tag_t.names[4], switchtotag = true }},
 
