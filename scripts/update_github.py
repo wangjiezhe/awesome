@@ -4,14 +4,16 @@ import os
 import time
 import xml.etree.ElementTree as ET
 from subprocess import (
-    check_output, CalledProcessError,
-    Popen, PIPE,
+    check_output,
+    CalledProcessError,
+    Popen,
+    PIPE,
 )
 import logging
 import logging.handlers
 
+from configparser import ConfigParser, NoOptionError
 import requests
-import configparser
 
 try:
     import setproctitle
@@ -23,19 +25,19 @@ logger.addHandler(logging.handlers.SysLogHandler(address='/dev/log'))
 logger.setLevel(logging.INFO)
 
 
-def get_proxy():
+def get_proxy() -> None:
     gitconfig = os.path.expanduser('~/.gitconfig')
-    config = configparser.ConfigParser()
+    config = ConfigParser()
     config.read(gitconfig)
     try:
         proxy = config.get('http', 'proxy')
         proxies = {'https': proxy}
-    except:
+    except NoOptionError:
         proxies = None
     return proxies
 
 
-def github_contributed():
+def github_contributed() -> bool:
     user = os.environ['USER']
     today = time.strftime('%Y-%m-%d')
     url = "https://github.com/users/%s/contributions" % user
@@ -47,7 +49,7 @@ def github_contributed():
     return int(rect.get('data-count')) > 0
 
 
-def get_dbus():
+def get_dbus() -> bool:
     if 'DBUS_SESSION_BUS_ADDRESS' in os.environ:
         return True
 
@@ -61,11 +63,13 @@ def get_dbus():
         raise
 
     with open('/proc/%s/environ' % pid) as f:
-        dbus = [x.split('=', 1)[1] for x in f.read().split(
-            '\0') if x.startswith('DBUS_SESSION_BUS_ADDRESS=')]
+        dbus = [
+            x.split('=', 1)[1] for x in f.read().split('\0')
+            if x.startswith('DBUS_SESSION_BUS_ADDRESS=')
+        ]
     if not dbus:
-        logger.error(
-            "can't get DBUS_SESSION_BUS_ADDRESS of awesome (pid %s)", pid)
+        logger.error("can't get DBUS_SESSION_BUS_ADDRESS of awesome (pid %s)",
+                     pid)
         return False
     dbus = dbus[0]
 
@@ -73,7 +77,7 @@ def get_dbus():
     return True
 
 
-def main():
+def main() -> None:
     ok = get_dbus()
     if not ok:
         return
@@ -89,6 +93,7 @@ def main():
 
     client = Popen(['awesome-client'], stdin=PIPE)
     client.communicate(s.encode('ascii'))
+
 
 if __name__ == '__main__':
     main()
