@@ -42,7 +42,7 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 networkmenu = {
-   { "&Google Chrome Dev", "google-chrome-unstable", app48 .. "google-chrome-unstable.png" },
+   { "&Google Chrome", "google-chrome-stable", app48 .. "google-chrome.png" },
    { "&Chromium", "chromium", app48 .. "chromium.png" },
    { "Chromium &Dev", "chromium-dev", app48 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app48 .. "firefox.png" },
@@ -57,7 +57,7 @@ networkmenu = {
    { "File&zilla", "filezilla", app48 .. "filezilla.png" },
    { "&Pidgin", "pidgin", app48 .. "pidgin.png" },
    { "Telegram", "telegram-desktop", app48 .. "telegram.png" },
-   { "Electron &WeChat", "electronic-wechat", "/usr/share/electronic-wechat/assets/icon.png" },
+   { "Electron &WeChat", "electronic-wechat", app48 .. "electronic-wechat.png" },
    { "&Linphone", "linphone", app48 .. "linphone.png" },
    { "&Ekiga Softphone", "ekiga", app48 .. "ekiga.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
@@ -82,8 +82,8 @@ mathmenu = {
    { "GP/PAR&I", terminal .. " -e gp" },
    { "CoCoA", terminal .. " -e cocoa5" },
    { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
-   { "M&atlab", "optirun matlab -desktop", pixmaps .. "matlab.png" },
-   { "Ma&thematica", "optirun Mathematica", app64 .. "wolfram-mathematica.png" },
+   -- { "M&atlab", "optirun matlab -desktop", pixmaps .. "matlab.png" },
+   -- { "Ma&thematica", "optirun Mathematica", app64 .. "wolfram-mathematica.png" },
    { "Ma&ple", "optirun xmaple", "/opt/maple2016/bin/Maple2016.png" },
    { "GNU &Octave", "octave --force-gui", app48 .. "octave.png" },
    { "Singular", terminal .. " -e Singular" },
@@ -125,8 +125,8 @@ markdownmenu = {
    { "&Marp", "marp", pixmaps .. "marp.png" },
 }
 pdfmenu = {
-   { "Master PDF Editor", "masterpdfeditor4", "/opt/master-pdf-editor-4/masterpdfeditor4.png" },
-   { "  PDF Editor", "pdfedit", "/usr/share/pdfedit/icon/pdfedit_logo.png" },
+   { "Master PDF Editor", "masterpdfeditor5", "/opt/master-pdf-editor-5/masterpdfeditor5.png" },
+   { "   PDF Editor", "pdfedit", "/usr/share/pdfedit/icon/pdfedit_logo.png" },
    { "Crop PDF files", "krop", act48g .. "edit-cut.png" },
    { "PDFsam", "pdfsam", pixmaps .. "pdfsam.png" },
 }
@@ -169,12 +169,12 @@ wpsmenu = {
 officemenu = {
    { "&LibreOffice", libreofficemenu, app48 .. "libreoffice-main.png" },
    { "&WPS Office", wpsmenu, app48 .. "wps-office-kingsoft.png" },
-   { "&Evince", "evince", app48 .. "evince.png" },
+   { "&Evince", "evince", app48 .. "org.gnome.Evince.png" },
    { "Calibre", "calibre --detach", app48 .. "calibre-gui.png" },
    { "Ok&ular", "okular", app48 .. "okular.png" },
    { "&GnuCash", "gnucash", app48 .. "gnucash-icon.png" },
    { "&FBReader", "FBReader", pixmaps .. "FBReader.png" },
-   { "&XMind", "XMind", app16 .. "XMind.png" },
+   { "&XMind", "XMind", pixmaps .. "xmind.png" },
    { "&MindMaster", "mindmaster", "/usr/share/icons/mindmaster.png" },
    { "Kee&PassXC", "keepassxc", app48 .. "keepassxc.png"},
    { "&Zotero", "zotero", app48 .. "zotero.png" },
@@ -235,18 +235,18 @@ qtmenu = {
 }
 sqlmenu = {
    { "&Sqlitebrowser", "sqlitebrowser", app256 .. "sqlitebrowser.png" },
-   { "Sqlite&man", "sqliteman", "/usr/share/icons/hicolor/sqliteman.png" },
+   { "Sqlite&man", "sqliteman", app32 .. "sqliteman.png" },
    { "&Navicat", "navicat", "/opt/navicat/Navicat/help/img/icon_navicat.png" },
 }
 developmentmenu = {
    { "&Qt", qtmenu },
    { "&Sql", sqlmenu },
    { "&CMake", "cmake-gui", app32 .. "CMakeSetup.png" },
-   { "&Genymotion", "genymotion", "/opt/genymotion/icons/icon.png" },
+   -- { "&Genymotion", "genymotion", "/opt/genymotion/icons/icon.png" },
    -- { "&Astah", "astah" },
-   { "&Devhelp", "devhelp", app48 .. "devhelp.png" },
+   { "&Devhelp", "devhelp", app48 .. "org.gnome.Devhelp.png" },
    { "Heimdall &Frontend", "heimdall-frontend", pixmaps .. "heimdall.png" },
-   { "&BeanShell", "/usr/lib/jvm/java-7-openjdk/bin/java -jar /usr/share/java/bsh.jar" },
+   { "&BeanShell", "/usr/lib/jvm/default/bin/java -jar /usr/share/java/bsh.jar" },
    { "H&opper Disassembler v4", "/opt/hopper-v4/bin/hopper-launcher.sh", app48 .. "hopper-disassembler-v4.png" },
    { "&IDA Demo", "/opt/ida-demo/idaq", app64 .. "ida.png" },
 }
@@ -255,7 +255,7 @@ webtoolsmenu = {
    { "&Zenmap (as root)", "gksudo zenmap", "/usr/share/zenmap/pixmaps/zenmap.png" },
    { "&Wireshark", "wireshark-gtk", app48 .. "wireshark.png" },
    { "&Burp Suite", "burpsuite", pixmaps .. "burpsuite.png" },
-   { "Charles", "charles", app48 .. "charles.png" },
+   { "Charles", "charles", app64 .. "charles.png" },
 }
 webcammenu = {
    { "&Guvcview", "guvcview", pixmaps .. "guvcview/guvcview.png" },
@@ -266,9 +266,9 @@ bridgemenu = {
    { "&Learn to Play Bridge", "dex " .. home_path .. ".local/share/applications/wine/Programs/'Bridge Base Inc'/'Learn to Play Bridge.desktop'" },
 }
 winemenu = {
-   { "&TIM", "/opt/deepinwine/apps/Deepin-TIM/run.sh", app48 .. "deepin.com.qq.office.svg" },
---   { "&QQ", "/opt/deepinwine/apps/Deepin-QQ/run.sh", app48 .. "deepin.com.qq.im.svg" },
-   { "&Wechat", "/opt/deepinwine/apps/Deepin-WeChat/run.sh", app48 .. "deepin.com.wechat.svg" },
+   -- { "&TIM", "/opt/deepinwine/apps/Deepin-TIM/run.sh", app48 .. "deepin.com.qq.office.svg" },
+   -- { "&QQ", "/opt/deepinwine/apps/Deepin-QQ/run.sh", app48 .. "deepin.com.qq.im.svg" },
+   -- { "&Wechat", "/opt/deepinwine/apps/Deepin-WeChat/run.sh", app48 .. "deepin.com.wechat.svg" },
    { "&RHWUD", "env WINEPREFIX=" .. home_path .. ".wine WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/Program\\ Files\\ \\(x86\\)/Random\\ House,\\ Inc/Random\\ House\\ Webster\\'s\\ Unabridged\\ Dictionary/RHUD30.EXE" },
    { "&CAJViewer", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/TTKN/'CAJViewer 7.2'/CAJVieweru.exe" },
    { "&SsReader", "env LANG=zh_CN.UTF8 WINEDEBUG=-all wine " .. home_path .. ".wine/drive_c/'Program Files (x86)'/SSREADER36/SsReader.exe" },
@@ -280,7 +280,7 @@ gamemenu = {
    { "&mGBA", "mgba-qt", app48 .. "mgba.png" },
    { "&Fceux", "fceux", pixmaps .. "fceux.png" },
    { "Hi&gan", "higan", pixmaps .. "higan.png" },
-   { "&Steam", "optirun /usr/lib/steam/steam", app48 .. "steam.png" },
+   -- { "&Steam", "optirun /usr/lib/steam/steam", app48 .. "steam.png" },
 }
 othermenu = {
    { "Shutter", "shutter", app48 .. "shutter.png" },

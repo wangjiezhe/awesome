@@ -734,7 +734,7 @@ awful.rules.rules = {
          class = {
             "Firefox", "firefox-developer",
             "Chromium", "Chromium-dev",
-            "Google-chrome-unstable",
+            "Google-chrome-unstable", "Google-chrome",
             "qutebrowser", "Vivaldi-stable",
          },
          name = {
