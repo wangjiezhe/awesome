@@ -74,7 +74,7 @@ local theme = beautiful.get()
 theme.font = "sans 9"
 theme.menu_height = dpi(25)
 theme.menu_width = dpi(200)
-theme.wallpaper = "/usr/share/archlinux/wallpaper/archlinux-simplyblack.png"
+theme.wallpaper = "/usr/share/backgrounds/archlinux/archlinux-simplyblack.png"
 
 revelation.init()
 
