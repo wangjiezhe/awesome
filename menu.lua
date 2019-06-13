@@ -81,7 +81,7 @@ mathmenu = {
    { "GAP", terminal .. " -e gap" },
    { "GP/PAR&I", terminal .. " -e gp" },
    { "CoCoA", terminal .. " -e cocoa5" },
-   { "&Maxiama", "wxmaxima", pixmaps .. "wxmaxima.png" },
+   { "&Maxiama", "wxmaxima", pixmaps .. "io.github.wxmaxima_developers.wxMaxima.png" },
    -- { "M&atlab", "optirun matlab -desktop", pixmaps .. "matlab.png" },
    -- { "Ma&thematica", "optirun Mathematica", app64 .. "wolfram-mathematica.png" },
    { "Ma&ple", "optirun xmaple", "/opt/maple2016/bin/Maple2016.png" },
