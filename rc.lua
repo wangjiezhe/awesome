@@ -76,9 +76,9 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 local theme = beautiful.get()
-theme.font = "sans 9"
-theme.menu_height = dpi(25)
-theme.menu_width = dpi(200)
+theme.font = "sans 12"
+theme.menu_height = dpi(32)
+theme.menu_width = dpi(250)
 theme.wallpaper = "/usr/share/backgrounds/archlinux/archlinux-simplyblack.png"
 
 revelation.init()
@@ -165,11 +165,11 @@ local net_widgets = require("net_widgets")
 net_wireless = net_widgets.wireless({
     interface="wlp4s0",
     indent=1,
-    font="dejavu sans mono 8",
+    font="dejavu sans mono 12",
 })
 net_wired = net_widgets.indicator({
-    interfaces = {"enp0s20u2"},
-    font="dejavu sans mono 8",
+    interfaces = {"enp5s0", "enp0s20u1", "enp0s20u2", "enp0s20u3"},
+    font="dejavu sans mono 12",
 })
 
 -- Github contribution indicator
