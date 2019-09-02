@@ -43,8 +43,9 @@ myawesomemenu = {
 }
 networkmenu = {
    { "&Google Chrome", "google-chrome-stable", app48 .. "google-chrome.png" },
+   { "Google Chrome &Dev", "google-chrome-unstable", app48 .. "google-chrome-unstable.png" },
    { "&Chromium", "chromium", app48 .. "chromium.png" },
-   { "Chromium &Dev", "chromium-dev", app48 .. "chromium-dev.png" },
+   -- { "Chromium &Dev", "chromium-dev", app48 .. "chromium-dev.png" },
    { "&Firefox", "firefox", app48 .. "firefox.png" },
    { "Firef&ox Developer", "firefox-developer-edition", app48 .. "firefox-developer-edition.png" },
    { "&Vivaldi", "vivaldi-stable", app48 .. "vivaldi.png" },
