@@ -135,6 +135,7 @@ editormenu = {
    { "Atom", "atom", app48 .. "atom.png" },
    { "G&vim", "gvim", app48 .. "gvim.png" },
    { "&Emacs", "env LC_CTYPE=zh_CN.UTF8 emacs", app48 .. "emacs.png" },
+   { "V&isual Studio Code", "code", "/usr/share/icons/visual-studio-code.png" },
    { "&LaTeX", latexmenu },
    { "PD&F", pdfmenu },
    { "&GVEdit", "gvedit" },
@@ -219,6 +220,7 @@ pamenu = {
 multimediamenu = {
    { "&FeelUOwn", home_path .. ".local/bin/feeluown", home_path .. ".local/share/pixmaps/feeluown.png" },
    { "&NetEase Cloud Music", "netease-cloud-music", apps .. "netease-cloud-music.svg" },
+   { "&VLC media player", "vlc", app16 .. "vlc.png" },
    { "K&W Player", "kwplayer", app48 .. "kwplayer.png" },
    { "&PulseAudio Control", pamenu },
    { "&Ario", "ario", app48 .. "ario.png" },
