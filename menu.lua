@@ -87,7 +87,7 @@ mathmenu = {
    -- { "Ma&thematica", "Mathematica", app64 .. "wolfram-mathematica.png" },
    { "Ma&ple", "xmaple", "/opt/maple2016/bin/Maple2016.png" },
    { "GNU &Octave", "octave --force-gui", app48 .. "octave.png" },
-   { "Singular", terminal .. " -e Singular" },
+   { "Singular", terminal .. " -e Singular", "/usr/share/icons/Singular.png" },
    { "&RStudio", "rstudio-bin", app48 .. "rstudio.png" },
    { "FriCAS", terminal .. " -e fricas -nosman" },
    { "&Yacas", "yacas-gui", pixmaps .. "yacas-gui.png" },
@@ -201,7 +201,6 @@ graphicmenu = {
    { "K&rita", "krita", app16 .. "krita.png" },
    { "&Blender", NVRUN .. "blender", apps .. "blender.svg" },
    { "&OBS", "obs", app256 .. "com.obsproject.Studio.png" },
-   { "&OpenSCAD", "openscad", pixmaps .. "openscad.png" },
    { "&Darktable", "darktable", app48 .. "darktable.png" },
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
    { "g&thumb", "Gthumb", app16 .. "org.gnome.gThumb.png" },
@@ -292,7 +291,7 @@ othermenu = {
    { "&Passwords and Keys", "seahorse", app48 .. "seahorse-preferences.png" },
    { "&Font Editor", "fontforge", app48 .. "org.fontforge.FontForge.png" },
    { "Hardware Topology", "lstopo" },
-   { "&Stellarium", "stellarium", app48 .. "stellarium.png" },
+   { "&Stellarium", NVRUN .. "stellarium", app48 .. "stellarium.png" },
 }
 powermenu = {
    { "Shutdown", "shutdown -P now" },
