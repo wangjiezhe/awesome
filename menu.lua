@@ -18,6 +18,8 @@ local act48g = "/usr/share/icons/gnome/48x48/actions/"
 local mime48 = "/usr/share/icons/hicolor/48x48/mimetypes/"
 local pixmaps = "/usr/share/pixmaps/"
 
+local NVRUN = "env __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia "
+
 -- FreeDesktop
 -- require('freedesktop.utils')
 -- require('freedesktop.menu')
@@ -50,20 +52,18 @@ networkmenu = {
    { "Firef&ox Developer", "firefox-developer-edition", app48 .. "firefox-developer-edition.png" },
    { "&Vivaldi", "vivaldi-stable", app48 .. "vivaldi.png" },
    { "&Yandex Browser", "yandex-browser-beta", app48 .. "yandex-browser-beta.png" },
-   { "&Qutebrowser (webkit)", "qutebrowser --backend webkit", app48 .. "qutebrowser.png" },
-   { "Q&utebrowser (webengine)", "qutebrowser --backend webengine" , app48 .. "qutebrowser.png" },
+   { "&Qutebrowser", NVRUN .. "qutebrowser" , app48 .. "qutebrowser.png" },
    { "&Thunderbird", "thunderbird", app48 .. "thunderbird.png" },
    { "&Baidu Cloud", "bcloud-gui", app48 .. "bcloud.png" },
    { "115 Pan", "115pan", pixmaps .. "115pan.png" },
    { "File&zilla", "filezilla", app48 .. "filezilla.png" },
    { "&Pidgin", "pidgin", app48 .. "pidgin.png" },
-   { "Telegram", "telegram-desktop", app48 .. "telegram.png" },
+   { "Telegr&am", "telegram-desktop", app48 .. "telegram.png" },
    { "Electron &WeChat", "electronic-wechat", app48 .. "electronic-wechat.png" },
    { "&Linphone", "linphone", app48 .. "linphone.png" },
    { "&Ekiga Softphone", "ekiga", app48 .. "ekiga.png" },
    { "He&xchat", "hexchat", app48 .. "hexchat.png" },
-   { "&ScudCloud", "scudcloud", pixmaps .. "scudcloud.png" },
-   { "Sl&ack", "slack", pixmaps .. "slack.png" },
+   { "&Slack", "slack", pixmaps .. "slack.png" },
    { "&Rocket.Chat+", "rocketchat-desktop", app512 .. "rocketchat-desktop.png" },
    { "Tra&nsmission", "transmission-gtk", app48 .. "transmission.png" },
    { "&MEGASync", "megasync", app48 .. "mega.png" },
@@ -106,8 +106,7 @@ latexmenu = {
 }
 pythonmenu = {
    { "&PyCharm", "pycharm", pixmaps .. "pycharm.png" },
-   { "Spyder2", "spyder2", apps .. "spyder2.svg" },
-   { "&Spyder3", "spyder3", apps .. "spyder3.svg" },
+   { "&Spyder", "spyder", apps .. "spyder.svg" },
    { "&Dreampie", "dreampie", pixmaps .. "dreampie.png" },
 }
 webmenu = {
@@ -127,9 +126,8 @@ markdownmenu = {
 }
 pdfmenu = {
    { "Master PDF Editor", "masterpdfeditor5", "/opt/master-pdf-editor-5/masterpdfeditor5.png" },
-   { "   PDF Editor", "pdfedit", "/usr/share/pdfedit/icon/pdfedit_logo.png" },
    { "Crop PDF files", "krop", act48g .. "edit-cut.png" },
-   { "PDFsam", "pdfsam", pixmaps .. "pdfsam.png" },
+   { "PDFsam", "pdfsam", app16 .. "pdfsam.png" },
 }
 editormenu = {
    { "Atom", "atom", app48 .. "atom.png" },
@@ -144,13 +142,12 @@ editormenu = {
    { "Dr&Racket", "drracket", app48 .. "drracket.png" },
    { "&Web", webmenu },
    { "&CLion", "clion", pixmaps .. "clion.svg" },
-   { "Anjuta", "anjuta", app48 .. "anjuta.png" },
    { "Eclip&se", "eclipse", app48 .. "eclipse.png" },
    { "&IntelliJ IDEA", "intellij-idea-ultimate-edition", pixmaps .. "intellij-idea-ultimate-edition.png" },
    { "&Android Studio", "android-studio", pixmaps .. "android-studio.png" },
    { "&QtCreator", "qtcreator", app48 .. "QtProject-qtcreator.png" },
    { "Li&teIDE", "liteide", pixmaps .. "liteide.png" },
-   { "PoE&dit", "poedit", app48 .. "poedit.png" },
+   { "PoE&dit", "poedit", app16 .. "net.poedit.Poedit.png" },
    { "Scribus", "scribus", app32 .. "scribus.png" },
    { "&OmegaT", "omegat", pixmaps .. "omegat.svg" },
    { "Wiki & &Note", wikimenu },
@@ -190,7 +187,7 @@ terminalmenu = {
    { "&Gnome Terminal", "gnome-terminal", app48g .. "gnome-terminal.png" },
    { "&Roxterm", "roxterm", apps .. "roxterm.svg" },
    { "&Lxterminal", "lxterminal", app128 .. "lxterminal.png" },
-   { "Tili&x", "tilix", app48 .. "com.gexperts.Tilix.png" },
+   { "Tili&x", "tilix", apps .. "com.gexperts.Tilix.svg" },
    { "&Terminator", "terminator", app48 .. "terminator.png" },
    { "&Cool Retro Term", "cool-retro-term", app64 .. "cool-retro-term.png" },
 }
@@ -199,16 +196,15 @@ colormenu = {
    { "G&pick", "gpick", app48 .. "gpick.png"}
 }
 graphicmenu = {
-   { "&GIMP", "gimp", app48 .. "gimp.png" },
+   { "&GIMP", NVRUN .. "gimp", app48 .. "gimp.png" },
    { "&Inkscape", "inkscape", app48 .. "inkscape.png" },
-   { "K&rita", "krita", app48 .. "calligrakrita.png" },
-   { "&Blender", "blender", apps .. "blender.svg" },
+   { "K&rita", "krita", app16 .. "krita.png" },
+   { "&Blender", NVRUN .. "blender", apps .. "blender.svg" },
    { "&OBS", "obs", app256 .. "com.obsproject.Studio.png" },
-   { "&FreeCAD", "freecad", app48 .. "freecad.png" },
    { "&OpenSCAD", "openscad", pixmaps .. "openscad.png" },
    { "&Darktable", "darktable", app48 .. "darktable.png" },
    { "Gee&qie", "geeqie", pixmaps .. "geeqie.png" },
-   { "g&thumb", "Gthumb", app48 .. "gthumb.png" },
+   { "g&thumb", "Gthumb", app16 .. "org.gnome.gThumb.png" },
    { "&Shotwell", "shotwell", app48 .. "shotwell.png" },
    { "&Color", colormenu },
 }
@@ -263,7 +259,7 @@ webtoolsmenu = {
 }
 webcammenu = {
    { "&Guvcview", "guvcview", pixmaps .. "guvcview/guvcview.png" },
-   { "&Cheese", "cheese", app48 .. "org.gnome.Cheese.png" },
+   { "&Cheese", "cheese", apps .. "org.gnome.Cheese.svg" },
 }
 bridgemenu = {
    { "&Bridge Master 2000", "dex " .. home_path .. ".local/share/applications/'Bridge Master 2000.desktop'" },
@@ -279,8 +275,8 @@ winemenu = {
    { "&Bridge", bridgemenu },
 }
 gamemenu = {
-   { "Super&tux2", "supertux2", pixmaps .. "supertux.png"},
-   { "&OpenRA", "opnra", app48 .. "openra-ra.png" },
+   { "Super&tux2", NVRUN .. "supertux2", pixmaps .. "supertux.png"},
+   { "&OpenRA", NVRUN .. "openra-ra", app48 .. "openra-ra.png" },
    { "&mGBA", "mgba-qt", pixmaps .. "mgba.png" },
    { "&Fceux", "fceux", pixmaps .. "fceux.png" },
    { "Hi&gan", "higan", pixmaps .. "higan.png" },
